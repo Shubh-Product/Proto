@@ -90,7 +90,22 @@ const Dashboard = () => {
           <div className="relative">
             {/* Fixed Header */}
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full table-fixed">
+                <colgroup>
+                  <col style={{ width: '180px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '100px' }} />
+                  <col style={{ width: '100px' }} />
+                  <col style={{ width: '100px' }} />
+                </colgroup>
                 <thead className="bg-blue-900 text-white">
                   <tr>
                     <th rowSpan="2" className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
@@ -139,40 +154,55 @@ const Dashboard = () => {
             </div>
             {/* Scrollable Body - Fixed height for 5 rows */}
             <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
-              <table className="w-full">
+              <table className="w-full table-fixed">
+                <colgroup>
+                  <col style={{ width: '180px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '80px' }} />
+                  <col style={{ width: '100px' }} />
+                  <col style={{ width: '100px' }} />
+                  <col style={{ width: '100px' }} />
+                </colgroup>
                 <tbody>
                   {mockDashboardMetrics.map((user, index) => (
                     <tr 
                       key={user.name} 
                       className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
                     >
-                      <td className="py-3 px-4 text-sm font-medium text-gray-900 w-[200px]">{user.name}</td>
+                      <td className="py-3 px-4 text-sm font-medium text-gray-900">{user.name}</td>
                       {/* M-1 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[80px]">{user.mMinus1.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[80px]">{user.mMinus1.renewed}</td>
-                      <td className="py-3 px-3 text-sm text-center w-[80px]">
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mMinus1.due}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mMinus1.renewed}</td>
+                      <td className="py-3 px-3 text-sm text-center">
                         <span className={`font-semibold ${user.mMinus1.percentage > 70 ? 'text-green-600' : user.mMinus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
                           {user.mMinus1.percentage}%
                         </span>
                       </td>
                       {/* M0 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[80px]">{user.m0.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[80px]">{user.m0.renewed}</td>
-                      <td className="py-3 px-3 text-sm text-center w-[80px]">
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.m0.due}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.m0.renewed}</td>
+                      <td className="py-3 px-3 text-sm text-center">
                         <span className={`font-semibold ${user.m0.percentage > 70 ? 'text-green-600' : user.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
                           {user.m0.percentage}%
                         </span>
                       </td>
                       {/* M+1 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[80px]">{user.mPlus1.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[80px]">{user.mPlus1.renewed}</td>
-                      <td className="py-3 px-3 text-sm text-center w-[80px]">
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mPlus1.due}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mPlus1.renewed}</td>
+                      <td className="py-3 px-3 text-sm text-center">
                         <span className="text-gray-400 font-semibold">{user.mPlus1.percentage}%</span>
                       </td>
                       {/* Other Metrics */}
-                      <td className="py-3 px-3 text-sm text-center text-orange-600 w-[100px]">{user.potentialPercentage}%</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[100px]">{user.interested}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900 w-[100px]">{user.matured}</td>
+                      <td className="py-3 px-3 text-sm text-center text-orange-600">{user.potentialPercentage}%</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.interested}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.matured}</td>
                     </tr>
                   ))}
                 </tbody>
