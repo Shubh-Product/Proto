@@ -7,9 +7,34 @@
     background: linear-gradient(90deg, rgba(233, 245, 255, 0.1) 56%, #F8FCFF 96%);
 }
 
+/* Enhanced Card Shadows - Material UI style */
+.card-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-hover:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
 /* Smooth transitions for interactive elements */
 button, a, input, select, textarea {
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input focus styles */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Button hover effects */
+button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 /* Custom scrollbar */
@@ -19,7 +44,7 @@ button, a, input, select, textarea {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -37,4 +62,20 @@ button, a, input, select, textarea {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* Table enhancements */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Enhanced table row hover */
+tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.02) !important;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    backdrop-filter: blur(2px);
 }
