@@ -19,62 +19,53 @@ const Dashboard = () => {
   const [dateFilter, setDateFilter] = useState('today');
   const [chartPeriod, setChartPeriod] = useState('weekly');
 
-  const { mMinus1, m0, mPlus1 } = mockDashboardMetrics;
+  // Calculate totals for user metrics
+  const totalMetrics = mockUserMetrics.reduce((acc, user) => ({
+    leadAssigned: acc.leadAssigned + user.leadAssigned,
+    lost: acc.lost + user.lost,
+    followUpDone: acc.followUpDone + user.followUpDone,
+    followUpPending: acc.followUpPending + user.followUpPending,
+    demoDone: acc.demoDone + user.demoDone,
+    demoPending: acc.demoPending + user.demoPending,
+    matured: acc.matured + user.matured
+  }), {
+    leadAssigned: 0,
+    lost: 0,
+    followUpDone: 0,
+    followUpPending: 0,
+    demoDone: 0,
+    demoPending: 0,
+    matured: 0
+  });
+
+  const totalTasks = {
+    toDo: mockTasksSummary.calls.toDo + mockTasksSummary.meetings.toDo,
+    done: mockTasksSummary.calls.done + mockTasksSummary.meetings.done
+  };
 
   return (
     <div className="space-y-6">
-
-      {/* Filters */}
-      <Card className="shadow-md">
-        <CardContent className="pt-6">
-          <div className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Date:</span>
-              <Select value={dateFilter} onValueChange={setDateFilter}>
-                <SelectTrigger className="w-[140px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="today">Today</SelectItem>
-                  <SelectItem value="yesterday">Yesterday</SelectItem>
-                  <SelectItem value="7d">Last 7 Days</SelectItem>
-                  <SelectItem value="thismonth">This Month</SelectItem>
-                  <SelectItem value="custom">Custom</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Product:</span>
-              <Select value={productFilter} onValueChange={setProductFilter}>
-                <SelectTrigger className="w-[160px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {mockProducts.map((product) => (
-                    <SelectItem key={product.value} value={product.value}>
-                      {product.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Type:</span>
-              <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger className="w-[140px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="renewal">Renewal</SelectItem>
-                  <SelectItem value="upsell">Upsell</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+      {/* Header with Title and Date Filter */}
+      <div className="bg-white border-b-2 border-blue-600 pb-2">
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+          <div className="flex items-center gap-2">
+            <Calendar className="w-5 h-5 text-gray-600" />
+            <Select value={dateFilter} onValueChange={setDateFilter}>
+              <SelectTrigger className="w-[140px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="today">Today</SelectItem>
+                <SelectItem value="yesterday">Yesterday</SelectItem>
+                <SelectItem value="7d">Last 7 Days</SelectItem>
+                <SelectItem value="thismonth">This Month</SelectItem>
+                <SelectItem value="custom">Custom</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Metrics Table */}
       <Card className="shadow-md">
