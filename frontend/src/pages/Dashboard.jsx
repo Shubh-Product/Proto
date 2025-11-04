@@ -262,11 +262,11 @@ const Dashboard = () => {
         </Card>
       </div>
 
-      {/* Renewal Trend - Bar Chart instead of Line Chart */}
+      {/* Renewal Trend - Bar Chart styled like screenshot */}
       <Card className="shadow-md">
-        <CardHeader>
+        <CardHeader className="border-b">
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg flex items-center gap-2">
+            <CardTitle className="text-lg font-bold flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-blue-600" />
               Renewal Trend
               <span className="text-sm font-normal text-gray-500 ml-2">
@@ -278,6 +278,7 @@ const Dashboard = () => {
                 variant={trendPeriod === '3M' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setTrendPeriod('3M')}
+                className="font-semibold"
               >
                 3M
               </Button>
@@ -285,6 +286,7 @@ const Dashboard = () => {
                 variant={trendPeriod === '6M' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setTrendPeriod('6M')}
+                className="font-semibold"
               >
                 6M
               </Button>
@@ -292,32 +294,44 @@ const Dashboard = () => {
                 variant={trendPeriod === '12M' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setTrendPeriod('12M')}
+                className="font-semibold"
               >
                 12M
               </Button>
             </div>
           </div>
         </CardHeader>
-        <CardContent>
-          <div className="h-[300px]">
+        <CardContent className="pt-6">
+          <div className="h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={mockTrendData[trendPeriod]}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="month" stroke="#6b7280" style={{ fontSize: '12px' }} />
-                <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
+                <XAxis 
+                  dataKey="month" 
+                  stroke="#6b7280" 
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#6b7280' }}
+                />
+                <YAxis 
+                  stroke="#6b7280" 
+                  style={{ fontSize: '12px' }}
+                  tick={{ fill: '#6b7280' }}
+                />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#fff',
                     border: '1px solid #e5e7eb',
                     borderRadius: '8px',
-                    fontSize: '12px'
+                    fontSize: '12px',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}
                   formatter={(value) => [`${value}%`, 'Percentage']}
                 />
                 <Bar 
                   dataKey="percentage" 
                   fill="#3b82f6" 
-                  radius={[4, 4, 0, 0]}
+                  radius={[6, 6, 0, 0]}
+                  maxBarSize={60}
                 />
               </BarChart>
             </ResponsiveContainer>
