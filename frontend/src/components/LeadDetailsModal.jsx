@@ -63,130 +63,113 @@ const LeadDetailsModal = ({ lead, onClose }) => {
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
           <TabsContent value="details" className="space-y-6 mt-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <Label className="text-xs text-gray-600">Subscription ID</Label>
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <Package className="w-4 h-4 text-blue-600" />
-                  {lead.subscriptionId}
+            {/* Lead Details Section - All fields in one section */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Lead Details</h3>
+              <div className="grid grid-cols-4 gap-4">
+                {/* Row 1 */}
+                <div className="space-y-2">
+                  <Label className="text-sm">Subscription ID</Label>
+                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
+                    <Package className="w-4 h-4 text-blue-600" />
+                    <span className="text-sm">{lead.subscriptionId}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-1">
-                <Label className="text-xs text-gray-600">Activation</Label>
-                <div className="flex items-center gap-2 text-sm">
-                  <Calendar className="w-4 h-4 text-gray-600" />
-                  {lead.activationDate}
+                <div className="space-y-2">
+                  <Label className="text-sm">Activation Date</Label>
+                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
+                    <Calendar className="w-4 h-4 text-gray-600" />
+                    <span className="text-sm">{lead.activationDate}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-1">
-                <Label className="text-xs text-gray-600">Valid Till</Label>
-                <div className="flex items-center gap-2 text-sm font-medium text-red-600">
-                  <Calendar className="w-4 h-4" />
-                  {lead.validTill}
+                <div className="space-y-2">
+                  <Label className="text-sm">Valid Till</Label>
+                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50 text-red-600">
+                    <Calendar className="w-4 h-4" />
+                    <span className="text-sm font-medium">{lead.validTill}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-1">
-                <Label className="text-xs text-gray-600">Last Active</Label>
-                <div className="flex items-center gap-2 text-sm">
-                  <Clock className="w-4 h-4 text-gray-600" />
-                  {lead.lastActive}
+                <div className="space-y-2">
+                  <Label className="text-sm">Last Active</Label>
+                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
+                    <Clock className="w-4 h-4 text-gray-600" />
+                    <span className="text-sm">{lead.lastActive}</span>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="border-t pt-4">
-              <h4 className="font-semibold text-sm mb-3">Services</h4>
-              <div className="flex flex-wrap gap-2">
-                {lead.services.map((service) => (
-                  <Badge key={service} variant="outline" className="text-xs">
-                    {service}
-                  </Badge>
-                ))}
-              </div>
-            </div>
+                {/* Row 2 */}
+                <div className="space-y-2">
+                  <Label className="text-sm">Services</Label>
+                  <Input value={lead.services.join(', ')} readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Offers</Label>
+                  <Input value={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'} readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Mobile</Label>
+                  <Input value={mobile} onChange={(e) => setMobile(e.target.value)} />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Product</Label>
+                  <Input value={lead.product} readOnly className="bg-gray-50" />
+                </div>
 
-            <div className="border-t pt-4">
-              <h4 className="font-semibold text-sm mb-3">Offers</h4>
-              <div className="flex gap-2">
-                {lead.offers.length > 0 ? (
-                  <Button variant="outline" size="sm" className="text-xs">
-                    View Offers ({lead.offers.length})
-                  </Button>
-                ) : (
-                  <span className="text-sm text-gray-500">No offers available</span>
-                )}
-              </div>
-            </div>
+                {/* Row 3 */}
+                <div className="space-y-2">
+                  <Label className="text-sm">Assigned To</Label>
+                  <Select value={assignedTo} onValueChange={setAssignedTo}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {mockTeamMembers.map((member) => (
+                        <SelectItem key={member.value} value={member.label}>
+                          {member.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Owner Partner</Label>
+                  <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Company Name</Label>
+                  <Input value={lead.company} readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Email</Label>
+                  <Input value={lead.email} readOnly className="bg-gray-50" />
+                </div>
 
-            <div className="grid grid-cols-2 gap-4 border-t pt-4">
-              <div className="space-y-2">
-                <Label>Mobile (Editable)</Label>
-                <Input value={mobile} onChange={(e) => setMobile(e.target.value)} />
-              </div>
-              <div className="space-y-2">
-                <Label>Product (Read-only)</Label>
-                <Input value={lead.product} readOnly className="bg-gray-50" />
-              </div>
-              <div className="space-y-2">
-                <Label>Assigned To</Label>
-                <Select value={assignedTo} onValueChange={setAssignedTo}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {mockTeamMembers.map((member) => (
-                      <SelectItem key={member.value} value={member.label}>
-                        {member.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label>Owner Partner</Label>
-                <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
-                  <Building2 className="w-4 h-4 text-gray-600" />
-                  <span className="text-sm">{lead.ownerPartner}</span>
+                {/* Row 4 */}
+                <div className="space-y-2">
+                  <Label className="text-sm">GSTIN</Label>
+                  <Input value={lead.gstin} readOnly className="bg-gray-50" />
                 </div>
-              </div>
-            </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">City</Label>
+                  <Input value={lead.city} readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Activeness</Label>
+                  <Input value={lead.activeness} readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Vintage</Label>
+                  <Input value={lead.vintage} readOnly className="bg-gray-50" />
+                </div>
 
-            <div className="border-t pt-4">
-              <h4 className="font-semibold text-sm mb-3">Company Info</h4>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <Label className="text-xs text-gray-600">Company Name</Label>
-                  <div className="mt-1 font-medium">{lead.company}</div>
+                {/* Row 5 */}
+                <div className="space-y-2">
+                  <Label className="text-sm">License Type</Label>
+                  <Input value={lead.licenseType} readOnly className="bg-gray-50" />
                 </div>
-                <div>
-                  <Label className="text-xs text-gray-600">Email</Label>
-                  <div className="mt-1">{lead.email}</div>
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-600">GSTIN</Label>
-                  <div className="mt-1">{lead.gstin}</div>
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-600">City</Label>
-                  <div className="mt-1">{lead.city}</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t pt-4">
-              <h4 className="font-semibold text-sm mb-3">Additional Information</h4>
-              <div className="grid grid-cols-3 gap-4 text-sm">
-                <div>
-                  <Label className="text-xs text-gray-600">Activeness</Label>
-                  <div className="mt-1 font-medium">{lead.activeness}</div>
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-600">Vintage</Label>
-                  <div className="mt-1 font-medium">{lead.vintage}</div>
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-600">License Type</Label>
-                  <div className="mt-1 font-medium">{lead.licenseType}</div>
+                <div className="space-y-2">
+                  <Label className="text-sm">GST Usage</Label>
+                  <Input value={lead.gstUsage} readOnly className="bg-gray-50" />
                 </div>
               </div>
             </div>
