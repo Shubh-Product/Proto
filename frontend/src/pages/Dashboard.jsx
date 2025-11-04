@@ -194,7 +194,7 @@ const Dashboard = () => {
         </Card>
 
         {/* Actionables */}
-        <Card>
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-orange-600" />
