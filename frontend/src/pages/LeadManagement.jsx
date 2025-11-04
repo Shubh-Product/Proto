@@ -270,7 +270,10 @@ const LeadManagement = () => {
                       />
                     </td>
                     <td className="py-1.5 px-4">
-                      <div className="text-sm font-medium text-blue-600">N/A</div>
+                      <div className="text-sm font-medium text-blue-600">{lead.company}</div>
+                    </td>
+                    <td className="py-1.5 px-4">
+                      <div className="text-sm text-gray-900">{lead.subscriptionId}</div>
                     </td>
                     <td className="py-1.5 px-4">
                       <div className="text-sm text-gray-900">{lead.ownerPartner}</div>
@@ -279,12 +282,10 @@ const LeadManagement = () => {
                       <div className="text-sm text-gray-900">{lead.nextFollowUp}</div>
                     </td>
                     <td className="py-1.5 px-4">
-                      <div className="text-sm text-gray-900">Call</div>
+                      <div className="text-sm text-gray-900">{lead.product}</div>
                     </td>
                     <td className="py-1.5 px-4">
-                      <Badge className={`${getPriorityColor(lead.priority)} text-xs border`}>
-                        {lead.priority}
-                      </Badge>
+                      <div className="text-sm text-gray-900">{lead.validTill}</div>
                     </td>
                     <td className="py-1.5 px-4">
                       <Badge className={`${getStageColor(lead.stage)} text-xs`}>
@@ -292,10 +293,10 @@ const LeadManagement = () => {
                       </Badge>
                     </td>
                     <td className="py-1.5 px-4">
-                      <div className="text-sm text-green-600 font-medium">In TAT</div>
-                    </td>
-                    <td className="py-1.5 px-4">
-                      <div className="text-sm text-gray-900">{lead.mobile}</div>
+                      <div className="text-sm">
+                        <div className="font-medium text-gray-900">{lead.assignedTo}</div>
+                        <div className="text-xs text-gray-600">{lead.mobile}</div>
+                      </div>
                     </td>
                     <td
                       className="py-1.5 px-4"
