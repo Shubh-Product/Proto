@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header with Title and Date Filter */}
+      {/* Header with Title and Filters */}
       <div className="bg-white border-b-2 border-blue-600 pb-2">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
@@ -46,6 +46,42 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* Filters */}
+      <Card className="shadow-md">
+        <CardContent className="pt-6">
+          <div className="flex flex-wrap gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-gray-700">Product:</span>
+              <Select value={productFilter} onValueChange={setProductFilter}>
+                <SelectTrigger className="w-[160px]">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {mockProducts.map((product) => (
+                    <SelectItem key={product.value} value={product.value}>
+                      {product.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-gray-700">Type:</span>
+              <Select value={typeFilter} onValueChange={setTypeFilter}>
+                <SelectTrigger className="w-[140px]">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="renewal">Renewal</SelectItem>
+                  <SelectItem value="upsell">Upsell</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* User Performance Table */}
       <Card className="shadow-md">
