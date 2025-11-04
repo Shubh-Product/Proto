@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen flex" style={{background: 'linear-gradient(90deg, rgba(233, 245, 255, 0.1) 56%, #F8FCFF 96%)'}}>
       {/* Left Sidebar */}
       <aside className="w-20 bg-white border-r border-gray-200 fixed left-0 top-0 bottom-0 z-40 flex flex-col">
         {/* Logo */}
