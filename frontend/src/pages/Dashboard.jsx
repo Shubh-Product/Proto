@@ -131,57 +131,40 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-100 bg-white hover:bg-gray-50">
-                  <td className="py-3 px-4 text-sm font-medium text-gray-900">M-1</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mMinus1.due}</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mMinus1.renewed}</td>
-                  <td className="py-3 px-3 text-sm text-center">
-                    <span className="text-green-600 font-semibold">{mMinus1.renewalPercentage}%</span>
-                  </td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-orange-600">{mMinus1.potentialPercentage}%</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mMinus1.interested}</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mMinus1.matured}</td>
-                </tr>
-                <tr className="border-b border-gray-100 bg-gray-50 hover:bg-gray-100">
-                  <td className="py-3 px-4 text-sm font-medium text-gray-900">M0 (Current)</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{m0.due}</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{m0.renewed}</td>
-                  <td className="py-3 px-3 text-sm text-center">
-                    <span className="text-green-600 font-semibold">{m0.renewalPercentage}%</span>
-                  </td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-orange-600">{m0.potentialPercentage}%</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{m0.interested}</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{m0.matured}</td>
-                </tr>
-                <tr className="bg-white hover:bg-gray-50">
-                  <td className="py-3 px-4 text-sm font-medium text-gray-900">M+1</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">-</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mPlus1.due}</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mPlus1.renewed}</td>
-                  <td className="py-3 px-3 text-sm text-center">
-                    <span className="text-gray-400 font-semibold">{mPlus1.renewalPercentage}%</span>
-                  </td>
-                  <td className="py-3 px-3 text-sm text-center text-orange-600">{mPlus1.potentialPercentage}%</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mPlus1.interested}</td>
-                  <td className="py-3 px-3 text-sm text-center text-gray-900">{mPlus1.matured}</td>
-                </tr>
+                {mockDashboardMetrics.map((user, index) => (
+                  <tr 
+                    key={user.name} 
+                    className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
+                  >
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">{user.name}</td>
+                    {/* M-1 Data */}
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mMinus1.due}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mMinus1.renewed}</td>
+                    <td className="py-3 px-3 text-sm text-center">
+                      <span className={`font-semibold ${user.mMinus1.percentage > 70 ? 'text-green-600' : user.mMinus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                        {user.mMinus1.percentage}%
+                      </span>
+                    </td>
+                    {/* M0 Data */}
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.m0.due}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.m0.renewed}</td>
+                    <td className="py-3 px-3 text-sm text-center">
+                      <span className={`font-semibold ${user.m0.percentage > 70 ? 'text-green-600' : user.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                        {user.m0.percentage}%
+                      </span>
+                    </td>
+                    {/* M+1 Data */}
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mPlus1.due}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mPlus1.renewed}</td>
+                    <td className="py-3 px-3 text-sm text-center">
+                      <span className="text-gray-400 font-semibold">{user.mPlus1.percentage}%</span>
+                    </td>
+                    {/* Other Metrics */}
+                    <td className="py-3 px-3 text-sm text-center text-orange-600">{user.potentialPercentage}%</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.interested}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{user.matured}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
