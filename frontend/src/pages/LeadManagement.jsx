@@ -31,6 +31,8 @@ const LeadManagement = () => {
   const [selectedLead, setSelectedLead] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [quickFilter, setQuickFilter] = useState('all');
+  const [dueFilter, setDueFilter] = useState('all');
+  const [expiredFilter, setExpiredFilter] = useState('all');
   const { setHeaderContent } = useHeader();
 
   // Set header content on mount
