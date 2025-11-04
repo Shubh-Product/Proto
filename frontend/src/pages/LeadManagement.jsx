@@ -196,7 +196,7 @@ const LeadManagement = () => {
       )}
 
       {/* Leads Table */}
-      <Card>
+      <Card className="shadow-md">
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <table className="w-full">
