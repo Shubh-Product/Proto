@@ -360,7 +360,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           </TabsContent>
 
           {/* Related Tab */}
-          <TabsContent value="related" className="mt-4">
+          <TabsContent value="related" className="mt-4 min-h-[400px]">
             <div className="border rounded-lg overflow-hidden">
               <table className="w-full">
                 <thead className="bg-gray-50">
@@ -371,7 +371,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Activation</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Valid Till</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Relation</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Follow-up</th>
+                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -385,9 +385,28 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                       <td className="py-3 px-4 text-sm">
                         <Badge variant="outline" className="text-xs">{sub.relation}</Badge>
                       </td>
-                      <td className="py-3 px-4 text-sm">{sub.lastFollowUp}</td>
+                      <td className="py-3 px-4 text-sm">
+                        <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                          <Calendar className="w-4 h-4 text-blue-600" />
+                        </button>
+                      </td>
                     </tr>
                   ))}
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">SUB-2023-789</td>
+                    <td className="py-3 px-4 text-sm">9876543299</td>
+                    <td className="py-3 px-4 text-sm">Busy Desktop</td>
+                    <td className="py-3 px-4 text-sm">2023-05-10</td>
+                    <td className="py-3 px-4 text-sm">2024-05-10</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Cross-sell</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
