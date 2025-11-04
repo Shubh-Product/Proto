@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -19,6 +19,7 @@ import LeadDetailsModal from '../components/LeadDetailsModal';
 import HistoryModal from '../components/HistoryModal';
 import BulkAssignModal from '../components/BulkAssignModal';
 import AdvancedFilterModal from '../components/AdvancedFilterModal';
+import ReactDOM from 'react-dom';
 
 const LeadManagement = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -30,6 +31,53 @@ const LeadManagement = () => {
   const [selectedLead, setSelectedLead] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [quickFilter, setQuickFilter] = useState('all');
+
+  // Inject search bar and advanced filters into header
+  useEffect(() => {
+    const headerActions = document.getElementById('header-actions');
+    if (headerActions) {
+      const searchContainer = document.createElement('div');
+      searchContainer.id = 'lead-search-container';
+      searchContainer.className = 'flex items-center gap-3 flex-1 max-w-2xl';
+      
+      headerActions.insertBefore(searchContainer, headerActions.firstChild);
+      
+      return () => {
+        const container = document.getElementById('lead-search-container');
+        if (container) {
+          container.remove();
+        }
+      };
+    }
+  }, []);
+
+  const HeaderSearchBar = () => {
+    const container = document.getElementById('lead-search-container');
+    if (!container) return null;
+
+    return ReactDOM.createPortal(
+      <>
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Input
+            placeholder="Search by Mobile, GSTIN, Email, Lead ID..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10 h-10"
+          />
+        </div>
+        <Button
+          variant="outline"
+          onClick={() => setShowAdvancedFilter(true)}
+          className="flex items-center gap-2 h-10"
+        >
+          <Filter className="w-4 h-4" />
+          Advanced Filters
+        </Button>
+      </>,
+      container
+    );
+  };
 
   const leadsPerPage = 10;
   const totalPages = Math.ceil(mockRenewalLeads.length / leadsPerPage);
