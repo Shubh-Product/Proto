@@ -4,7 +4,7 @@
 
 .App {
     min-height: 100vh;
-    background-color: #f9fafb;
+    background: linear-gradient(90deg, rgba(233, 245, 255, 0.1) 56%, #F8FCFF 96%);
 }
 
 /* Smooth transitions for interactive elements */
