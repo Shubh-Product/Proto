@@ -115,6 +115,65 @@ const LeadManagement = () => {
 
   return (
     <div className="space-y-4">
+      {/* Quick Filters */}
+      <div className="flex flex-wrap gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b border-gray-200">
+        <Button
+          size="sm"
+          variant={quickFilter === 'all' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('all')}
+          className="h-8"
+        >
+          All Leads
+        </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === 'due' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('due')}
+          className="h-8"
+        >
+          Due (M-2 to M+1)
+        </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === 'expired' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('expired')}
+          className="h-8"
+        >
+          Expired
+        </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === '720days' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('720days')}
+          className="h-8"
+        >
+          720 Days Offer
+        </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === 'interested' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('interested')}
+          className="h-8"
+        >
+          Interested
+        </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === 'pendingfu' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('pendingfu')}
+          className="h-8"
+        >
+          Pending FU
+        </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === 'upcomingfu' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('upcomingfu')}
+          className="h-8"
+        >
+          Upcoming FU
+        </Button>
+      </div>
 
       {/* Bulk Actions */}
       {selectedLeads.length > 0 && (
