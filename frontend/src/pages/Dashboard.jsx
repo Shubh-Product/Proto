@@ -167,58 +167,58 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Work Done & Actionables */}
+      {/* Work Done & Actionables - Styled like screenshot */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Work Done */}
         <Card className="shadow-md">
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
+          <CardHeader className="border-b">
+            <CardTitle className="text-lg font-bold flex items-center gap-2">
               <Phone className="w-5 h-5 text-blue-600" />
               Work Done by Priority
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
+          <CardContent className="pt-6">
+            <div className="space-y-6">
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-3">Calls</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-red-50 p-3 rounded-lg border border-red-100">
-                    <div className="text-xs text-red-700 font-medium">Hot</div>
-                    <div className="text-2xl font-bold text-red-600 mt-1">{mockWorkDone.calls.hot}</div>
+                <h4 className="text-base font-bold text-gray-900 mb-3">Calls</h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-red-50 p-4 rounded-lg border border-red-100">
+                    <div className="text-xs text-red-700 font-medium mb-1">Hot</div>
+                    <div className="text-3xl font-bold text-red-600">{mockWorkDone.calls.hot}</div>
                   </div>
-                  <div className="bg-orange-50 p-3 rounded-lg border border-orange-100">
-                    <div className="text-xs text-orange-700 font-medium">Warm</div>
-                    <div className="text-2xl font-bold text-orange-600 mt-1">{mockWorkDone.calls.warm}</div>
+                  <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                    <div className="text-xs text-orange-700 font-medium mb-1">Warm</div>
+                    <div className="text-3xl font-bold text-orange-600">{mockWorkDone.calls.warm}</div>
                   </div>
-                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                    <div className="text-xs text-blue-700 font-medium">Cold</div>
-                    <div className="text-2xl font-bold text-blue-600 mt-1">{mockWorkDone.calls.cold}</div>
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <div className="text-xs text-blue-700 font-medium mb-1">Cold</div>
+                    <div className="text-3xl font-bold text-blue-600">{mockWorkDone.calls.cold}</div>
                   </div>
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-700 font-medium">Other</div>
-                    <div className="text-2xl font-bold text-gray-600 mt-1">{mockWorkDone.calls.other}</div>
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div className="text-xs text-gray-700 font-medium mb-1">Other</div>
+                    <div className="text-3xl font-bold text-gray-600">{mockWorkDone.calls.other}</div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-3">Meetings</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-red-50 p-3 rounded-lg border border-red-100">
-                    <div className="text-xs text-red-700 font-medium">Hot</div>
-                    <div className="text-2xl font-bold text-red-600 mt-1">{mockWorkDone.meetings.hot}</div>
+                <h4 className="text-base font-bold text-gray-900 mb-3">Meetings</h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-red-50 p-4 rounded-lg border border-red-100">
+                    <div className="text-xs text-red-700 font-medium mb-1">Hot</div>
+                    <div className="text-3xl font-bold text-red-600">{mockWorkDone.meetings.hot}</div>
                   </div>
-                  <div className="bg-orange-50 p-3 rounded-lg border border-orange-100">
-                    <div className="text-xs text-orange-700 font-medium">Warm</div>
-                    <div className="text-2xl font-bold text-orange-600 mt-1">{mockWorkDone.meetings.warm}</div>
+                  <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                    <div className="text-xs text-orange-700 font-medium mb-1">Warm</div>
+                    <div className="text-3xl font-bold text-orange-600">{mockWorkDone.meetings.warm}</div>
                   </div>
-                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                    <div className="text-xs text-blue-700 font-medium">Cold</div>
-                    <div className="text-2xl font-bold text-blue-600 mt-1">{mockWorkDone.meetings.cold}</div>
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <div className="text-xs text-blue-700 font-medium mb-1">Cold</div>
+                    <div className="text-3xl font-bold text-blue-600">{mockWorkDone.meetings.cold}</div>
                   </div>
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-700 font-medium">Other</div>
-                    <div className="text-2xl font-bold text-gray-600 mt-1">{mockWorkDone.meetings.other}</div>
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div className="text-xs text-gray-700 font-medium mb-1">Other</div>
+                    <div className="text-3xl font-bold text-gray-600">{mockWorkDone.meetings.other}</div>
                   </div>
                 </div>
               </div>
@@ -228,34 +228,34 @@ const Dashboard = () => {
 
         {/* Actionables */}
         <Card className="shadow-md">
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
+          <CardHeader className="border-b">
+            <CardTitle className="text-lg font-bold flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-orange-600" />
               Actionables
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <div className="space-y-4">
-              <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                <div className="flex items-center justify-between">
+              <div className="bg-red-50 p-5 rounded-lg border border-red-200">
+                <div className="flex items-center justify-between mb-3">
                   <div>
-                    <div className="text-sm font-medium text-red-900">Expiring Today</div>
+                    <div className="text-base font-bold text-red-900">Expiring Today</div>
                     <div className="text-xs text-red-700 mt-1">Immediate action required</div>
                   </div>
-                  <div className="text-3xl font-bold text-red-600">{mockActionables.expiringToday}</div>
+                  <div className="text-4xl font-bold text-red-600">{mockActionables.expiringToday}</div>
                 </div>
-                <Button className="w-full mt-3 bg-red-600 hover:bg-red-700">View Leads</Button>
+                <Button className="w-full bg-red-600 hover:bg-red-700 font-semibold">View Leads</Button>
               </div>
 
-              <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-                <div className="flex items-center justify-between">
+              <div className="bg-orange-50 p-5 rounded-lg border border-orange-200">
+                <div className="flex items-center justify-between mb-3">
                   <div>
-                    <div className="text-sm font-medium text-orange-900">Expiring Tomorrow</div>
+                    <div className="text-base font-bold text-orange-900">Expiring Tomorrow</div>
                     <div className="text-xs text-orange-700 mt-1">Plan follow-up activities</div>
                   </div>
-                  <div className="text-3xl font-bold text-orange-600">{mockActionables.expiringTomorrow}</div>
+                  <div className="text-4xl font-bold text-orange-600">{mockActionables.expiringTomorrow}</div>
                 </div>
-                <Button className="w-full mt-3 bg-orange-600 hover:bg-orange-700">View Leads</Button>
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 font-semibold">View Leads</Button>
               </div>
             </div>
           </CardContent>
