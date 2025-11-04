@@ -148,96 +148,113 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Work Done & Actionables */}
+      {/* Tasks and Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Work Done */}
+        {/* Tasks for Today */}
         <Card className="shadow-md">
           <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Phone className="w-5 h-5 text-blue-600" />
-              Work Done by Priority
-            </CardTitle>
+            <CardTitle className="text-lg font-bold">Tasks for Today</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-3">Calls</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-red-50 p-3 rounded-lg border border-red-100">
-                    <div className="text-xs text-red-700 font-medium">Hot</div>
-                    <div className="text-2xl font-bold text-red-600 mt-1">{mockWorkDone.calls.hot}</div>
-                  </div>
-                  <div className="bg-orange-50 p-3 rounded-lg border border-orange-100">
-                    <div className="text-xs text-orange-700 font-medium">Warm</div>
-                    <div className="text-2xl font-bold text-orange-600 mt-1">{mockWorkDone.calls.warm}</div>
-                  </div>
-                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                    <div className="text-xs text-blue-700 font-medium">Cold</div>
-                    <div className="text-2xl font-bold text-blue-600 mt-1">{mockWorkDone.calls.cold}</div>
-                  </div>
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-700 font-medium">Other</div>
-                    <div className="text-2xl font-bold text-gray-600 mt-1">{mockWorkDone.calls.other}</div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-sm font-semibold text-gray-700 mb-3">Meetings</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-red-50 p-3 rounded-lg border border-red-100">
-                    <div className="text-xs text-red-700 font-medium">Hot</div>
-                    <div className="text-2xl font-bold text-red-600 mt-1">{mockWorkDone.meetings.hot}</div>
-                  </div>
-                  <div className="bg-orange-50 p-3 rounded-lg border border-orange-100">
-                    <div className="text-xs text-orange-700 font-medium">Warm</div>
-                    <div className="text-2xl font-bold text-orange-600 mt-1">{mockWorkDone.meetings.warm}</div>
-                  </div>
-                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                    <div className="text-xs text-blue-700 font-medium">Cold</div>
-                    <div className="text-2xl font-bold text-blue-600 mt-1">{mockWorkDone.meetings.cold}</div>
-                  </div>
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-700 font-medium">Other</div>
-                    <div className="text-2xl font-bold text-gray-600 mt-1">{mockWorkDone.meetings.other}</div>
-                  </div>
-                </div>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="border-b-2 border-gray-200">
+                  <tr>
+                    <th className="text-left py-2 px-3 text-sm font-semibold text-gray-700"></th>
+                    <th className="text-center py-2 px-3 text-sm font-semibold text-gray-700">To Do</th>
+                    <th className="text-center py-2 px-3 text-sm font-semibold text-gray-700">Done</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 px-3 text-sm font-medium text-gray-900">Calls</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{mockTasksSummary.calls.toDo}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{mockTasksSummary.calls.done}</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 px-3 text-sm font-medium text-gray-900">Meetings</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{mockTasksSummary.meetings.toDo}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{mockTasksSummary.meetings.done}</td>
+                  </tr>
+                  <tr className="bg-gray-50 font-semibold">
+                    <td className="py-3 px-3 text-sm text-gray-900">Total</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{totalTasks.toDo}</td>
+                    <td className="py-3 px-3 text-sm text-center text-gray-900">{totalTasks.done}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </CardContent>
         </Card>
 
-        {/* Actionables */}
+        {/* Assigned to Matured % Chart */}
         <Card className="shadow-md">
           <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-orange-600" />
-              Actionables
-            </CardTitle>
+            <CardTitle className="text-lg font-bold">Assigned to Matured %</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-medium text-red-900">Expiring Today</div>
-                    <div className="text-xs text-red-700 mt-1">Immediate action required</div>
-                  </div>
-                  <div className="text-3xl font-bold text-red-600">{mockActionables.expiringToday}</div>
-                </div>
-                <Button className="w-full mt-3 bg-red-600 hover:bg-red-700">View Leads</Button>
-              </div>
-
-              <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-medium text-orange-900">Expiring Tomorrow</div>
-                    <div className="text-xs text-orange-700 mt-1">Plan follow-up activities</div>
-                  </div>
-                  <div className="text-3xl font-bold text-orange-600">{mockActionables.expiringTomorrow}</div>
-                </div>
-                <Button className="w-full mt-3 bg-orange-600 hover:bg-orange-700">View Leads</Button>
-              </div>
+            <div className="h-[250px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={mockWeeklyMaturityData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis 
+                    dataKey="week" 
+                    stroke="#6b7280" 
+                    style={{ fontSize: '11px' }}
+                    interval={0}
+                  />
+                  <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: '#fff',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '8px',
+                      fontSize: '12px'
+                    }}
+                    formatter={(value) => [`${value}%`, 'Percentage']}
+                  />
+                  <Bar dataKey="percentage" fill="#3b82f6" radius={[4, 4, 0, 0]}>
+                    {mockWeeklyMaturityData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill="#3b82f6" />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex justify-center gap-6 mt-4">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="chartPeriod"
+                  value="daily"
+                  checked={chartPeriod === 'daily'}
+                  onChange={(e) => setChartPeriod(e.target.value)}
+                  className="w-4 h-4"
+                />
+                <span className="text-sm text-gray-700">Daily</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="chartPeriod"
+                  value="weekly"
+                  checked={chartPeriod === 'weekly'}
+                  onChange={(e) => setChartPeriod(e.target.value)}
+                  className="w-4 h-4"
+                />
+                <span className="text-sm text-gray-700">Weekly</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="chartPeriod"
+                  value="monthly"
+                  checked={chartPeriod === 'monthly'}
+                  onChange={(e) => setChartPeriod(e.target.value)}
+                  className="w-4 h-4"
+                />
+                <span className="text-sm text-gray-700">Monthly</span>
+              </label>
             </div>
           </CardContent>
         </Card>
