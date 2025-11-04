@@ -272,7 +272,7 @@ const LeadManagement = () => {
                     onClick={() => handleOpenLeadDetails(lead)}
                   >
                     <td
-                      className="py-2 px-4"
+                      className="py-1.5 px-4"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <input
