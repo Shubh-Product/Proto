@@ -32,9 +32,11 @@ const Layout = ({ children }) => {
       <aside className="w-20 bg-white border-r border-gray-200 fixed left-0 top-0 bottom-0 z-40 flex flex-col">
         {/* Logo */}
         <div className="h-20 flex items-center justify-center border-b border-gray-200">
-          <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-xl">B</span>
-          </div>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_busy-renewal/artifacts/nq5ldyk9_image.png" 
+            alt="Busy Logo" 
+            className="w-12 h-12 object-contain"
+          />
         </div>
 
         {/* Navigation */}
