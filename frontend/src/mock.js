@@ -577,6 +577,24 @@ export const mockRelatedSubscriptions = [
     validTill: '2025-01-15',
     relation: 'Upsell',
     lastFollowUp: '2024-07-30'
+  },
+  {
+    subscription: 'SUB-2024-002-B',
+    mobile: '9876543222',
+    product: 'Busy Desktop',
+    activation: '2024-02-20',
+    validTill: '2025-02-20',
+    relation: 'Cross-sell',
+    lastFollowUp: '2024-07-28'
+  },
+  {
+    subscription: 'SUB-2024-003-C',
+    mobile: '9876543233',
+    product: 'Busy Mandi',
+    activation: '2024-03-10',
+    validTill: '2025-03-10',
+    relation: 'Related',
+    lastFollowUp: '2024-07-25'
   }
 ];
 
