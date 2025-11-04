@@ -17,31 +17,11 @@ import {
 
 const Dashboard = () => {
   const [dateFilter, setDateFilter] = useState('today');
-  const [chartPeriod, setChartPeriod] = useState('weekly');
+  const [productFilter, setProductFilter] = useState('all');
+  const [typeFilter, setTypeFilter] = useState('renewal');
+  const [trendPeriod, setTrendPeriod] = useState('3M');
 
-  // Calculate totals for user metrics
-  const totalMetrics = mockUserMetrics.reduce((acc, user) => ({
-    leadAssigned: acc.leadAssigned + user.leadAssigned,
-    lost: acc.lost + user.lost,
-    followUpDone: acc.followUpDone + user.followUpDone,
-    followUpPending: acc.followUpPending + user.followUpPending,
-    demoDone: acc.demoDone + user.demoDone,
-    demoPending: acc.demoPending + user.demoPending,
-    matured: acc.matured + user.matured
-  }), {
-    leadAssigned: 0,
-    lost: 0,
-    followUpDone: 0,
-    followUpPending: 0,
-    demoDone: 0,
-    demoPending: 0,
-    matured: 0
-  });
-
-  const totalTasks = {
-    toDo: mockTasksSummary.calls.toDo + mockTasksSummary.meetings.toDo,
-    done: mockTasksSummary.calls.done + mockTasksSummary.meetings.done
-  };
+  const { mMinus1, m0, mPlus1 } = mockDashboardMetrics;
 
   return (
     <div className="space-y-6">
