@@ -88,16 +88,6 @@ const LeadManagement = () => {
 
   return (
     <div className="space-y-6">
-      {/* Page Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Lead Management</h1>
-          <p className="text-sm text-gray-600 mt-1">Manage and track renewal leads</p>
-        </div>
-        <Button className="bg-blue-600 hover:bg-blue-700">
-          Create Lead
-        </Button>
-      </div>
 
       {/* Search and Filters */}
       <Card>
