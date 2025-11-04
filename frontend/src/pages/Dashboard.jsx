@@ -76,7 +76,7 @@ const Dashboard = () => {
       </Card>
 
       {/* Metrics Table */}
-      <Card>
+      <Card className="shadow-md">
         <CardHeader>
           <CardTitle className="text-lg">Monthly Overview</CardTitle>
         </CardHeader>
