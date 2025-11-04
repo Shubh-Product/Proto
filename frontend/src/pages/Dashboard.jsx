@@ -24,7 +24,7 @@ const Dashboard = () => {
     <div className="space-y-6">
 
       {/* Filters */}
-      <Card>
+      <Card className="shadow-md">
         <CardContent className="pt-6">
           <div className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2">
