@@ -116,7 +116,7 @@ const LeadManagement = () => {
   return (
     <div className="space-y-4">
       {/* Quick Filters */}
-      <div className="flex flex-wrap gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b border-gray-200">
+      <div className="flex flex-wrap gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b shadow-sm" style={{borderColor: '#E2E8F0'}}>
         <Button
           size="sm"
           variant={quickFilter === 'all' ? 'default' : 'outline'}
