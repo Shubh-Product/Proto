@@ -212,12 +212,17 @@ const LeadManagement = () => {
                   </th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">
                     <div className="flex items-center gap-1">
-                      Lead Name <ArrowUpDown className="w-3 h-3" />
+                      Company Name <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">
                     <div className="flex items-center gap-1">
-                      Partner Name <ArrowUpDown className="w-3 h-3" />
+                      Subscription ID <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                    <div className="flex items-center gap-1">
+                      Owner Partner <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">
@@ -227,12 +232,12 @@ const LeadManagement = () => {
                   </th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">
                     <div className="flex items-center gap-1">
-                      Type <ArrowUpDown className="w-3 h-3" />
+                      Product <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">
                     <div className="flex items-center gap-1">
-                      Priority <ArrowUpDown className="w-3 h-3" />
+                      Valid Till <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">
@@ -240,8 +245,7 @@ const LeadManagement = () => {
                       Stage <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">TAT</th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">Mobile</th>
+                  <th className="py-3 px-4 text-left text-sm font-semibold">Contact Details</th>
                   <th className="py-3 px-4 text-left text-sm font-semibold">Actions</th>
                 </tr>
               </thead>
