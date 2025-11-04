@@ -45,7 +45,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl h-[85vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-base flex items-center gap-2">
             <span className="font-bold text-gray-900">Edit Lead</span>
@@ -55,15 +55,15 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           </DialogTitle>
         </DialogHeader>
 
-        <Tabs defaultValue="details" className="mt-4">
-          <TabsList className="grid w-full grid-cols-3">
+        <Tabs defaultValue="details" className="mt-4 flex-1 flex flex-col overflow-hidden">
+          <TabsList className="grid w-full grid-cols-3 flex-shrink-0">
             <TabsTrigger value="details">Details</TabsTrigger>
             <TabsTrigger value="addons">Add-ons</TabsTrigger>
             <TabsTrigger value="related">Related</TabsTrigger>
           </TabsList>
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
-          <TabsContent value="details" className="space-y-6 mt-4 min-h-[400px]">
+          <TabsContent value="details" className="space-y-6 mt-4 overflow-y-auto flex-1">
             {/* Lead Details Section - All fields in one section */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Lead Details</h3>
