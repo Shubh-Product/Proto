@@ -21,8 +21,6 @@ const Dashboard = () => {
   const [typeFilter, setTypeFilter] = useState('renewal');
   const [trendPeriod, setTrendPeriod] = useState('3M');
 
-  const { mMinus1, m0, mPlus1 } = mockDashboardMetrics;
-
   return (
     <div className="space-y-6">
       {/* Header with Title and Filters */}
