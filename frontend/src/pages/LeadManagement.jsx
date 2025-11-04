@@ -135,88 +135,69 @@ const LeadManagement = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
+      <HeaderSearchBar />
 
-      {/* Search and Filters */}
-      <Card>
-        <CardContent className="pt-6">
-          <div className="space-y-4">
-            {/* Search Bar */}
-            <div className="flex gap-3">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <Input
-                  placeholder="Search by Mobile, GSTIN, Email, Lead ID..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-              <Button
-                variant="outline"
-                onClick={() => setShowAdvancedFilter(true)}
-                className="flex items-center gap-2"
-              >
-                <Filter className="w-4 h-4" />
-                Advanced Filters
-              </Button>
-            </div>
+      {/* Quick Filters and Create Lead Button */}
+      <div className="flex items-center justify-between gap-4">
+        {/* Quick Filters */}
+        <div className="flex flex-wrap gap-2">
+          <Button
+            size="sm"
+            variant={quickFilter === 'all' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('all')}
+          >
+            All Leads
+          </Button>
+          <Button
+            size="sm"
+            variant={quickFilter === 'due' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('due')}
+          >
+            Due (M-2 to M+1)
+          </Button>
+          <Button
+            size="sm"
+            variant={quickFilter === 'expired' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('expired')}
+          >
+            Expired
+          </Button>
+          <Button
+            size="sm"
+            variant={quickFilter === '720days' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('720days')}
+          >
+            720 Days Offer
+          </Button>
+          <Button
+            size="sm"
+            variant={quickFilter === 'interested' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('interested')}
+          >
+            Interested
+          </Button>
+          <Button
+            size="sm"
+            variant={quickFilter === 'pendingfu' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('pendingfu')}
+          >
+            Pending FU
+          </Button>
+          <Button
+            size="sm"
+            variant={quickFilter === 'upcomingfu' ? 'default' : 'outline'}
+            onClick={() => setQuickFilter('upcomingfu')}
+          >
+            Upcoming FU
+          </Button>
+        </div>
 
-            {/* Quick Filters */}
-            <div className="flex flex-wrap gap-2">
-              <Button
-                size="sm"
-                variant={quickFilter === 'all' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('all')}
-              >
-                All Leads
-              </Button>
-              <Button
-                size="sm"
-                variant={quickFilter === 'due' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('due')}
-              >
-                Due (M-2 to M+1)
-              </Button>
-              <Button
-                size="sm"
-                variant={quickFilter === 'expired' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('expired')}
-              >
-                Expired
-              </Button>
-              <Button
-                size="sm"
-                variant={quickFilter === '720days' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('720days')}
-              >
-                720 Days Offer
-              </Button>
-              <Button
-                size="sm"
-                variant={quickFilter === 'interested' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('interested')}
-              >
-                Interested
-              </Button>
-              <Button
-                size="sm"
-                variant={quickFilter === 'pendingfu' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('pendingfu')}
-              >
-                Pending FU
-              </Button>
-              <Button
-                size="sm"
-                variant={quickFilter === 'upcomingfu' ? 'default' : 'outline'}
-                onClick={() => setQuickFilter('upcomingfu')}
-              >
-                Upcoming FU
-              </Button>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+        {/* Create Lead Button - Right Aligned */}
+        <Button className="bg-blue-600 hover:bg-blue-700 flex-shrink-0">
+          Create Lead
+        </Button>
+      </div>
 
       {/* Bulk Actions */}
       {selectedLeads.length > 0 && (
