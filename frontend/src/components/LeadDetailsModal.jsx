@@ -47,10 +47,9 @@ const LeadDetailsModal = ({ lead, onClose }) => {
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold mb-2">Edit Lead</DialogTitle>
-          <div className="text-sm text-gray-700">
-            {lead.subscriptionId} | Activation: {lead.activationDate} | Valid Till: {lead.validTill} | Last Active: {lead.lastActive} | Related Services: {lead.services.length}
-          </div>
+          <DialogTitle className="text-base">
+            <span className="font-bold">Edit Lead</span> | {lead.subscriptionId} | Activation: {lead.activationDate} | Valid Till: {lead.validTill} | Last Active: {lead.lastActive} | Related Services: {lead.services.length}
+          </DialogTitle>
         </DialogHeader>
 
         <Tabs defaultValue="details" className="mt-4">
