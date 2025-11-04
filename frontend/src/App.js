@@ -5,17 +5,20 @@ import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import LeadManagement from './pages/LeadManagement';
 import { Toaster } from './components/ui/toaster';
+import { HeaderProvider } from './contexts/HeaderContext';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/leads" element={<LeadManagement />} />
-          </Routes>
-        </Layout>
+        <HeaderProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/leads" element={<LeadManagement />} />
+            </Routes>
+          </Layout>
+        </HeaderProvider>
       </BrowserRouter>
       <Toaster />
     </div>
