@@ -420,10 +420,10 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           </TabsContent>
 
           {/* Related Tab */}
-          <TabsContent value="related" className="mt-4 min-h-[400px]">
+          <TabsContent value="related" className="mt-4 overflow-y-auto flex-1">
             <div className="border rounded-lg overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-gray-50 sticky top-0">
                   <tr>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Subscription</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Mobile</th>
@@ -460,6 +460,66 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <td className="py-3 px-4 text-sm">2024-05-10</td>
                     <td className="py-3 px-4 text-sm">
                       <Badge variant="outline" className="text-xs">Cross-sell</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">SUB-2024-456</td>
+                    <td className="py-3 px-4 text-sm">9876543288</td>
+                    <td className="py-3 px-4 text-sm">Busy Mandi</td>
+                    <td className="py-3 px-4 text-sm">2024-02-20</td>
+                    <td className="py-3 px-4 text-sm">2025-02-20</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Upsell</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">SUB-2024-123</td>
+                    <td className="py-3 px-4 text-sm">9876543277</td>
+                    <td className="py-3 px-4 text-sm">Busy Mobile</td>
+                    <td className="py-3 px-4 text-sm">2024-03-10</td>
+                    <td className="py-3 px-4 text-sm">2025-03-10</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Cross-sell</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">SUB-2024-567</td>
+                    <td className="py-3 px-4 text-sm">9876543266</td>
+                    <td className="py-3 px-4 text-sm">Busy Recom</td>
+                    <td className="py-3 px-4 text-sm">2024-04-15</td>
+                    <td className="py-3 px-4 text-sm">2025-04-15</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Upsell</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">SUB-2023-890</td>
+                    <td className="py-3 px-4 text-sm">9876543255</td>
+                    <td className="py-3 px-4 text-sm">Busy Online</td>
+                    <td className="py-3 px-4 text-sm">2023-06-25</td>
+                    <td className="py-3 px-4 text-sm">2024-06-25</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Related</Badge>
                     </td>
                     <td className="py-3 px-4 text-sm">
                       <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
