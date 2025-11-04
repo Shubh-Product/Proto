@@ -309,7 +309,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           </TabsContent>
 
           {/* Add-ons Tab */}
-          <TabsContent value="addons" className="mt-4">
+          <TabsContent value="addons" className="mt-4 min-h-[400px]">
             <div className="border rounded-lg overflow-hidden">
               <table className="w-full">
                 <thead className="bg-gray-50">
@@ -320,13 +320,38 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Activation</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Valid Till</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Relation</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Follow-up</th>
+                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td colSpan="7" className="py-8 text-center text-sm text-gray-500">
-                      No add-ons available
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD1</td>
+                    <td className="py-3 px-4 text-sm">{lead.mobile}</td>
+                    <td className="py-3 px-4 text-sm">GST Add-on</td>
+                    <td className="py-3 px-4 text-sm">{lead.activationDate}</td>
+                    <td className="py-3 px-4 text-sm">{lead.validTill}</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add-on</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD2</td>
+                    <td className="py-3 px-4 text-sm">{lead.mobile}</td>
+                    <td className="py-3 px-4 text-sm">Inventory Module</td>
+                    <td className="py-3 px-4 text-sm">{lead.activationDate}</td>
+                    <td className="py-3 px-4 text-sm">{lead.validTill}</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add-on</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
                     </td>
                   </tr>
                 </tbody>
