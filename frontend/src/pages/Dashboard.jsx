@@ -83,58 +83,83 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Monthly Overview Table */}
+      {/* Monthly Overview Table - Styled like screenshot */}
       <Card className="shadow-md">
-        <CardHeader>
-          <CardTitle className="text-lg">Monthly Overview</CardTitle>
-        </CardHeader>
-        <CardContent>
+        <CardContent className="p-0">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Period</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Due</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Renewed</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">%</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Potential %</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Interested</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Matured</th>
+              <thead className="bg-blue-900 text-white">
+                <tr>
+                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                    <div className="flex items-center gap-1">
+                      Period <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-center text-sm font-semibold">
+                    <div className="flex items-center justify-center gap-1">
+                      Due <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-center text-sm font-semibold">
+                    <div className="flex items-center justify-center gap-1">
+                      Renewed <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-center text-sm font-semibold">
+                    <div className="flex items-center justify-center gap-1">
+                      % <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-center text-sm font-semibold">
+                    <div className="flex items-center justify-center gap-1">
+                      Potential % <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-center text-sm font-semibold">
+                    <div className="flex items-center justify-center gap-1">
+                      Interested <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-3 px-4 text-center text-sm font-semibold">
+                    <div className="flex items-center justify-center gap-1">
+                      Matured <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-100 hover:bg-gray-50">
+                <tr className="border-b border-gray-100 bg-white hover:bg-gray-50">
                   <td className="py-3 px-4 text-sm font-medium text-gray-900">M-1</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.due}</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.renewed}</td>
-                  <td className="py-3 px-4 text-sm text-right">
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mMinus1.due}</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mMinus1.renewed}</td>
+                  <td className="py-3 px-4 text-sm text-center">
                     <span className="text-green-600 font-semibold">{mMinus1.renewalPercentage}%</span>
                   </td>
-                  <td className="py-3 px-4 text-sm text-right text-orange-600">{mMinus1.potentialPercentage}%</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.interested}</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.matured}</td>
+                  <td className="py-3 px-4 text-sm text-center text-orange-600">{mMinus1.potentialPercentage}%</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mMinus1.interested}</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mMinus1.matured}</td>
                 </tr>
-                <tr className="border-b border-gray-100 hover:bg-gray-50 bg-blue-50">
+                <tr className="border-b border-gray-100 bg-gray-50 hover:bg-gray-100">
                   <td className="py-3 px-4 text-sm font-medium text-gray-900">M0 (Current)</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.due}</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.renewed}</td>
-                  <td className="py-3 px-4 text-sm text-right">
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{m0.due}</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{m0.renewed}</td>
+                  <td className="py-3 px-4 text-sm text-center">
                     <span className="text-green-600 font-semibold">{m0.renewalPercentage}%</span>
                   </td>
-                  <td className="py-3 px-4 text-sm text-right text-orange-600">{m0.potentialPercentage}%</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.interested}</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.matured}</td>
+                  <td className="py-3 px-4 text-sm text-center text-orange-600">{m0.potentialPercentage}%</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{m0.interested}</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{m0.matured}</td>
                 </tr>
-                <tr className="hover:bg-gray-50">
+                <tr className="bg-white hover:bg-gray-50">
                   <td className="py-3 px-4 text-sm font-medium text-gray-900">M+1</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.due}</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.renewed}</td>
-                  <td className="py-3 px-4 text-sm text-right">
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mPlus1.due}</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mPlus1.renewed}</td>
+                  <td className="py-3 px-4 text-sm text-center">
                     <span className="text-gray-400 font-semibold">{mPlus1.renewalPercentage}%</span>
                   </td>
-                  <td className="py-3 px-4 text-sm text-right text-orange-600">{mPlus1.potentialPercentage}%</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.interested}</td>
-                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.matured}</td>
+                  <td className="py-3 px-4 text-sm text-center text-orange-600">{mPlus1.potentialPercentage}%</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mPlus1.interested}</td>
+                  <td className="py-3 px-4 text-sm text-center text-gray-900">{mPlus1.matured}</td>
                 </tr>
               </tbody>
             </table>
