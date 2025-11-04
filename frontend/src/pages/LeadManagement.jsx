@@ -118,7 +118,7 @@ const LeadManagement = () => {
   return (
     <div className="space-y-4">
       {/* Quick Filters */}
-      <div className="flex flex-wrap gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b shadow-sm" style={{borderColor: '#E2E8F0'}}>
+      <div className="flex flex-wrap items-center gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b shadow-sm" style={{borderColor: '#E2E8F0'}}>
         <Button
           size="sm"
           variant={quickFilter === 'all' ? 'default' : 'outline'}
@@ -127,22 +127,39 @@ const LeadManagement = () => {
         >
           All Leads
         </Button>
-        <Button
-          size="sm"
-          variant={quickFilter === 'due' ? 'default' : 'outline'}
-          onClick={() => setQuickFilter('due')}
-          className="h-8"
-        >
-          Due (M-2 to M+1)
-        </Button>
-        <Button
-          size="sm"
-          variant={quickFilter === 'expired' ? 'default' : 'outline'}
-          onClick={() => setQuickFilter('expired')}
-          className="h-8"
-        >
-          Expired
-        </Button>
+        
+        {/* Due Dropdown */}
+        <div className="flex items-center gap-1">
+          <span className="text-sm text-gray-700">Due:</span>
+          <Select value={dueFilter} onValueChange={setDueFilter}>
+            <SelectTrigger className="h-8 w-[100px]">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="m-2">M-2</SelectItem>
+              <SelectItem value="m-1">M-1</SelectItem>
+              <SelectItem value="m0">M0</SelectItem>
+              <SelectItem value="m+1">M+1</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Expired Dropdown */}
+        <div className="flex items-center gap-1">
+          <span className="text-sm text-gray-700">Expired:</span>
+          <Select value={expiredFilter} onValueChange={setExpiredFilter}>
+            <SelectTrigger className="h-8 w-[100px]">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="m-3">M-3</SelectItem>
+              <SelectItem value="m-4">M-4</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
         <Button
           size="sm"
           variant={quickFilter === '720days' ? 'default' : 'outline'}
@@ -165,7 +182,7 @@ const LeadManagement = () => {
           onClick={() => setQuickFilter('pendingfu')}
           className="h-8"
         >
-          Pending FU
+          Pending Follow Up
         </Button>
         <Button
           size="sm"
@@ -173,7 +190,7 @@ const LeadManagement = () => {
           onClick={() => setQuickFilter('upcomingfu')}
           className="h-8"
         >
-          Upcoming FU
+          Upcoming Follow Up
         </Button>
       </div>
 
