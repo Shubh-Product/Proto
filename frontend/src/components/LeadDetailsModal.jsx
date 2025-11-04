@@ -63,7 +63,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           </TabsList>
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
-          <TabsContent value="details" className="space-y-6 mt-4">
+          <TabsContent value="details" className="space-y-6 mt-4 min-h-[400px]">
             {/* Lead Details Section - All fields in one section */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Lead Details</h3>
