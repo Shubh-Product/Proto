@@ -192,67 +192,6 @@ const LeadManagement = () => {
   return (
     <div className="space-y-4">
 
-      {/* Quick Filters and Create Lead Button */}
-      <div className="flex items-center justify-between gap-4">
-        {/* Quick Filters */}
-        <div className="flex flex-wrap gap-2">
-          <Button
-            size="sm"
-            variant={quickFilter === 'all' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('all')}
-          >
-            All Leads
-          </Button>
-          <Button
-            size="sm"
-            variant={quickFilter === 'due' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('due')}
-          >
-            Due (M-2 to M+1)
-          </Button>
-          <Button
-            size="sm"
-            variant={quickFilter === 'expired' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('expired')}
-          >
-            Expired
-          </Button>
-          <Button
-            size="sm"
-            variant={quickFilter === '720days' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('720days')}
-          >
-            720 Days Offer
-          </Button>
-          <Button
-            size="sm"
-            variant={quickFilter === 'interested' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('interested')}
-          >
-            Interested
-          </Button>
-          <Button
-            size="sm"
-            variant={quickFilter === 'pendingfu' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('pendingfu')}
-          >
-            Pending FU
-          </Button>
-          <Button
-            size="sm"
-            variant={quickFilter === 'upcomingfu' ? 'default' : 'outline'}
-            onClick={() => setQuickFilter('upcomingfu')}
-          >
-            Upcoming FU
-          </Button>
-        </div>
-
-        {/* Create Lead Button - Right Aligned */}
-        <Button className="bg-blue-600 hover:bg-blue-700 flex-shrink-0">
-          Create Lead
-        </Button>
-      </div>
-
       {/* Bulk Actions */}
       {selectedLeads.length > 0 && (
         <Card className="bg-blue-50 border-blue-200">
