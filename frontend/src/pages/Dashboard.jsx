@@ -83,80 +83,58 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* User Performance Table */}
+      {/* Monthly Overview Table */}
       <Card className="shadow-md">
-        <CardContent className="p-0">
+        <CardHeader>
+          <CardTitle className="text-lg">Monthly Overview</CardTitle>
+        </CardHeader>
+        <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-blue-900 text-white">
-                <tr>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
-                    <div className="flex items-center gap-1">
-                      Name <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Lead Assigned <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Lost <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Follow Up Done <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Follow Up Pending <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Demo Done <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Demo Pending <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-3 px-4 text-center text-sm font-semibold">
-                    <div className="flex items-center justify-center gap-1">
-                      Matured <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Period</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Due</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Renewed</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">%</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Potential %</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Interested</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Matured</th>
                 </tr>
               </thead>
               <tbody>
-                {mockUserMetrics.map((user, index) => (
-                  <tr 
-                    key={user.name} 
-                    className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
-                  >
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900">{user.name}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.leadAssigned}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.lost}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.followUpDone}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.followUpPending}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.demoDone}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.demoPending}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{user.matured}</td>
-                  </tr>
-                ))}
-                <tr className="bg-gray-100 font-semibold">
-                  <td className="py-3 px-4 text-sm text-gray-900">Total</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.leadAssigned}</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.lost}</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.followUpDone}</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.followUpPending}</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.demoDone}</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.demoPending}</td>
-                  <td className="py-3 px-4 text-sm text-center text-gray-900">{totalMetrics.matured}</td>
+                <tr className="border-b border-gray-100 hover:bg-gray-50">
+                  <td className="py-3 px-4 text-sm font-medium text-gray-900">M-1</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.due}</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.renewed}</td>
+                  <td className="py-3 px-4 text-sm text-right">
+                    <span className="text-green-600 font-semibold">{mMinus1.renewalPercentage}%</span>
+                  </td>
+                  <td className="py-3 px-4 text-sm text-right text-orange-600">{mMinus1.potentialPercentage}%</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.interested}</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mMinus1.matured}</td>
+                </tr>
+                <tr className="border-b border-gray-100 hover:bg-gray-50 bg-blue-50">
+                  <td className="py-3 px-4 text-sm font-medium text-gray-900">M0 (Current)</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.due}</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.renewed}</td>
+                  <td className="py-3 px-4 text-sm text-right">
+                    <span className="text-green-600 font-semibold">{m0.renewalPercentage}%</span>
+                  </td>
+                  <td className="py-3 px-4 text-sm text-right text-orange-600">{m0.potentialPercentage}%</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.interested}</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{m0.matured}</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="py-3 px-4 text-sm font-medium text-gray-900">M+1</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.due}</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.renewed}</td>
+                  <td className="py-3 px-4 text-sm text-right">
+                    <span className="text-gray-400 font-semibold">{mPlus1.renewalPercentage}%</span>
+                  </td>
+                  <td className="py-3 px-4 text-sm text-right text-orange-600">{mPlus1.potentialPercentage}%</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.interested}</td>
+                  <td className="py-3 px-4 text-sm text-right text-gray-900">{mPlus1.matured}</td>
                 </tr>
               </tbody>
             </table>
