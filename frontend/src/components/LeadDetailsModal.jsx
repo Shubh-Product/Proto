@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { RadioGroup, RadioGroupItem } from './ui/radio-group';
-import { Calendar } from 'lucide-react';
-import { mockDispositions, mockStages, mockPriorities, mockTeamMembers, mockProducts } from '../mock';
+import { Badge } from './ui/badge';
+import { Calendar, Clock, Package, User, Building2 } from 'lucide-react';
+import { mockDispositions, mockStages, mockPriorities, mockRelatedSubscriptions, mockTeamMembers } from '../mock';
 import { toast } from '../hooks/use-toast';
 
 const LeadDetailsModal = ({ lead, onClose }) => {
   const [mobile, setMobile] = useState(lead.mobile);
-  const [contactPerson, setContactPerson] = useState(lead.assignedTo);
   const [assignedTo, setAssignedTo] = useState(lead.assignedTo);
-  const [product, setProduct] = useState(lead.product);
   
-  const [updateType, setUpdateType] = useState('call');
+  const [followUpType, setFollowUpType] = useState('call');
   const [stage, setStage] = useState(lead.stage.toLowerCase());
   const [priority, setPriority] = useState(lead.priority.toLowerCase());
   const [disposition, setDisposition] = useState('');
@@ -24,35 +23,47 @@ const LeadDetailsModal = ({ lead, onClose }) => {
   const [nextFUDateTime, setNextFUDateTime] = useState('');
   const [remarks, setRemarks] = useState('');
 
-  const handleSaveDetails = () => {
+  const handleSaveFollowUp = () => {
+    if (!disposition || !remarks) {
+      toast({
+        title: 'Validation Error',
+        description: 'Disposition and Remarks are required',
+        variant: 'destructive'
+      });
+      return;
+    }
+
     toast({
-      title: 'Details Saved',
-      description: 'Lead details have been updated successfully'
+      title: 'Follow-up Saved',
+      description: 'Follow-up has been recorded successfully'
     });
+
+    // Reset form
+    setDisposition('');
+    setRemarks('');
   };
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
-        {/* Header */}
-        <DialogHeader className="border-b pb-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <DialogTitle className="text-xl font-semibold">Edit Lead</DialogTitle>
-              <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
-                <span>Lead ID: {lead.id}</span>
-                <span>31 Oct 25</span>
-                <span>Existing Services: N/A</span>
-              </div>
-            </div>
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-xl">{lead.company}</DialogTitle>
+          <div className="flex items-center gap-2 mt-2">
+            <Badge className="text-xs">{lead.subscriptionId}</Badge>
+            <Badge variant="outline" className="text-xs">{lead.product}</Badge>
           </div>
         </DialogHeader>
 
-        <div className="space-y-6 mt-4">
-          {/* Lead Details Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Lead Details</h3>
-            <div className="grid grid-cols-4 gap-4">
+        <Tabs defaultValue="details" className="mt-4">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="details">Details</TabsTrigger>
+            <TabsTrigger value="followup">Follow-up</TabsTrigger>
+            <TabsTrigger value="addons">Add-ons</TabsTrigger>
+            <TabsTrigger value="related">Related</TabsTrigger>
+          </TabsList>
+
+          {/* Details Tab */}
+          <TabsContent value="details" className="space-y-6 mt-4">
               <div className="space-y-2">
                 <Label className="text-sm">Subscription ID</Label>
                 <Input value={lead.subscriptionId} readOnly className="bg-gray-50" />
