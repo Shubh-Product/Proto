@@ -135,7 +135,7 @@ const Dashboard = () => {
               </table>
             </div>
             {/* Scrollable Body - Fixed height for 5 rows */}
-            <div className="overflow-x-auto overflow-y-auto max-h-[300px]">
+            <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
               <table className="w-full">
                 <tbody>
                   {mockDashboardMetrics.map((user, index) => (
