@@ -118,7 +118,6 @@ const LeadManagement = () => {
 
   return (
     <div className="space-y-4">
-      <HeaderSearchBar />
 
       {/* Quick Filters and Create Lead Button */}
       <div className="flex items-center justify-between gap-4">
