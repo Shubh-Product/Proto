@@ -309,10 +309,10 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           </TabsContent>
 
           {/* Add-ons Tab */}
-          <TabsContent value="addons" className="mt-4 min-h-[400px]">
+          <TabsContent value="addons" className="mt-4 overflow-y-auto flex-1">
             <div className="border rounded-lg overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-gray-50 sticky top-0">
                   <tr>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Subscription</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Mobile</th>
@@ -345,6 +345,66 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <td className="py-3 px-4 text-sm">Inventory Module</td>
                     <td className="py-3 px-4 text-sm">{lead.activationDate}</td>
                     <td className="py-3 px-4 text-sm">{lead.validTill}</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add-on</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD3</td>
+                    <td className="py-3 px-4 text-sm">{lead.mobile}</td>
+                    <td className="py-3 px-4 text-sm">E-Way Bill Module</td>
+                    <td className="py-3 px-4 text-sm">2024-03-15</td>
+                    <td className="py-3 px-4 text-sm">2025-03-15</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add-on</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD4</td>
+                    <td className="py-3 px-4 text-sm">{lead.mobile}</td>
+                    <td className="py-3 px-4 text-sm">E-Invoice Module</td>
+                    <td className="py-3 px-4 text-sm">2024-02-10</td>
+                    <td className="py-3 px-4 text-sm">2025-02-10</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add-on</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD5</td>
+                    <td className="py-3 px-4 text-sm">{lead.mobile}</td>
+                    <td className="py-3 px-4 text-sm">Multi-User License</td>
+                    <td className="py-3 px-4 text-sm">2024-01-20</td>
+                    <td className="py-3 px-4 text-sm">2025-01-20</td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add-on</Badge>
+                    </td>
+                    <td className="py-3 px-4 text-sm">
+                      <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr className="border-t border-gray-100">
+                    <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD6</td>
+                    <td className="py-3 px-4 text-sm">{lead.mobile}</td>
+                    <td className="py-3 px-4 text-sm">Payroll Module</td>
+                    <td className="py-3 px-4 text-sm">2024-04-05</td>
+                    <td className="py-3 px-4 text-sm">2025-04-05</td>
                     <td className="py-3 px-4 text-sm">
                       <Badge variant="outline" className="text-xs">Add-on</Badge>
                     </td>
