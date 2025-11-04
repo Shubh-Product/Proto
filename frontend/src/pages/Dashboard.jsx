@@ -230,7 +230,7 @@ const Dashboard = () => {
       </div>
 
       {/* Trend Graph */}
-      <Card>
+      <Card className="shadow-md">
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="text-lg flex items-center gap-2">
