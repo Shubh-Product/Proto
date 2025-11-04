@@ -520,6 +520,47 @@ export const mockTrendData = {
   ]
 };
 
+// User Performance Metrics
+export const mockUserMetrics = [
+  {
+    name: 'Shubham (Me)',
+    leadAssigned: 0,
+    lost: 0,
+    followUpDone: 0,
+    followUpPending: 1,
+    demoDone: 0,
+    demoPending: 0,
+    matured: 0
+  },
+  {
+    name: 'Brijesh Agrawal',
+    leadAssigned: 1144,
+    lost: 218,
+    followUpDone: 6874,
+    followUpPending: 338423,
+    demoDone: 130,
+    demoPending: 431,
+    matured: 24
+  }
+];
+
+// Tasks Summary
+export const mockTasksSummary = {
+  calls: { toDo: 3799, done: 10412 },
+  meetings: { toDo: 19, done: 4 }
+};
+
+// Weekly Maturity Data for Bar Chart
+export const mockWeeklyMaturityData = [
+  { week: '14 Sep -\n20 Sep', percentage: 2.54 },
+  { week: '21 Sep -\n27 Sep', percentage: 1.36 },
+  { week: '28 Sep -\n4 Oct', percentage: 2.02 },
+  { week: '5 Oct -\n11 Oct', percentage: 2.05 },
+  { week: '12 Oct -\n18 Oct', percentage: 1.49 },
+  { week: '19 Oct -\n25 Oct', percentage: 1.51 },
+  { week: '26 Oct -\n31 Oct', percentage: 1.13 }
+];
+
 // Follow-up History
 export const mockFollowUpHistory = [
   {
