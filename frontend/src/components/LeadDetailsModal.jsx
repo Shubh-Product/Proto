@@ -55,14 +55,13 @@ const LeadDetailsModal = ({ lead, onClose }) => {
         </DialogHeader>
 
         <Tabs defaultValue="details" className="mt-4">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="details">Details</TabsTrigger>
-            <TabsTrigger value="followup">Follow-up</TabsTrigger>
             <TabsTrigger value="addons">Add-ons</TabsTrigger>
             <TabsTrigger value="related">Related</TabsTrigger>
           </TabsList>
 
-          {/* Details Tab */}
+          {/* Details Tab - Contains both Lead Details and Follow Up Update */}
           <TabsContent value="details" className="space-y-6 mt-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
