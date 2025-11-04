@@ -177,7 +177,7 @@ const LeadManagement = () => {
 
       {/* Bulk Actions */}
       {selectedLeads.length > 0 && (
-        <Card className="bg-blue-50 border-blue-200">
+        <Card className="bg-blue-50 border-blue-200 shadow-sm">
           <CardContent className="pt-4">
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-blue-900">
