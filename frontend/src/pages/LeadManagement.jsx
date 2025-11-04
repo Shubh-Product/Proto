@@ -279,7 +279,7 @@ const LeadManagement = () => {
                     onClick={() => handleOpenLeadDetails(lead)}
                   >
                     <td
-                      className="py-3 px-4"
+                      className="py-2 px-4"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <input
@@ -289,36 +289,36 @@ const LeadManagement = () => {
                         className="w-4 h-4 rounded border-gray-300"
                       />
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <div className="text-sm font-medium text-blue-600">N/A</div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <div className="text-sm text-gray-900">{lead.ownerPartner}</div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <div className="text-sm text-gray-900">{lead.nextFollowUp}</div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <div className="text-sm text-gray-900">Call</div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <Badge className={`${getPriorityColor(lead.priority)} text-xs border`}>
                         {lead.priority}
                       </Badge>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <Badge className={`${getStageColor(lead.stage)} text-xs`}>
                         {lead.stage}
                       </Badge>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <div className="text-sm text-green-600 font-medium">In TAT</div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2 px-4">
                       <div className="text-sm text-gray-900">{lead.mobile}</div>
                     </td>
                     <td
-                      className="py-3 px-4"
+                      className="py-2 px-4"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <div className="flex items-center gap-2">
