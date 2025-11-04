@@ -190,112 +190,138 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                 </div>
               </div>
             </div>
-          </TabsContent>
 
-          {/* Follow-up Tab */}
-          <TabsContent value="followup" className="space-y-4 mt-4">
-            <div className="space-y-2">
-              <Label>Type</Label>
-              <Select value={followUpType} onValueChange={setFollowUpType}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="call">Call</SelectItem>
-                  <SelectItem value="meeting">Meeting</SelectItem>
-                  <SelectItem value="general">General</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label>Stage</Label>
-                <Select value={stage} onValueChange={setStage}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {mockStages.map((s) => (
-                      <SelectItem key={s.value} value={s.value}>
-                        {s.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+            {/* Follow Up Update Section - Part of Details Tab */}
+            <div className="border-t pt-6">
+              <h3 className="text-lg font-semibold mb-4">Follow Up Update</h3>
+              
+              {/* Update Type */}
+              <div className="mb-4">
+                <Label className="text-sm mb-2 block">Update Type</Label>
+                <div className="flex gap-6">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      value="call"
+                      checked={followUpType === 'call'}
+                      onChange={(e) => setFollowUpType(e.target.value)}
+                      className="w-4 h-4"
+                    />
+                    <span className="text-sm">Call</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      value="meeting"
+                      checked={followUpType === 'meeting'}
+                      onChange={(e) => setFollowUpType(e.target.value)}
+                      className="w-4 h-4"
+                    />
+                    <span className="text-sm">Meeting</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      value="general"
+                      checked={followUpType === 'general'}
+                      onChange={(e) => setFollowUpType(e.target.value)}
+                      className="w-4 h-4"
+                    />
+                    <span className="text-sm">General</span>
+                  </label>
+                </div>
               </div>
-              <div className="space-y-2">
-                <Label>Priority</Label>
-                <Select value={priority} onValueChange={setPriority}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {mockPriorities.map((p) => (
-                      <SelectItem key={p.value} value={p.value}>
-                        {p.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+
+              <div className="grid grid-cols-4 gap-4">
+                <div className="space-y-2">
+                  <Label className="text-sm">Stage</Label>
+                  <Select value={stage} onValueChange={setStage}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {mockStages.map((s) => (
+                        <SelectItem key={s.value} value={s.value}>
+                          {s.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Priority</Label>
+                  <Select value={priority} onValueChange={setPriority}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {mockPriorities.map((p) => (
+                        <SelectItem key={p.value} value={p.value}>
+                          {p.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Call Disposition</Label>
+                  <Select value={disposition} onValueChange={setDisposition}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {mockDispositions.map((d) => (
+                        <SelectItem key={d} value={d}>
+                          {d}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Next FU Type</Label>
+                  <Select value={nextFUType} onValueChange={setNextFUType} disabled={stage === 'matured' || stage === 'dropped'}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="call">Call</SelectItem>
+                      <SelectItem value="meeting">Meeting</SelectItem>
+                      <SelectItem value="general">General</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2 col-span-2">
+                  <Label className="text-sm">Next Follow Up Date Time</Label>
+                  <Input
+                    type="datetime-local"
+                    value={nextFUDateTime}
+                    onChange={(e) => setNextFUDateTime(e.target.value)}
+                    disabled={stage === 'matured' || stage === 'dropped'}
+                    placeholder="Auto +30min"
+                  />
+                </div>
+                <div className="space-y-2 col-span-2">
+                  <Label className="text-sm">Remarks</Label>
+                  <Textarea
+                    value={remarks}
+                    onChange={(e) => setRemarks(e.target.value)}
+                    placeholder="Enter remarks..."
+                    rows={3}
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label>Disposition *</Label>
-              <Select value={disposition} onValueChange={setDisposition}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select disposition" />
-                </SelectTrigger>
-                <SelectContent>
-                  {mockDispositions.map((d) => (
-                    <SelectItem key={d} value={d}>
-                      {d}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            {/* Action Buttons */}
+            <div className="flex justify-end gap-3 pt-4 border-t">
+              <Button variant="outline" onClick={onClose}>
+                View History
+              </Button>
+              <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleSaveFollowUp}>
+                Save Details
+              </Button>
             </div>
-
-            <div className="space-y-2">
-              <Label>Next Follow-up</Label>
-              <div className="grid grid-cols-2 gap-4">
-                <Select value={nextFUType} onValueChange={setNextFUType} disabled={stage === 'matured' || stage === 'dropped'}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="call">Call</SelectItem>
-                    <SelectItem value="meeting">Meeting</SelectItem>
-                    <SelectItem value="general">General</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Input
-                  type="datetime-local"
-                  value={nextFUDateTime}
-                  onChange={(e) => setNextFUDateTime(e.target.value)}
-                  disabled={stage === 'matured' || stage === 'dropped'}
-                  placeholder="Auto +30min"
-                />
-              </div>
-              {(stage === 'matured' || stage === 'dropped') && (
-                <p className="text-xs text-gray-500">Disabled for {stage} stage</p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <Label>Remarks *</Label>
-              <Textarea
-                value={remarks}
-                onChange={(e) => setRemarks(e.target.value)}
-                placeholder="Enter your remarks..."
-                rows={4}
-              />
-            </div>
-
-            <Button onClick={handleSaveFollowUp} className="w-full bg-blue-600 hover:bg-blue-700">
-              Save Follow-up
-            </Button>
           </TabsContent>
 
           {/* Add-ons Tab */}
