@@ -202,7 +202,7 @@ const LeadManagement = () => {
             <table className="w-full">
               <thead className="bg-blue-900 text-white">
                 <tr>
-                  <th className="py-3 px-4 text-left">
+                  <th className="py-2 px-4 text-left">
                     <input
                       type="checkbox"
                       checked={selectedLeads.length === mockRenewalLeads.length}
@@ -210,43 +210,43 @@ const LeadManagement = () => {
                       className="w-4 h-4 rounded border-white"
                     />
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Company Name <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Subscription ID <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Owner Partner <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Next Follow Up <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Product <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Valid Till <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       Stage <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">Contact Details</th>
-                  <th className="py-3 px-4 text-left text-sm font-semibold">Actions</th>
+                  <th className="py-2 px-4 text-left text-xs font-semibold">Contact Details</th>
+                  <th className="py-2 px-4 text-left text-xs font-semibold">Actions</th>
                 </tr>
               </thead>
               <tbody>
