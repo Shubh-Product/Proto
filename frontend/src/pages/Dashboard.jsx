@@ -137,7 +137,7 @@ const Dashboard = () => {
       {/* Work Done & Actionables */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Work Done */}
-        <Card>
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Phone className="w-5 h-5 text-blue-600" />
