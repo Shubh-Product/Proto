@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Button } from '../components/ui/button';
-import { Calendar, TrendingUp, Phone, Users as UsersIcon, AlertCircle } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { Calendar, TrendingUp, Phone, Users as UsersIcon, AlertCircle, ArrowUpDown } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 import {
   mockDashboardMetrics,
   mockWorkDone,
   mockActionables,
   mockTrendData,
-  mockProducts
+  mockProducts,
+  mockUserMetrics,
+  mockTasksSummary,
+  mockWeeklyMaturityData
 } from '../mock';
 
 const Dashboard = () => {
   const [dateFilter, setDateFilter] = useState('today');
-  const [productFilter, setProductFilter] = useState('all');
-  const [typeFilter, setTypeFilter] = useState('renewal');
-  const [trendPeriod, setTrendPeriod] = useState('3M');
+  const [chartPeriod, setChartPeriod] = useState('weekly');
 
   const { mMinus1, m0, mPlus1 } = mockDashboardMetrics;
 
