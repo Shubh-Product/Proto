@@ -19,7 +19,7 @@ import LeadDetailsModal from '../components/LeadDetailsModal';
 import HistoryModal from '../components/HistoryModal';
 import BulkAssignModal from '../components/BulkAssignModal';
 import AdvancedFilterModal from '../components/AdvancedFilterModal';
-import ReactDOM from 'react-dom';
+import { useHeader } from '../contexts/HeaderContext';
 
 const LeadManagement = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,31 +31,11 @@ const LeadManagement = () => {
   const [selectedLead, setSelectedLead] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [quickFilter, setQuickFilter] = useState('all');
+  const { setHeaderContent } = useHeader();
 
-  // Inject search bar and advanced filters into header
+  // Set header content on mount
   useEffect(() => {
-    const headerActions = document.getElementById('header-actions');
-    if (headerActions) {
-      const searchContainer = document.createElement('div');
-      searchContainer.id = 'lead-search-container';
-      searchContainer.className = 'flex items-center gap-3 flex-1 max-w-2xl';
-      
-      headerActions.insertBefore(searchContainer, headerActions.firstChild);
-      
-      return () => {
-        const container = document.getElementById('lead-search-container');
-        if (container) {
-          container.remove();
-        }
-      };
-    }
-  }, []);
-
-  const HeaderSearchBar = () => {
-    const container = document.getElementById('lead-search-container');
-    if (!container) return null;
-
-    return ReactDOM.createPortal(
+    setHeaderContent(
       <>
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -74,10 +54,12 @@ const LeadManagement = () => {
           <Filter className="w-4 h-4" />
           Advanced Filters
         </Button>
-      </>,
-      container
+      </>
     );
-  };
+
+    // Cleanup header content on unmount
+    return () => setHeaderContent(null);
+  }, [searchQuery, setHeaderContent]);
 
   const leadsPerPage = 10;
   const totalPages = Math.ceil(mockRenewalLeads.length / leadsPerPage);
