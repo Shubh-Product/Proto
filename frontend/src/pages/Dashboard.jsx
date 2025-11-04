@@ -167,96 +167,89 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Work Done & Actionables - Styled like screenshot */}
+      {/* Tasks for Today & Actionables - Table style like screenshot */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Work Done */}
+        {/* Tasks for Today Table */}
         <Card className="shadow-md">
-          <CardHeader className="border-b">
+          <CardHeader className="border-b pb-3">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
               <Phone className="w-5 h-5 text-blue-600" />
-              Work Done by Priority
+              Tasks for Today
             </CardTitle>
           </CardHeader>
-          <CardContent className="pt-6">
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-base font-bold text-gray-900 mb-3">Calls</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-red-50 p-4 rounded-lg border border-red-100">
-                    <div className="text-xs text-red-700 font-medium mb-1">Hot</div>
-                    <div className="text-3xl font-bold text-red-600">{mockWorkDone.calls.hot}</div>
-                  </div>
-                  <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
-                    <div className="text-xs text-orange-700 font-medium mb-1">Warm</div>
-                    <div className="text-3xl font-bold text-orange-600">{mockWorkDone.calls.warm}</div>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                    <div className="text-xs text-blue-700 font-medium mb-1">Cold</div>
-                    <div className="text-3xl font-bold text-blue-600">{mockWorkDone.calls.cold}</div>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-700 font-medium mb-1">Other</div>
-                    <div className="text-3xl font-bold text-gray-600">{mockWorkDone.calls.other}</div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-base font-bold text-gray-900 mb-3">Meetings</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-red-50 p-4 rounded-lg border border-red-100">
-                    <div className="text-xs text-red-700 font-medium mb-1">Hot</div>
-                    <div className="text-3xl font-bold text-red-600">{mockWorkDone.meetings.hot}</div>
-                  </div>
-                  <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
-                    <div className="text-xs text-orange-700 font-medium mb-1">Warm</div>
-                    <div className="text-3xl font-bold text-orange-600">{mockWorkDone.meetings.warm}</div>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                    <div className="text-xs text-blue-700 font-medium mb-1">Cold</div>
-                    <div className="text-3xl font-bold text-blue-600">{mockWorkDone.meetings.cold}</div>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-700 font-medium mb-1">Other</div>
-                    <div className="text-3xl font-bold text-gray-600">{mockWorkDone.meetings.other}</div>
-                  </div>
-                </div>
-              </div>
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-blue-900 text-white">
+                  <tr>
+                    <th className="py-3 px-4 text-left text-sm font-semibold"></th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">To Do</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Done</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 bg-white">
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Calls</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockWorkDone.calls.hot + mockWorkDone.calls.warm + mockWorkDone.calls.cold + mockWorkDone.calls.other}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">158</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Meetings</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockWorkDone.meetings.hot + mockWorkDone.meetings.warm + mockWorkDone.meetings.cold + mockWorkDone.meetings.other}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">38</td>
+                  </tr>
+                  <tr className="bg-gray-100 font-semibold">
+                    <td className="py-3 px-4 text-sm text-gray-900">Total</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockWorkDone.calls.hot + mockWorkDone.calls.warm + mockWorkDone.calls.cold + mockWorkDone.calls.other + 
+                       mockWorkDone.meetings.hot + mockWorkDone.meetings.warm + mockWorkDone.meetings.cold + mockWorkDone.meetings.other}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">196</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </CardContent>
         </Card>
 
-        {/* Actionables */}
+        {/* Actionables Table */}
         <Card className="shadow-md">
-          <CardHeader className="border-b">
+          <CardHeader className="border-b pb-3">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-orange-600" />
               Actionables
             </CardTitle>
           </CardHeader>
-          <CardContent className="pt-6">
-            <div className="space-y-4">
-              <div className="bg-red-50 p-5 rounded-lg border border-red-200">
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <div className="text-base font-bold text-red-900">Expiring Today</div>
-                    <div className="text-xs text-red-700 mt-1">Immediate action required</div>
-                  </div>
-                  <div className="text-4xl font-bold text-red-600">{mockActionables.expiringToday}</div>
-                </div>
-                <Button className="w-full bg-red-600 hover:bg-red-700 font-semibold">View Leads</Button>
-              </div>
-
-              <div className="bg-orange-50 p-5 rounded-lg border border-orange-200">
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <div className="text-base font-bold text-orange-900">Expiring Tomorrow</div>
-                    <div className="text-xs text-orange-700 mt-1">Plan follow-up activities</div>
-                  </div>
-                  <div className="text-4xl font-bold text-orange-600">{mockActionables.expiringTomorrow}</div>
-                </div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700 font-semibold">View Leads</Button>
-              </div>
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-blue-900 text-white">
+                  <tr>
+                    <th className="py-3 px-4 text-left text-sm font-semibold">Expiring</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 bg-white">
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Today</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockActionables.expiringToday}</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Tomorrow</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockActionables.expiringTomorrow}</td>
+                  </tr>
+                  <tr className="bg-gray-100 font-semibold">
+                    <td className="py-3 px-4 text-sm text-gray-900">Total</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockActionables.expiringToday + mockActionables.expiringTomorrow}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </CardContent>
         </Card>
