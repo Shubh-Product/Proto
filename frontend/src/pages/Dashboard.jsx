@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Button } from '../components/ui/button';
 import { Calendar, TrendingUp, Phone, Users as UsersIcon, AlertCircle, ArrowUpDown } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
+import { useHeader } from '../contexts/HeaderContext';
 import {
   mockDashboardMetrics,
   mockWorkDone,
@@ -20,6 +21,65 @@ const Dashboard = () => {
   const [productFilter, setProductFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('renewal');
   const [trendPeriod, setTrendPeriod] = useState('3M');
+  const { setHeaderContent } = useHeader();
+
+  // Set header content with filters when component mounts
+  useEffect(() => {
+    setHeaderContent(
+      <div className="flex items-center gap-3">
+        {/* Date Filter */}
+        <div className="flex items-center gap-2">
+          <Calendar className="w-4 h-4 text-gray-600" />
+          <Select value={dateFilter} onValueChange={setDateFilter}>
+            <SelectTrigger className="w-[130px] h-9">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="today">Today</SelectItem>
+              <SelectItem value="yesterday">Yesterday</SelectItem>
+              <SelectItem value="7d">Last 7 Days</SelectItem>
+              <SelectItem value="thismonth">This Month</SelectItem>
+              <SelectItem value="custom">Custom</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Product Filter */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-medium text-gray-700">Product:</span>
+          <Select value={productFilter} onValueChange={setProductFilter}>
+            <SelectTrigger className="w-[150px] h-9">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {mockProducts.map((product) => (
+                <SelectItem key={product.value} value={product.value}>
+                  {product.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Type Filter */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-medium text-gray-700">Type:</span>
+          <Select value={typeFilter} onValueChange={setTypeFilter}>
+            <SelectTrigger className="w-[130px] h-9">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="renewal">Renewal</SelectItem>
+              <SelectItem value="upsell">Upsell</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+    );
+
+    // Cleanup: remove header content when component unmounts
+    return () => setHeaderContent(null);
+  }, [dateFilter, productFilter, typeFilter, setHeaderContent]);
 
   return (
     <div className="space-y-6">
