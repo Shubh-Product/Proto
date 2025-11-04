@@ -75,40 +75,44 @@ const Layout = ({ children }) => {
 
             {/* Right Side Actions */}
             <div className="flex items-center gap-4 flex-1 justify-end">
-              {/* This will be replaced by children components if needed */}
-              <div id="header-actions" className="flex items-center gap-4 flex-1 justify-end">
-                {/* Switch to User Dropdown */}
-                <Select value={currentRole} onValueChange={setCurrentRole}>
-                  <SelectTrigger className="w-[200px] h-10 border-gray-300">
-                    <div className="flex items-center gap-2">
-                      <Menu className="w-4 h-4 text-gray-600" />
-                      <SelectValue placeholder="Switch to User" />
-                    </div>
-                  </SelectTrigger>
-                  <SelectContent>
-                    {mockRoles.map((role) => (
-                      <SelectItem key={role.value} value={role.value}>
-                        {role.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              {/* Dynamic header content from pages */}
+              {headerContent && (
+                <div className="flex items-center gap-3 flex-1 max-w-2xl">
+                  {headerContent}
+                </div>
+              )}
 
-                {/* Icons */}
-                <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors">
-                  <ShieldCheck className="w-5 h-5 text-gray-600" />
-                </button>
-                
-                <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors relative">
-                  <Bell className="w-5 h-5 text-gray-600" />
-                  <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
-                </button>
-                
-                {/* User Avatar */}
-                <button className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                  <span className="text-white font-semibold text-sm">S</span>
-                </button>
-              </div>
+              {/* Switch to User Dropdown */}
+              <Select value={currentRole} onValueChange={setCurrentRole}>
+                <SelectTrigger className="w-[200px] h-10 border-gray-300">
+                  <div className="flex items-center gap-2">
+                    <Menu className="w-4 h-4 text-gray-600" />
+                    <SelectValue placeholder="Switch to User" />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  {mockRoles.map((role) => (
+                    <SelectItem key={role.value} value={role.value}>
+                      {role.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* Icons */}
+              <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors">
+                <ShieldCheck className="w-5 h-5 text-gray-600" />
+              </button>
+              
+              <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors relative">
+                <Bell className="w-5 h-5 text-gray-600" />
+                <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
+              </button>
+              
+              {/* User Avatar */}
+              <button className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <span className="text-white font-semibold text-sm">S</span>
+              </button>
             </div>
           </div>
         </header>
