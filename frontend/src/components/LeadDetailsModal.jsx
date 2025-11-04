@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Badge } from './ui/badge';
 import { Calendar, Clock, Package, User, Building2 } from 'lucide-react';
 import { mockDispositions, mockStages, mockPriorities, mockRelatedSubscriptions } from '../mock';
-import { toast } from './ui/use-toast';
+import { toast } from '../hooks/use-toast';
 
 const LeadDetailsModal = ({ lead, onClose }) => {
   const [followUpType, setFollowUpType] = useState('call');
