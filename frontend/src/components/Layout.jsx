@@ -3,10 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Users, BarChart3, MessageSquare, UserCog, ShieldCheck, Menu, User, Bell } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { mockRoles } from '../mock';
+import { useHeader } from '../contexts/HeaderContext';
 
 const Layout = ({ children }) => {
   const location = useLocation();
   const [currentRole, setCurrentRole] = useState('asm');
+  const { headerContent } = useHeader();
 
   const navigation = [
     { name: 'Dashboard', href: '/', icon: LayoutDashboard },
