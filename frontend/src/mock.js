@@ -439,8 +439,75 @@ export const mockRenewalLeads = [
   }
 ];
 
-// Dashboard Metrics Mock Data
-export const mockDashboardMetrics = {
+// Dashboard Metrics Mock Data - Per User
+export const mockDashboardMetrics = [
+  {
+    name: 'Sudhanshu Kumar',
+    mMinus1: { due: 45, renewed: 32, percentage: 71.1 },
+    m0: { due: 67, renewed: 42, percentage: 62.7 },
+    mPlus1: { due: 52, renewed: 0, percentage: 0 },
+    potentialPercentage: 35.2,
+    interested: 15,
+    matured: 42
+  },
+  {
+    name: 'Amit Sharma',
+    mMinus1: { due: 38, renewed: 28, percentage: 73.7 },
+    m0: { due: 58, renewed: 38, percentage: 65.5 },
+    mPlus1: { due: 48, renewed: 0, percentage: 0 },
+    potentialPercentage: 28.5,
+    interested: 12,
+    matured: 38
+  },
+  {
+    name: 'Shubham Verma',
+    mMinus1: { due: 32, renewed: 19, percentage: 59.4 },
+    m0: { due: 48, renewed: 28, percentage: 58.3 },
+    mPlus1: { due: 42, renewed: 0, percentage: 0 },
+    potentialPercentage: 42.8,
+    interested: 8,
+    matured: 28
+  },
+  {
+    name: 'Nitesh Gupta',
+    mMinus1: { due: 30, renewed: 19, percentage: 63.3 },
+    m0: { due: 50, renewed: 26, percentage: 52.0 },
+    mPlus1: { due: 47, renewed: 0, percentage: 0 },
+    potentialPercentage: 48.6,
+    interested: 7,
+    matured: 26
+  },
+  {
+    name: 'Priya Singh',
+    mMinus1: { due: 28, renewed: 22, percentage: 78.6 },
+    m0: { due: 42, renewed: 31, percentage: 73.8 },
+    mPlus1: { due: 35, renewed: 0, percentage: 0 },
+    potentialPercentage: 22.4,
+    interested: 9,
+    matured: 31
+  },
+  {
+    name: 'Rahul Patel',
+    mMinus1: { due: 25, renewed: 16, percentage: 64.0 },
+    m0: { due: 38, renewed: 23, percentage: 60.5 },
+    mPlus1: { due: 30, renewed: 0, percentage: 0 },
+    potentialPercentage: 38.2,
+    interested: 6,
+    matured: 23
+  },
+  {
+    name: 'Anjali Reddy',
+    mMinus1: { due: 22, renewed: 18, percentage: 81.8 },
+    m0: { due: 35, renewed: 28, percentage: 80.0 },
+    mPlus1: { due: 28, renewed: 0, percentage: 0 },
+    potentialPercentage: 18.5,
+    interested: 5,
+    matured: 28
+  }
+];
+
+// Legacy format for backward compatibility
+export const mockDashboardMetricsLegacy = {
   mMinus1: {
     due: 145,
     renewed: 98,
