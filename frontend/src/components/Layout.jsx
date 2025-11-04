@@ -66,11 +66,12 @@ const Layout = ({ children }) => {
       {/* Main Content Area */}
       <div className="flex-1 ml-20">
         {/* Top Header */}
-        <header className="bg-white border-b border-gray-200 h-20 sticky top-0 z-30">
-          <div className="h-full px-6 flex items-center justify-between gap-4">
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          {/* Main Header Row */}
+          <div className="h-14 px-6 flex items-center justify-between gap-4">
             {/* Page Title */}
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-semibold text-blue-900">{getPageTitle()}</h1>
+              <h1 className="text-xl font-semibold text-blue-900">{getPageTitle()}</h1>
             </div>
 
             {/* Right Side Actions */}
@@ -84,7 +85,7 @@ const Layout = ({ children }) => {
 
               {/* Switch to User Dropdown */}
               <Select value={currentRole} onValueChange={setCurrentRole}>
-                <SelectTrigger className="w-[200px] h-10 border-gray-300">
+                <SelectTrigger className="w-[180px] h-9 border-gray-300">
                   <div className="flex items-center gap-2">
                     <Menu className="w-4 h-4 text-gray-600" />
                     <SelectValue placeholder="Switch to User" />
@@ -100,18 +101,18 @@ const Layout = ({ children }) => {
               </Select>
 
               {/* Icons */}
-              <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors">
-                <ShieldCheck className="w-5 h-5 text-gray-600" />
+              <button className="w-9 h-9 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors">
+                <ShieldCheck className="w-4 h-4 text-gray-600" />
               </button>
               
-              <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors relative">
-                <Bell className="w-5 h-5 text-gray-600" />
+              <button className="w-9 h-9 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors relative">
+                <Bell className="w-4 h-4 text-gray-600" />
                 <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               
               {/* User Avatar */}
-              <button className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <span className="text-white font-semibold text-sm">S</span>
+              <button className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <span className="text-white font-semibold text-xs">S</span>
               </button>
             </div>
           </div>
