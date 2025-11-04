@@ -237,138 +237,68 @@ const Dashboard = () => {
         </Card>
       </div>
 
-      {/* Additional Charts Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Demo Done To Matured % */}
-        <Card className="shadow-md">
-          <CardHeader>
-            <CardTitle className="text-lg font-bold">Demo Done To Matured %</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[250px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={mockWeeklyMaturityData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                  <XAxis 
-                    dataKey="week" 
-                    stroke="#6b7280" 
-                    style={{ fontSize: '11px' }}
-                    interval={0}
-                  />
-                  <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: '#fff',
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '8px',
-                      fontSize: '12px'
-                    }}
-                    formatter={(value) => [`${value}%`, 'Percentage']}
-                  />
-                  <Bar dataKey="percentage" fill="#10b981" radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
+      {/* Renewal Trend - Bar Chart instead of Line Chart */}
+      <Card className="shadow-md">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-lg flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-blue-600" />
+              Renewal Trend
+              <span className="text-sm font-normal text-gray-500 ml-2">
+                (Mature till date ÷ total leads) × 100
+              </span>
+            </CardTitle>
+            <div className="flex gap-2">
+              <Button
+                variant={trendPeriod === '3M' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setTrendPeriod('3M')}
+              >
+                3M
+              </Button>
+              <Button
+                variant={trendPeriod === '6M' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setTrendPeriod('6M')}
+              >
+                6M
+              </Button>
+              <Button
+                variant={trendPeriod === '12M' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setTrendPeriod('12M')}
+              >
+                12M
+              </Button>
             </div>
-            <div className="flex justify-center gap-6 mt-4">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="demoPeriod"
-                  value="daily"
-                  defaultChecked={false}
-                  className="w-4 h-4"
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={mockTrendData[trendPeriod]}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="month" stroke="#6b7280" style={{ fontSize: '12px' }} />
+                <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#fff',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    fontSize: '12px'
+                  }}
+                  formatter={(value) => [`${value}%`, 'Percentage']}
                 />
-                <span className="text-sm text-gray-700">Daily</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="demoPeriod"
-                  value="weekly"
-                  defaultChecked={true}
-                  className="w-4 h-4"
+                <Bar 
+                  dataKey="percentage" 
+                  fill="#3b82f6" 
+                  radius={[4, 4, 0, 0]}
                 />
-                <span className="text-sm text-gray-700">Weekly</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="demoPeriod"
-                  value="monthly"
-                  defaultChecked={false}
-                  className="w-4 h-4"
-                />
-                <span className="text-sm text-gray-700">Monthly</span>
-              </label>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Assigned To Demo Scheduled % */}
-        <Card className="shadow-md">
-          <CardHeader>
-            <CardTitle className="text-lg font-bold">Assigned To Demo Scheduled %</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[250px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={mockWeeklyMaturityData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                  <XAxis 
-                    dataKey="week" 
-                    stroke="#6b7280" 
-                    style={{ fontSize: '11px' }}
-                    interval={0}
-                  />
-                  <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: '#fff',
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '8px',
-                      fontSize: '12px'
-                    }}
-                    formatter={(value) => [`${value}%`, 'Percentage']}
-                  />
-                  <Bar dataKey="percentage" fill="#f59e0b" radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="flex justify-center gap-6 mt-4">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="scheduledPeriod"
-                  value="daily"
-                  defaultChecked={false}
-                  className="w-4 h-4"
-                />
-                <span className="text-sm text-gray-700">Daily</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="scheduledPeriod"
-                  value="weekly"
-                  defaultChecked={true}
-                  className="w-4 h-4"
-                />
-                <span className="text-sm text-gray-700">Weekly</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="scheduledPeriod"
-                  value="monthly"
-                  defaultChecked={false}
-                  className="w-4 h-4"
-                />
-                <span className="text-sm text-gray-700">Monthly</span>
-              </label>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
