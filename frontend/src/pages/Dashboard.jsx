@@ -40,68 +40,98 @@ const Dashboard = () => {
       {/* Filters Section - Above the table */}
       <Card className="shadow-md">
         <CardContent className="py-4">
-          <div className="flex items-center gap-4">
-            {/* Radio Buttons for Renewal/Upsell */}
-            <div className="flex items-center gap-3">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="leadType"
-                  value="renewal"
-                  checked={leadType === 'renewal'}
-                  onChange={(e) => setLeadType(e.target.value)}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <span className="text-sm font-medium text-gray-700">Renewal</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="leadType"
-                  value="upsell"
-                  checked={leadType === 'upsell'}
-                  onChange={(e) => setLeadType(e.target.value)}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <span className="text-sm font-medium text-gray-700">Upsell</span>
-              </label>
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              {/* Radio Buttons for Renewal/Upsell */}
+              <div className="flex items-center gap-3">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="leadType"
+                    value="renewal"
+                    checked={leadType === 'renewal'}
+                    onChange={(e) => setLeadType(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm font-medium text-gray-700">Renewal</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="leadType"
+                    value="upsell"
+                    checked={leadType === 'upsell'}
+                    onChange={(e) => setLeadType(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm font-medium text-gray-700">Upsell</span>
+                </label>
+              </div>
+
+              {/* Date Filter */}
+              <div className="flex items-center gap-2 border-l pl-4">
+                <span className="text-sm font-medium text-gray-700">Date:</span>
+                <Select value={dateFilter} onValueChange={setDateFilter}>
+                  <SelectTrigger className="w-[140px]">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="today">Today</SelectItem>
+                    <SelectItem value="yesterday">Yesterday</SelectItem>
+                    <SelectItem value="7d">Last 7 Days</SelectItem>
+                    <SelectItem value="thismonth">This Month</SelectItem>
+                    <SelectItem value="custom">Custom</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Product/Upsell Offer Filter */}
+              <div className="flex items-center gap-2 border-l pl-4">
+                <span className="text-sm font-medium text-gray-700">
+                  {leadType === 'upsell' ? 'Upsell Offer:' : 'Product:'}
+                </span>
+                <Select value={productFilter} onValueChange={setProductFilter}>
+                  <SelectTrigger className="w-[160px]">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {(leadType === 'upsell' ? mockUpsellOffers : mockProducts).map((item) => (
+                      <SelectItem key={item.value} value={item.value}>
+                        {item.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
-            {/* Date Filter */}
-            <div className="flex items-center gap-2 border-l pl-4">
-              <span className="text-sm font-medium text-gray-700">Date:</span>
-              <Select value={dateFilter} onValueChange={setDateFilter}>
-                <SelectTrigger className="w-[140px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="today">Today</SelectItem>
-                  <SelectItem value="yesterday">Yesterday</SelectItem>
-                  <SelectItem value="7d">Last 7 Days</SelectItem>
-                  <SelectItem value="thismonth">This Month</SelectItem>
-                  <SelectItem value="custom">Custom</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Product/Upsell Offer Filter */}
-            <div className="flex items-center gap-2 border-l pl-4">
-              <span className="text-sm font-medium text-gray-700">
-                {leadType === 'upsell' ? 'Upsell Offer:' : 'Product:'}
-              </span>
-              <Select value={productFilter} onValueChange={setProductFilter}>
-                <SelectTrigger className="w-[160px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {(leadType === 'upsell' ? mockUpsellOffers : mockProducts).map((item) => (
-                    <SelectItem key={item.value} value={item.value}>
-                      {item.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            {/* View Type Radio Buttons - Only show when Renewal is selected */}
+            {leadType === 'renewal' && (
+              <div className="flex items-center gap-3 border-l pl-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="viewType"
+                    value="userwise"
+                    checked={viewType === 'userwise'}
+                    onChange={(e) => setViewType(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm font-medium text-gray-700">User Wise</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="viewType"
+                    value="offerswise"
+                    checked={viewType === 'offerswise'}
+                    onChange={(e) => setViewType(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm font-medium text-gray-700">Upsell Offers Wise</span>
+                </label>
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
