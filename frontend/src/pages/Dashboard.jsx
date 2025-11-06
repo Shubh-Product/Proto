@@ -38,25 +38,8 @@ const Dashboard = () => {
       <Card className="shadow-md">
         <CardContent className="py-4">
           <div className="flex items-center gap-4">
-            {/* Date Filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Date:</span>
-              <Select value={dateFilter} onValueChange={setDateFilter}>
-                <SelectTrigger className="w-[140px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="today">Today</SelectItem>
-                  <SelectItem value="yesterday">Yesterday</SelectItem>
-                  <SelectItem value="7d">Last 7 Days</SelectItem>
-                  <SelectItem value="thismonth">This Month</SelectItem>
-                  <SelectItem value="custom">Custom</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
             {/* Radio Buttons for Renewal/Upsell */}
-            <div className="flex items-center gap-3 border-l pl-4">
+            <div className="flex items-center gap-3">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
@@ -79,6 +62,23 @@ const Dashboard = () => {
                 />
                 <span className="text-sm font-medium text-gray-700">Upsell</span>
               </label>
+            </div>
+
+            {/* Date Filter */}
+            <div className="flex items-center gap-2 border-l pl-4">
+              <span className="text-sm font-medium text-gray-700">Date:</span>
+              <Select value={dateFilter} onValueChange={setDateFilter}>
+                <SelectTrigger className="w-[140px]">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="today">Today</SelectItem>
+                  <SelectItem value="yesterday">Yesterday</SelectItem>
+                  <SelectItem value="7d">Last 7 Days</SelectItem>
+                  <SelectItem value="thismonth">This Month</SelectItem>
+                  <SelectItem value="custom">Custom</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Product Filter */}
