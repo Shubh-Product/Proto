@@ -21,6 +21,7 @@ const Dashboard = () => {
   const [dateFilter, setDateFilter] = useState('today');
   const [productFilter, setProductFilter] = useState('all');
   const [leadType, setLeadType] = useState('renewal'); // Changed from typeFilter to leadType
+  const [viewType, setViewType] = useState('userwise'); // userwise or offerswise
   const [trendPeriod, setTrendPeriod] = useState('3M');
   const { setHeaderContent } = useHeader();
 
