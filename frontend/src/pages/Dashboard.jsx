@@ -175,11 +175,6 @@ const Dashboard = () => {
                     </th>
                     <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                       <div className="flex items-center justify-center gap-1">
-                        Potential% <ArrowUpDown className="w-3 h-3" />
-                      </div>
-                    </th>
-                    <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
-                      <div className="flex items-center justify-center gap-1">
                         Interested <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
