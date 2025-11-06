@@ -91,7 +91,9 @@ export const mockRenewalLeads = [
     vintage: '24 months',
     licenseType: 'Enterprise',
     offers: ['720 Days Offer'],
-    gstUsage: 'Active'
+    gstUsage: 'Active',
+    upsellTo: 'Mobile',
+    offerValidity: '-'
   },
   {
     id: 'R004',
