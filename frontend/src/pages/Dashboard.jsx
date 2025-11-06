@@ -105,8 +105,8 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* View Type Radio Buttons - Only show when Renewal is selected */}
-            {leadType === 'renewal' && (
+            {/* View Type Radio Buttons - Only show when Upsell is selected */}
+            {leadType === 'upsell' && (
               <div className="flex items-center gap-3 border-l pl-4">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
