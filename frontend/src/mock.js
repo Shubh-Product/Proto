@@ -636,6 +636,55 @@ export const mockWeeklyMaturityData = [
   { week: '26 Oct -\n31 Oct', percentage: 1.13 }
 ];
 
+// Upsell Offers Performance Metrics
+export const mockUpsellOffersMetrics = [
+  {
+    name: '720 Days',
+    mMinus1: { due: 85, renewed: 62, percentage: 72.9 },
+    m0: { due: 120, renewed: 78, percentage: 65.0 },
+    mPlus1: { due: 95, renewed: 0, percentage: 0 },
+    potentialPercentage: 28.5,
+    interested: 32,
+    matured: 78
+  },
+  {
+    name: 'Model Upgrade',
+    mMinus1: { due: 42, renewed: 28, percentage: 66.7 },
+    m0: { due: 58, renewed: 35, percentage: 60.3 },
+    mPlus1: { due: 48, renewed: 0, percentage: 0 },
+    potentialPercentage: 38.2,
+    interested: 18,
+    matured: 35
+  },
+  {
+    name: 'Mobile',
+    mMinus1: { due: 35, renewed: 25, percentage: 71.4 },
+    m0: { due: 48, renewed: 32, percentage: 66.7 },
+    mPlus1: { due: 42, renewed: 0, percentage: 0 },
+    potentialPercentage: 32.8,
+    interested: 15,
+    matured: 32
+  },
+  {
+    name: 'Mobile Bundle',
+    mMinus1: { due: 28, renewed: 22, percentage: 78.6 },
+    m0: { due: 38, renewed: 28, percentage: 73.7 },
+    mPlus1: { due: 32, renewed: 0, percentage: 0 },
+    potentialPercentage: 24.5,
+    interested: 12,
+    matured: 28
+  },
+  {
+    name: 'Busy Online',
+    mMinus1: { due: 52, renewed: 38, percentage: 73.1 },
+    m0: { due: 68, renewed: 45, percentage: 66.2 },
+    mPlus1: { due: 58, renewed: 0, percentage: 0 },
+    potentialPercentage: 31.2,
+    interested: 22,
+    matured: 45
+  }
+];
+
 // Follow-up History
 export const mockFollowUpHistory = [
   {
