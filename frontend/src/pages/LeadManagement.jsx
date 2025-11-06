@@ -256,7 +256,7 @@ const LeadManagement = () => {
                   </th>
                   <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
-                      Product <ArrowUpDown className="w-3 h-3" />
+                      {leadType === 'upsell' ? 'Upsell To' : 'Product'} <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-2 px-4 text-left text-xs font-semibold">
