@@ -231,7 +231,6 @@ const Dashboard = () => {
                   <col style={{ width: '80px' }} />
                   <col style={{ width: '100px' }} />
                   <col style={{ width: '100px' }} />
-                  <col style={{ width: '100px' }} />
                 </colgroup>
                 <tbody>
                   {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffersMetrics : mockDashboardMetrics).map((item, index) => (
