@@ -11,6 +11,7 @@ import {
   mockActionables,
   mockTrendData,
   mockProducts,
+  mockUpsellOffers,
   mockUserMetrics,
   mockTasksSummary,
   mockWeeklyMaturityData
