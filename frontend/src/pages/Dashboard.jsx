@@ -229,8 +229,8 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* To Do & Work Done Tables - Side by side */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* To Do, Work Done & Actionables Tables - All in same row */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* To Do Table */}
         <Card className="shadow-md">
           <CardHeader className="border-b pb-3">
@@ -334,11 +334,6 @@ const Dashboard = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      {/* Actionables Table */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div></div> {/* Empty space to align with the layout */}
 
         {/* Actionables Table */}
         <Card className="shadow-md">
