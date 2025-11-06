@@ -11,8 +11,24 @@ const Layout = ({ children }) => {
   const { headerContent } = useHeader();
 
   const navigation = [
-    { name: 'Dashboard', href: '/', icon: LayoutDashboard },
-    { name: 'Lead', href: '/leads', icon: Users },
+    { 
+      name: 'Dashboard', 
+      href: '/', 
+      icon: LayoutDashboard,
+      subMenu: [
+        { name: 'New Sales', href: '/dashboard/new-sales' },
+        { name: 'Renewal & Upsell', href: '/' }
+      ]
+    },
+    { 
+      name: 'Lead', 
+      href: '/leads', 
+      icon: Users,
+      subMenu: [
+        { name: 'New Sales', href: '/leads/new-sales' },
+        { name: 'Renewal & Upsell', href: '/leads' }
+      ]
+    },
     { name: 'Report', href: '#', icon: BarChart3 },
     { name: 'Enquiry', href: '#', icon: MessageSquare },
     { name: 'User', href: '#', icon: UserCog },
