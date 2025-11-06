@@ -235,7 +235,7 @@ const Dashboard = () => {
                   <col style={{ width: '100px' }} />
                 </colgroup>
                 <tbody>
-                  {(leadType === 'renewal' && viewType === 'offerswise' ? mockUpsellOffersMetrics : mockDashboardMetrics).map((item, index) => (
+                  {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffersMetrics : mockDashboardMetrics).map((item, index) => (
                     <tr 
                       key={item.name} 
                       className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
