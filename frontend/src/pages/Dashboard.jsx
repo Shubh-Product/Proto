@@ -257,7 +257,6 @@ const Dashboard = () => {
                         <span className="text-gray-400 font-semibold">{item.mPlus1.percentage}%</span>
                       </td>
                       {/* Other Metrics */}
-                      <td className="py-3 px-3 text-sm text-center text-orange-600">{item.potentialPercentage}%</td>
                       <td className="py-3 px-3 text-sm text-center text-gray-900">{item.interested}</td>
                       <td className="py-3 px-3 text-sm text-center text-gray-900">{item.matured}</td>
                     </tr>
