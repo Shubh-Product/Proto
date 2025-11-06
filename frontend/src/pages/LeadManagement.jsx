@@ -119,6 +119,32 @@ const LeadManagement = () => {
     <div className="space-y-4">
       {/* Quick Filters */}
       <div className="flex flex-wrap items-center gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b shadow-sm" style={{borderColor: '#E2E8F0'}}>
+        {/* Radio Buttons for Renewal/Upsell */}
+        <div className="flex items-center gap-3 border-r pr-3">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="leadTypeFilter"
+              value="renewal"
+              checked={leadType === 'renewal'}
+              onChange={(e) => setLeadType(e.target.value)}
+              className="w-4 h-4 text-blue-600"
+            />
+            <span className="text-sm font-medium text-gray-700">Renewal</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="leadTypeFilter"
+              value="upsell"
+              checked={leadType === 'upsell'}
+              onChange={(e) => setLeadType(e.target.value)}
+              className="w-4 h-4 text-blue-600"
+            />
+            <span className="text-sm font-medium text-gray-700">Upsell</span>
+          </label>
+        </div>
+
         <Button
           size="sm"
           variant={quickFilter === 'all' ? 'default' : 'outline'}
@@ -128,7 +154,7 @@ const LeadManagement = () => {
           All Leads
         </Button>
         
-        {/* Due Dropdown */}
+        {/* Due Dropdown with M-4 and M-3 added */}
         <div className="flex items-center gap-1">
           <span className="text-sm text-gray-700">Due:</span>
           <Select value={dueFilter} onValueChange={setDueFilter}>
@@ -137,6 +163,8 @@ const LeadManagement = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All</SelectItem>
+              <SelectItem value="m-4">M-4</SelectItem>
+              <SelectItem value="m-3">M-3</SelectItem>
               <SelectItem value="m-2">M-2</SelectItem>
               <SelectItem value="m-1">M-1</SelectItem>
               <SelectItem value="m0">M0</SelectItem>
@@ -145,29 +173,6 @@ const LeadManagement = () => {
           </Select>
         </div>
 
-        {/* Expired Dropdown */}
-        <div className="flex items-center gap-1">
-          <span className="text-sm text-gray-700">Expired:</span>
-          <Select value={expiredFilter} onValueChange={setExpiredFilter}>
-            <SelectTrigger className="h-8 w-[100px]">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="m-3">M-3</SelectItem>
-              <SelectItem value="m-4">M-4</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <Button
-          size="sm"
-          variant={quickFilter === '720days' ? 'default' : 'outline'}
-          onClick={() => setQuickFilter('720days')}
-          className="h-8"
-        >
-          720 Days Offer
-        </Button>
         <Button
           size="sm"
           variant={quickFilter === 'interested' ? 'default' : 'outline'}
