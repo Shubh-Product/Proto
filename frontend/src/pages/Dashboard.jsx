@@ -72,15 +72,23 @@ const Dashboard = () => {
               <div className="flex items-center gap-2 border-l pl-4">
                 <span className="text-sm font-medium text-gray-700">Date:</span>
                 <Select value={dateFilter} onValueChange={setDateFilter}>
-                  <SelectTrigger className="w-[140px]">
+                  <SelectTrigger className="w-[180px]">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="today">Today</SelectItem>
                     <SelectItem value="yesterday">Yesterday</SelectItem>
+                    <SelectItem value="3d">Last 3 Days</SelectItem>
                     <SelectItem value="7d">Last 7 Days</SelectItem>
+                    <SelectItem value="15d">Last 15 Days</SelectItem>
+                    <SelectItem value="30d">Last 30 Days</SelectItem>
+                    <SelectItem value="thisweek">This Week</SelectItem>
+                    <SelectItem value="lastweek">Last Week</SelectItem>
                     <SelectItem value="thismonth">This Month</SelectItem>
+                    <SelectItem value="lastmonth">Last Month</SelectItem>
+                    <SelectItem value="lastmonthonwards">Last Month Onwards</SelectItem>
                     <SelectItem value="custom">Custom</SelectItem>
+                    <SelectItem value="startenddate">Start Date and End Date</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
