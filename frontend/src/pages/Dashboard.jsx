@@ -82,17 +82,19 @@ const Dashboard = () => {
               </Select>
             </div>
 
-            {/* Product Filter */}
+            {/* Product/Upsell Offer Filter */}
             <div className="flex items-center gap-2 border-l pl-4">
-              <span className="text-sm font-medium text-gray-700">Product:</span>
+              <span className="text-sm font-medium text-gray-700">
+                {leadType === 'upsell' ? 'Upsell Offer:' : 'Product:'}
+              </span>
               <Select value={productFilter} onValueChange={setProductFilter}>
                 <SelectTrigger className="w-[160px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {mockProducts.map((product) => (
-                    <SelectItem key={product.value} value={product.value}>
-                      {product.label}
+                  {(leadType === 'upsell' ? mockUpsellOffers : mockProducts).map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
