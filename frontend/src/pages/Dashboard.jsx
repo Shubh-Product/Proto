@@ -27,9 +27,9 @@ const Dashboard = () => {
   useEffect(() => {
     setHeaderContent(
       <div className="flex items-center gap-3">
-        {/* Date Filter */}
+        {/* Date Filter - In same row as Product and Type */}
         <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4 text-gray-600" />
+          <span className="text-sm font-medium text-gray-700">Date:</span>
           <Select value={dateFilter} onValueChange={setDateFilter}>
             <SelectTrigger className="w-[130px] h-9">
               <SelectValue />
