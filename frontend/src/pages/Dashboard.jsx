@@ -235,38 +235,38 @@ const Dashboard = () => {
                   <col style={{ width: '100px' }} />
                 </colgroup>
                 <tbody>
-                  {mockDashboardMetrics.map((user, index) => (
+                  {(leadType === 'renewal' && viewType === 'offerswise' ? mockUpsellOffersMetrics : mockDashboardMetrics).map((item, index) => (
                     <tr 
-                      key={user.name} 
+                      key={item.name} 
                       className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
                     >
-                      <td className="py-3 px-4 text-sm font-medium text-gray-900">{user.name}</td>
+                      <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
                       {/* M-1 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mMinus1.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mMinus1.renewed}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus1.due}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus1.renewed}</td>
                       <td className="py-3 px-3 text-sm text-center">
-                        <span className={`font-semibold ${user.mMinus1.percentage > 70 ? 'text-green-600' : user.mMinus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
-                          {user.mMinus1.percentage}%
+                        <span className={`font-semibold ${item.mMinus1.percentage > 70 ? 'text-green-600' : item.mMinus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                          {item.mMinus1.percentage}%
                         </span>
                       </td>
                       {/* M0 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.m0.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.m0.renewed}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.m0.due}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.m0.renewed}</td>
                       <td className="py-3 px-3 text-sm text-center">
-                        <span className={`font-semibold ${user.m0.percentage > 70 ? 'text-green-600' : user.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
-                          {user.m0.percentage}%
+                        <span className={`font-semibold ${item.m0.percentage > 70 ? 'text-green-600' : item.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                          {item.m0.percentage}%
                         </span>
                       </td>
                       {/* M+1 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mPlus1.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.mPlus1.renewed}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus1.due}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus1.renewed}</td>
                       <td className="py-3 px-3 text-sm text-center">
-                        <span className="text-gray-400 font-semibold">{user.mPlus1.percentage}%</span>
+                        <span className="text-gray-400 font-semibold">{item.mPlus1.percentage}%</span>
                       </td>
                       {/* Other Metrics */}
-                      <td className="py-3 px-3 text-sm text-center text-orange-600">{user.potentialPercentage}%</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.interested}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{user.matured}</td>
+                      <td className="py-3 px-3 text-sm text-center text-orange-600">{item.potentialPercentage}%</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.interested}</td>
+                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.matured}</td>
                     </tr>
                   ))}
                 </tbody>
