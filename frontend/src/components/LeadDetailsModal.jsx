@@ -378,9 +378,6 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <td className="py-3 px-4 text-sm">2024-01-20</td>
                     <td className="py-3 px-4 text-sm">2025-01-20</td>
                     <td className="py-3 px-4 text-sm">
-                      <Badge variant="outline" className="text-xs">Add-on</Badge>
-                    </td>
-                    <td className="py-3 px-4 text-sm">
                       <button className="p-1 hover:bg-gray-100 rounded transition-colors" title="Follow Up">
                         <Calendar className="w-4 h-4 text-blue-600" />
                       </button>
