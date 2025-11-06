@@ -55,8 +55,34 @@ const Dashboard = () => {
               </Select>
             </div>
 
+            {/* Radio Buttons for Renewal/Upsell */}
+            <div className="flex items-center gap-3 border-l pl-4">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="leadType"
+                  value="renewal"
+                  checked={leadType === 'renewal'}
+                  onChange={(e) => setLeadType(e.target.value)}
+                  className="w-4 h-4 text-blue-600"
+                />
+                <span className="text-sm font-medium text-gray-700">Renewal</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="leadType"
+                  value="upsell"
+                  checked={leadType === 'upsell'}
+                  onChange={(e) => setLeadType(e.target.value)}
+                  className="w-4 h-4 text-blue-600"
+                />
+                <span className="text-sm font-medium text-gray-700">Upsell</span>
+              </label>
+            </div>
+
             {/* Product Filter */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 border-l pl-4">
               <span className="text-sm font-medium text-gray-700">Product:</span>
               <Select value={productFilter} onValueChange={setProductFilter}>
                 <SelectTrigger className="w-[160px]">
@@ -68,20 +94,6 @@ const Dashboard = () => {
                       {product.label}
                     </SelectItem>
                   ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Type Filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Type:</span>
-              <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger className="w-[140px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="renewal">Renewal</SelectItem>
-                  <SelectItem value="upsell">Upsell</SelectItem>
                 </SelectContent>
               </Select>
             </div>
