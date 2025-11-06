@@ -217,14 +217,14 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Tasks for Today & Actionables - Table style like screenshot */}
+      {/* Work Done & Actionables - Table style like screenshot */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Tasks for Today Table */}
+        {/* Work Done Table */}
         <Card className="shadow-md">
           <CardHeader className="border-b pb-3">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
               <Phone className="w-5 h-5 text-blue-600" />
-              Tasks for Today
+              Work Done
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
@@ -233,32 +233,41 @@ const Dashboard = () => {
                 <thead className="bg-blue-900 text-white">
                   <tr>
                     <th className="py-3 px-4 text-left text-sm font-semibold"></th>
-                    <th className="py-3 px-4 text-center text-sm font-semibold">To Do</th>
-                    <th className="py-3 px-4 text-center text-sm font-semibold">Done</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Hot</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Warm</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Cold</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Other</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-100 bg-white">
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Calls</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.calls.hot + mockWorkDone.calls.warm + mockWorkDone.calls.cold + mockWorkDone.calls.other}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">158</td>
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Call</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.hot}</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.warm}</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.cold}</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.other}</td>
                   </tr>
                   <tr className="border-b border-gray-100 bg-gray-50">
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Meetings</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.meetings.hot + mockWorkDone.meetings.warm + mockWorkDone.meetings.cold + mockWorkDone.meetings.other}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">38</td>
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Meeting</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.hot}</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.warm}</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.cold}</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.other}</td>
                   </tr>
                   <tr className="bg-gray-100 font-semibold">
                     <td className="py-3 px-4 text-sm text-gray-900">Total</td>
                     <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.calls.hot + mockWorkDone.calls.warm + mockWorkDone.calls.cold + mockWorkDone.calls.other + 
-                       mockWorkDone.meetings.hot + mockWorkDone.meetings.warm + mockWorkDone.meetings.cold + mockWorkDone.meetings.other}
+                      {mockWorkDone.calls.hot + mockWorkDone.meetings.hot}
                     </td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">196</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockWorkDone.calls.warm + mockWorkDone.meetings.warm}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockWorkDone.calls.cold + mockWorkDone.meetings.cold}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">
+                      {mockWorkDone.calls.other + mockWorkDone.meetings.other}
+                    </td>
                   </tr>
                 </tbody>
               </table>
