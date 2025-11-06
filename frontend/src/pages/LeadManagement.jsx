@@ -306,10 +306,14 @@ const LeadManagement = () => {
                       <div className="text-sm text-gray-900">{lead.nextFollowUp}</div>
                     </td>
                     <td className="py-1.5 px-4">
-                      <div className="text-sm text-gray-900">{lead.product}</div>
+                      <div className="text-sm text-gray-900">
+                        {leadType === 'upsell' ? (lead.upsellTo || lead.product) : lead.product}
+                      </div>
                     </td>
                     <td className="py-1.5 px-4">
-                      <div className="text-sm text-gray-900">{lead.validTill}</div>
+                      <div className="text-sm text-gray-900">
+                        {leadType === 'upsell' ? (lead.offerValidity || '-') : lead.validTill}
+                      </div>
                     </td>
                     <td className="py-1.5 px-4">
                       <Badge className={`${getStageColor(lead.stage)} text-xs`}>
