@@ -104,6 +104,8 @@ export const mockRenewalLeads = [
     validTill: '2024-07-30',
     nextFollowUp: '2024-08-08 14:00',
     stage: 'Dropped',
+    upsellTo: 'Mobile Bundle',
+    offerValidity: '2024-10-15',
     priority: 'Cold',
     mobile: '9876012345',
     email: 'metro@electronics.com',
