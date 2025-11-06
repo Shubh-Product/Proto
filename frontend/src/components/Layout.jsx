@@ -79,13 +79,13 @@ const Layout = ({ children }) => {
                 
                 {/* Sub-menu */}
                 {item.subMenu && (
-                  <div className="absolute left-full top-0 ml-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <div className="bg-white shadow-lg rounded-lg border border-gray-200 py-2 min-w-[180px]">
+                  <div className="absolute left-full top-0 ml-2 hidden group-hover:block z-50">
+                    <div className="bg-white shadow-xl rounded-lg border border-gray-200 py-2 min-w-[180px]">
                       {item.subMenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                          className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors whitespace-nowrap"
                         >
                           {subItem.name}
                         </Link>
