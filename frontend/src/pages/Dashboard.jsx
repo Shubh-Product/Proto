@@ -134,7 +134,7 @@ const Dashboard = () => {
                       Previous Month (M-1)
                     </th>
                     <th colSpan="3" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                      Previous Month (M0)
+                      Current Month (M0)
                     </th>
                     <th colSpan="3" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
                       Following Month (M+1)
