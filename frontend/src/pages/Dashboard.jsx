@@ -19,7 +19,7 @@ import {
 const Dashboard = () => {
   const [dateFilter, setDateFilter] = useState('today');
   const [productFilter, setProductFilter] = useState('all');
-  const [typeFilter, setTypeFilter] = useState('renewal');
+  const [leadType, setLeadType] = useState('renewal'); // Changed from typeFilter to leadType
   const [trendPeriod, setTrendPeriod] = useState('3M');
   const { setHeaderContent } = useHeader();
 
