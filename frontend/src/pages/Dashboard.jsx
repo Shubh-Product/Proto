@@ -162,7 +162,7 @@ const Dashboard = () => {
                   <tr>
                     <th rowSpan="2" className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                       <div className="flex items-center gap-1">
-                        {leadType === 'renewal' && viewType === 'offerswise' ? 'Upsell Offers' : 'Name'} <ArrowUpDown className="w-3 h-3" />
+                        {leadType === 'upsell' && viewType === 'offerswise' ? 'Upsell Offers' : 'Name'} <ArrowUpDown className="w-3 h-3" />
                       </div>
                     </th>
                     <th colSpan="3" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
