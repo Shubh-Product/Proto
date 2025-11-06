@@ -386,13 +386,13 @@ const Dashboard = () => {
         </Card>
       </div>
 
-      {/* Renewal Trend - Bar Chart styled like screenshot */}
+      {/* Renewal/Upsell Trend - Bar Chart styled like screenshot */}
       <Card className="shadow-md">
         <CardHeader className="border-b">
           <div className="flex items-center justify-between">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-blue-600" />
-              Renewal Trend
+              {leadType === 'upsell' ? 'Upsell Trend' : 'Renewal Trend'}
               <span className="text-sm font-normal text-gray-500 ml-2">
                 (Mature till date ÷ total leads) × 100
               </span>
