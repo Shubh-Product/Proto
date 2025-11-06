@@ -724,6 +724,17 @@ export const mockProducts = [
   { value: 'recom', label: 'Busy Recom' }
 ];
 
+// Upsell Offers
+export const mockUpsellOffers = [
+  { value: 'all', label: 'All Offers' },
+  { value: '720days', label: '720 Days' },
+  { value: 'modelupgrade', label: 'Model Upgrade' },
+  { value: 'mobile', label: 'Mobile' },
+  { value: 'mobilebundle', label: 'Mobile Bundle' },
+  { value: 'online', label: 'Busy Online' },
+  { value: 'recom', label: 'Busy Recom' }
+];
+
 // Dispositions
 export const mockDispositions = [
   'Interested',
