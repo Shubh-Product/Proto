@@ -156,7 +156,6 @@ const Dashboard = () => {
                   <col style={{ width: '80px' }} />
                   <col style={{ width: '100px' }} />
                   <col style={{ width: '100px' }} />
-                  <col style={{ width: '100px' }} />
                 </colgroup>
                 <thead className="bg-blue-900 text-white">
                   <tr>
