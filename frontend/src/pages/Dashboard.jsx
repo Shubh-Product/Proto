@@ -229,8 +229,56 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Work Done & Actionables - Table style like screenshot */}
+      {/* To Do & Work Done Tables - Side by side */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* To Do Table */}
+        <Card className="shadow-md">
+          <CardHeader className="border-b pb-3">
+            <CardTitle className="text-lg font-bold flex items-center gap-2">
+              <Phone className="w-5 h-5 text-blue-600" />
+              To Do
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-blue-900 text-white">
+                  <tr>
+                    <th className="py-3 px-4 text-left text-sm font-semibold"></th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Hot</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Warm</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Cold</th>
+                    <th className="py-3 px-4 text-center text-sm font-semibold">Other</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 bg-white">
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Call</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">18</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">32</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">15</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">8</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Meeting</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">5</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">8</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">3</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">2</td>
+                  </tr>
+                  <tr className="bg-gray-100 font-semibold">
+                    <td className="py-3 px-4 text-sm text-gray-900">Total</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">23</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">40</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">18</td>
+                    <td className="py-3 px-4 text-sm text-center text-gray-900">10</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Work Done Table */}
         <Card className="shadow-md">
           <CardHeader className="border-b pb-3">
@@ -286,6 +334,11 @@ const Dashboard = () => {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Actionables Table */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div></div> {/* Empty space to align with the layout */}
 
         {/* Actionables Table */}
         <Card className="shadow-md">
