@@ -61,21 +61,39 @@ const Layout = ({ children }) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.href;
             return (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`flex flex-col items-center justify-center py-4 px-2 transition-colors relative ${
-                  isActive
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                }`}
-              >
-                {isActive && (
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
+              <div key={item.name} className="relative group">
+                <Link
+                  to={item.href}
+                  className={`flex flex-col items-center justify-center py-4 px-2 transition-colors relative ${
+                    isActive
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  {isActive && (
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
+                  )}
+                  <Icon className="w-6 h-6 mb-1" />
+                  <span className="text-xs font-medium text-center">{item.name}</span>
+                </Link>
+                
+                {/* Sub-menu */}
+                {item.subMenu && (
+                  <div className="absolute left-full top-0 ml-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="bg-white shadow-lg rounded-lg border border-gray-200 py-2 min-w-[180px]">
+                      {item.subMenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
-                <Icon className="w-6 h-6 mb-1" />
-                <span className="text-xs font-medium text-center">{item.name}</span>
-              </Link>
+              </div>
             );
           })}
         </nav>
