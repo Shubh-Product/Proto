@@ -88,10 +88,29 @@ const Dashboard = () => {
                     <SelectItem value="lastmonth">Last Month</SelectItem>
                     <SelectItem value="lastmonthonwards">Last Month Onwards</SelectItem>
                     <SelectItem value="custom">Custom</SelectItem>
-                    <SelectItem value="startenddate">Start Date and End Date</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
+
+              {/* Custom Date Picker - Show when Custom is selected */}
+              {dateFilter === 'custom' && (
+                <div className="flex items-center gap-2 border-l pl-4">
+                  <div className="flex items-center gap-2">
+                    <label className="text-sm font-medium text-gray-700">From:</label>
+                    <input
+                      type="date"
+                      className="px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <label className="text-sm font-medium text-gray-700">To:</label>
+                    <input
+                      type="date"
+                      className="px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </div>
+              )}
 
               {/* Product/Upsell Offer Filter */}
               <div className="flex items-center gap-2 border-l pl-4">
