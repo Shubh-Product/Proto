@@ -47,11 +47,20 @@ const LeadDetailsModal = ({ lead, onClose }) => {
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl h-[85vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle className="text-base flex items-center gap-2">
-            <span className="font-bold text-gray-900">Edit Lead</span>
-            <span className="text-gray-500 font-normal">
-              | {lead.subscriptionId} | Activation: {lead.activationDate} | Valid Till: {lead.validTill} | Last Active: {lead.lastActive} | Related Services: {lead.services.length}
-            </span>
+          <DialogTitle className="text-base flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-gray-900">Edit Lead</span>
+              <span className="text-gray-500 font-normal">
+                | {lead.subscriptionId} | Activation: {new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')} | Valid Till: {new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')} | Last Active: {new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}
+              </span>
+            </div>
+            {/* Color bifurcation */}
+            <div className="flex gap-1 mt-1">
+              <div className="h-1 flex-1 bg-blue-600 rounded"></div>
+              <div className="h-1 flex-1 bg-green-600 rounded"></div>
+              <div className="h-1 flex-1 bg-orange-600 rounded"></div>
+              <div className="h-1 flex-1 bg-purple-600 rounded"></div>
+            </div>
           </DialogTitle>
         </DialogHeader>
 
