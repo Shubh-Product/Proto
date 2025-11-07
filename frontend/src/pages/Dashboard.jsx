@@ -15,7 +15,9 @@ import {
   mockUserMetrics,
   mockTasksSummary,
   mockWeeklyMaturityData,
-  mockUpsellOffersMetrics
+  mockUpsellOffersMetrics,
+  mockOperationalMetrics,
+  mockRenewal4MonthMetrics
 } from '../mock';
 
 const Dashboard = () => {
