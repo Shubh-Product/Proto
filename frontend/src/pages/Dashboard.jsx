@@ -133,6 +133,32 @@ const Dashboard = () => {
               </div>
             </div>
 
+            {/* Dashboard View Type Radio Buttons - Operational/Renewal */}
+            <div className="flex items-center gap-3 border-l pl-4">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="dashboardView"
+                  value="operational"
+                  checked={dashboardView === 'operational'}
+                  onChange={(e) => setDashboardView(e.target.value)}
+                  className="w-4 h-4 text-blue-600"
+                />
+                <span className="text-sm font-medium text-gray-700">Operational</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="dashboardView"
+                  value="renewal"
+                  checked={dashboardView === 'renewal'}
+                  onChange={(e) => setDashboardView(e.target.value)}
+                  className="w-4 h-4 text-blue-600"
+                />
+                <span className="text-sm font-medium text-gray-700">Renewal</span>
+              </label>
+            </div>
+
             {/* View Type Radio Buttons - Only show when Upsell is selected */}
             {leadType === 'upsell' && (
               <div className="flex items-center gap-3 border-l pl-4">
