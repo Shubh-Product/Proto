@@ -123,31 +123,6 @@ const LeadManagement = () => {
     <div className="space-y-4">
       {/* Quick Filters */}
       <div className="flex flex-wrap items-center gap-2 bg-white px-6 py-3 -mx-6 -mt-6 border-b shadow-sm" style={{borderColor: '#E2E8F0'}}>
-        {/* Radio Buttons for Renewal/Upsell */}
-        <div className="flex items-center gap-3 border-r pr-3">
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="radio"
-              name="leadTypeFilter"
-              value="renewal"
-              checked={leadType === 'renewal'}
-              onChange={(e) => setLeadType(e.target.value)}
-              className="w-4 h-4 text-blue-600"
-            />
-            <span className="text-sm font-medium text-gray-700">Renewal</span>
-          </label>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="radio"
-              name="leadTypeFilter"
-              value="upsell"
-              checked={leadType === 'upsell'}
-              onChange={(e) => setLeadType(e.target.value)}
-              className="w-4 h-4 text-blue-600"
-            />
-            <span className="text-sm font-medium text-gray-700">Upsell</span>
-          </label>
-        </div>
 
         <Button
           size="sm"
