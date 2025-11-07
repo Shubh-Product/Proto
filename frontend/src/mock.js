@@ -452,7 +452,8 @@ export const mockRenewalLeads = [
 export const mockOperationalMetrics = [
   {
     name: 'Sudhanshu Kumar',
-    callMeetingDone: 45,
+    call: { pending: 12, done: 38 },
+    meeting: { pending: 5, done: 7 },
     matured: 42,
     interested: 15,
     paymentReceived: 38,
@@ -460,7 +461,8 @@ export const mockOperationalMetrics = [
   },
   {
     name: 'Amit Sharma',
-    callMeetingDone: 52,
+    call: { pending: 15, done: 42 },
+    meeting: { pending: 3, done: 10 },
     matured: 38,
     interested: 12,
     paymentReceived: 35,
@@ -468,7 +470,8 @@ export const mockOperationalMetrics = [
   },
   {
     name: 'Shubham Verma',
-    callMeetingDone: 38,
+    call: { pending: 10, done: 32 },
+    meeting: { pending: 2, done: 6 },
     matured: 28,
     interested: 8,
     paymentReceived: 25,
@@ -476,7 +479,8 @@ export const mockOperationalMetrics = [
   },
   {
     name: 'Nitesh Gupta',
-    callMeetingDone: 42,
+    call: { pending: 8, done: 35 },
+    meeting: { pending: 4, done: 7 },
     matured: 26,
     interested: 7,
     paymentReceived: 22,
@@ -484,7 +488,8 @@ export const mockOperationalMetrics = [
   },
   {
     name: 'Priya Singh',
-    callMeetingDone: 48,
+    call: { pending: 11, done: 40 },
+    meeting: { pending: 3, done: 8 },
     matured: 31,
     interested: 9,
     paymentReceived: 28,
@@ -492,7 +497,8 @@ export const mockOperationalMetrics = [
   },
   {
     name: 'Rahul Patel',
-    callMeetingDone: 35,
+    call: { pending: 9, done: 28 },
+    meeting: { pending: 2, done: 5 },
     matured: 23,
     interested: 6,
     paymentReceived: 20,
