@@ -192,80 +192,193 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Monthly Overview Table - Exact structure from screenshot with scrollable 5 rows */}
+      {/* Dashboard Table - Operational or Renewal */}
       <Card className="shadow-md">
         <CardContent className="p-0">
           <div className="relative">
-            {/* Fixed Header */}
-            <div className="overflow-x-auto">
-              <table className="w-full table-fixed">
-                <colgroup>
-                  <col style={{ width: '180px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '100px' }} />
-                  <col style={{ width: '100px' }} />
-                </colgroup>
-                <thead className="bg-blue-900 text-white">
-                  <tr>
-                    <th rowSpan="2" className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
-                      <div className="flex items-center gap-1">
-                        {leadType === 'upsell' && viewType === 'offerswise' ? 'Upsell Offers' : 'Name'} <ArrowUpDown className="w-3 h-3" />
-                      </div>
-                    </th>
-                    <th colSpan="3" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                      Previous Month (M-1)
-                    </th>
-                    <th colSpan="3" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                      Current Month (M0)
-                    </th>
-                    <th colSpan="3" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                      Following Month (M+1)
-                    </th>
-                    <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
-                      <div className="flex items-center justify-center gap-1">
-                        Interested <ArrowUpDown className="w-3 h-3" />
-                      </div>
-                    </th>
-                    <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
-                      <div className="flex items-center justify-center gap-1">
-                        Matured <ArrowUpDown className="w-3 h-3" />
-                      </div>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">
-                      {leadType === 'upsell' ? 'Leads' : 'Due'}
-                    </th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">
-                      {leadType === 'upsell' ? 'Upsell' : 'Renewed'}
-                    </th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">
-                      {leadType === 'upsell' ? 'Leads' : 'Due'}
-                    </th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">
-                      {leadType === 'upsell' ? 'Upsell' : 'Renewed'}
-                    </th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">
-                      {leadType === 'upsell' ? 'Leads' : 'Due'}
-                    </th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">
-                      {leadType === 'upsell' ? 'Upsell' : 'Renewed'}
-                    </th>
-                    <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
+            {dashboardView === 'operational' ? (
+              /* Operational View Table */
+              <>
+                {/* Fixed Header */}
+                <div className="overflow-x-auto">
+                  <table className="w-full table-fixed">
+                    <colgroup>
+                      <col style={{ width: '200px' }} />
+                      <col style={{ width: '150px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '150px' }} />
+                      <col style={{ width: '120px' }} />
+                    </colgroup>
+                    <thead className="bg-blue-900 text-white">
+                      <tr>
+                        <th className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center gap-1">
+                            Name <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Call/Meeting Done <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Matured <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Interested <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Payment Received <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Dropped <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                {/* Scrollable Body */}
+                <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
+                  <table className="w-full table-fixed">
+                    <colgroup>
+                      <col style={{ width: '200px' }} />
+                      <col style={{ width: '150px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '150px' }} />
+                      <col style={{ width: '120px' }} />
+                    </colgroup>
+                    <tbody>
+                      {mockOperationalMetrics.map((item, index) => (
+                        <tr 
+                          key={item.name} 
+                          className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
+                        >
+                          <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.callMeetingDone}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            ) : (
+              /* Renewal View Table - 4 Month Trend */
+              <>
+                {/* Fixed Header */}
+                <div className="overflow-x-auto">
+                  <table className="w-full table-fixed">
+                    <colgroup>
+                      <col style={{ width: '180px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                    </colgroup>
+                    <thead className="bg-blue-900 text-white">
+                      <tr>
+                        <th rowSpan="2" className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center gap-1">
+                            Name <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
+                          M-2
+                        </th>
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
+                          M-1
+                        </th>
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
+                          M0
+                        </th>
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900">
+                          M+1
+                        </th>
+                      </tr>
+                      <tr>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold sticky top-[52px] bg-blue-900">%</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                {/* Scrollable Body */}
+                <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
+                  <table className="w-full table-fixed">
+                    <colgroup>
+                      <col style={{ width: '180px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                    </colgroup>
+                    <tbody>
+                      {mockRenewal4MonthMetrics.map((item, index) => (
+                        <tr 
+                          key={item.name} 
+                          className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
+                        >
+                          <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
+                          {/* M-2 Data */}
+                          <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus2.due}</td>
+                          <td className="py-3 px-3 text-sm text-center">
+                            <span className={`font-semibold ${item.mMinus2.percentage > 70 ? 'text-green-600' : item.mMinus2.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                              {item.mMinus2.percentage}%
+                            </span>
+                          </td>
+                          {/* M-1 Data */}
+                          <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus1.due}</td>
+                          <td className="py-3 px-3 text-sm text-center">
+                            <span className={`font-semibold ${item.mMinus1.percentage > 70 ? 'text-green-600' : item.mMinus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                              {item.mMinus1.percentage}%
+                            </span>
+                          </td>
+                          {/* M0 Data */}
+                          <td className="py-3 px-3 text-sm text-center text-gray-900">{item.m0.due}</td>
+                          <td className="py-3 px-3 text-sm text-center">
+                            <span className={`font-semibold ${item.m0.percentage > 70 ? 'text-green-600' : item.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
+                              {item.m0.percentage}%
+                            </span>
+                          </td>
+                          {/* M+1 Data */}
+                          <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus1.due}</td>
+                          <td className="py-3 px-3 text-sm text-center">
+                            <span className="text-gray-400 font-semibold">{item.mPlus1.percentage}%</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
             {/* Scrollable Body - Fixed height for 5 rows */}
             <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
               <table className="w-full table-fixed">
