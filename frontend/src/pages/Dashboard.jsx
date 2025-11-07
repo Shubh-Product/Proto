@@ -608,7 +608,8 @@ const Dashboard = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </TooltipProvider>
   );
 };
 
