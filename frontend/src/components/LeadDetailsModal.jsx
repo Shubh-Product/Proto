@@ -374,6 +374,9 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                         <Calendar className="w-4 h-4 text-blue-600" />
                       </button>
                     </td>
+                    <td className="py-3 px-4 text-sm">
+                      <Badge variant="outline" className="text-xs">Add On</Badge>
+                    </td>
                   </tr>
                   <tr className="border-t border-gray-100">
                     <td className="py-3 px-4 text-sm">{lead.subscriptionId}-ADD4</td>
