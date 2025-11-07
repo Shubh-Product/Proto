@@ -387,12 +387,18 @@ const Dashboard = () => {
                           {/* M+1 Data */}
                           <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus1.due}</td>
                           <td className="py-3 px-3 text-sm text-center">
-                            <span 
-                              className="text-gray-400 font-semibold cursor-help"
-                              title={leadType === 'upsell' ? 'Matured (Upsell)/Total Leads assigned in that month' : 'Matured (Renewal)/Total Due leads in that month'}
-                            >
-                              {item.mPlus1.percentage}%
-                            </span>
+                            <ChartTooltip>
+                              <TooltipTrigger asChild>
+                                <span className="text-gray-400 font-semibold cursor-help">
+                                  {item.mPlus1.percentage}%
+                                </span>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="text-xs">
+                                  {leadType === 'upsell' ? 'Matured (Upsell)/Total Leads assigned in that month' : 'Matured (Renewal)/Total Due leads in that month'}
+                                </p>
+                              </TooltipContent>
+                            </ChartTooltip>
                           </td>
                         </tr>
                       ))}
