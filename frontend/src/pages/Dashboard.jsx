@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Button } from '../components/ui/button';
@@ -21,13 +22,16 @@ import {
 } from '../mock';
 
 const Dashboard = () => {
+  const location = useLocation();
   const [dateFilter, setDateFilter] = useState('today');
   const [productFilter, setProductFilter] = useState('all');
-  const [leadType, setLeadType] = useState('renewal'); // Changed from typeFilter to leadType
   const [viewType, setViewType] = useState('userwise'); // userwise or offerswise
   const [dashboardView, setDashboardView] = useState('operational'); // operational or renewal
   const [trendPeriod, setTrendPeriod] = useState('6M');
   const { setHeaderContent } = useHeader();
+
+  // Determine leadType based on URL path
+  const leadType = location.pathname.includes('upsell') ? 'upsell' : 'renewal';
 
   // Cleanup header content when component mounts/unmounts
   useEffect(() => {
