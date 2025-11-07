@@ -240,8 +240,11 @@ const Dashboard = () => {
                 <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
                   <table className="w-full table-fixed">
                     <colgroup>
-                      <col style={{ width: '200px' }} />
-                      <col style={{ width: '150px' }} />
+                      <col style={{ width: '180px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
                       <col style={{ width: '120px' }} />
                       <col style={{ width: '120px' }} />
                       <col style={{ width: '150px' }} />
