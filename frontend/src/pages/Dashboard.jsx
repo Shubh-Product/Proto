@@ -46,7 +46,8 @@ const Dashboard = () => {
   }, [setHeaderContent]);
 
   return (
-    <div className="space-y-6">
+    <TooltipProvider>
+      <div className="space-y-6">
       {/* Filters Section - Above the table */}
       <Card className="shadow-md">
         <CardContent className="py-4">
