@@ -237,17 +237,17 @@ const Dashboard = () => {
                       <col style={{ width: '120px' }} />
                     </colgroup>
                     <tbody>
-                      {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffersMetrics : mockOperationalMetrics).map((item, index) => (
+                      {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).map((item, index) => (
                         <tr 
                           key={item.name} 
                           className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
                         >
                           <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.callMeetingDone || item.mMinus1?.due || 0}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured || item.mMinus1?.renewed || 0}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested || item.m0?.due || 0}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived || item.m0?.renewed || 0}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped || item.mPlus1?.due || 0}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.callMeetingDone}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
                         </tr>
                       ))}
                     </tbody>
