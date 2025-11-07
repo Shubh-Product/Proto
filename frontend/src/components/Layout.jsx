@@ -17,7 +17,8 @@ const Layout = ({ children }) => {
       icon: LayoutDashboard,
       subMenu: [
         { name: 'New Sales', href: '/dashboard/new-sales' },
-        { name: 'Renewal & Upsell', href: '/' }
+        { name: 'Renewals', href: '/' },
+        { name: 'Upsell', href: '/dashboard/upsell' }
       ]
     },
     { 
@@ -26,7 +27,8 @@ const Layout = ({ children }) => {
       icon: Users,
       subMenu: [
         { name: 'New Sales', href: '/leads/new-sales' },
-        { name: 'Renewal & Upsell', href: '/leads' }
+        { name: 'Renewals', href: '/leads' },
+        { name: 'Upsell', href: '/leads/upsell' }
       ]
     },
     { name: 'Report', href: '#', icon: BarChart3 },
