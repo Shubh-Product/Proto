@@ -301,13 +301,13 @@ const Dashboard = () => {
                         </th>
                       </tr>
                       <tr>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">{leadType === 'upsell' ? 'Leads Assigned' : 'Due'}</th>
                         <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">{leadType === 'upsell' ? 'Leads Assigned' : 'Due'}</th>
                         <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">{leadType === 'upsell' ? 'Leads Assigned' : 'Due'}</th>
                         <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">%</th>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Due</th>
+                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">{leadType === 'upsell' ? 'Leads Assigned' : 'Due'}</th>
                         <th className="py-2 px-3 text-center text-xs font-semibold sticky top-[52px] bg-blue-900">%</th>
                       </tr>
                     </thead>
