@@ -510,7 +510,8 @@ export const mockOperationalMetrics = [
 export const mockOperationalUpsellOffersMetrics = [
   {
     name: '720 Days',
-    callMeetingDone: 85,
+    call: { pending: 20, done: 72 },
+    meeting: { pending: 8, done: 13 },
     matured: 78,
     interested: 32,
     paymentReceived: 72,
@@ -518,7 +519,8 @@ export const mockOperationalUpsellOffersMetrics = [
   },
   {
     name: 'Model Upgrade',
-    callMeetingDone: 58,
+    call: { pending: 14, done: 48 },
+    meeting: { pending: 5, done: 10 },
     matured: 35,
     interested: 18,
     paymentReceived: 32,
@@ -526,7 +528,8 @@ export const mockOperationalUpsellOffersMetrics = [
   },
   {
     name: 'Mobile',
-    callMeetingDone: 48,
+    call: { pending: 12, done: 40 },
+    meeting: { pending: 3, done: 8 },
     matured: 32,
     interested: 15,
     paymentReceived: 29,
@@ -534,7 +537,8 @@ export const mockOperationalUpsellOffersMetrics = [
   },
   {
     name: 'Mobile Bundle',
-    callMeetingDone: 38,
+    call: { pending: 10, done: 32 },
+    meeting: { pending: 2, done: 6 },
     matured: 28,
     interested: 12,
     paymentReceived: 25,
@@ -542,7 +546,8 @@ export const mockOperationalUpsellOffersMetrics = [
   },
   {
     name: 'Busy Online',
-    callMeetingDone: 68,
+    call: { pending: 16, done: 58 },
+    meeting: { pending: 6, done: 10 },
     matured: 45,
     interested: 22,
     paymentReceived: 41,
