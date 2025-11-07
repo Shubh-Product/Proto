@@ -379,60 +379,6 @@ const Dashboard = () => {
                 </div>
               </>
             )}
-            {/* Scrollable Body - Fixed height for 5 rows */}
-            <div className="overflow-x-auto overflow-y-auto max-h-[280px]">
-              <table className="w-full table-fixed">
-                <colgroup>
-                  <col style={{ width: '180px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '80px' }} />
-                  <col style={{ width: '100px' }} />
-                  <col style={{ width: '100px' }} />
-                </colgroup>
-                <tbody>
-                  {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffersMetrics : mockDashboardMetrics).map((item, index) => (
-                    <tr 
-                      key={item.name} 
-                      className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
-                    >
-                      <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
-                      {/* M-1 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus1.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus1.renewed}</td>
-                      <td className="py-3 px-3 text-sm text-center">
-                        <span className={`font-semibold ${item.mMinus1.percentage > 70 ? 'text-green-600' : item.mMinus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
-                          {item.mMinus1.percentage}%
-                        </span>
-                      </td>
-                      {/* M0 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.m0.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.m0.renewed}</td>
-                      <td className="py-3 px-3 text-sm text-center">
-                        <span className={`font-semibold ${item.m0.percentage > 70 ? 'text-green-600' : item.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
-                          {item.m0.percentage}%
-                        </span>
-                      </td>
-                      {/* M+1 Data */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus1.due}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus1.renewed}</td>
-                      <td className="py-3 px-3 text-sm text-center">
-                        <span className="text-gray-400 font-semibold">{item.mPlus1.percentage}%</span>
-                      </td>
-                      {/* Other Metrics */}
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.interested}</td>
-                      <td className="py-3 px-3 text-sm text-center text-gray-900">{item.matured}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
           </div>
         </CardContent>
       </Card>
