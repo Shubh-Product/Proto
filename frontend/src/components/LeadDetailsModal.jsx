@@ -328,6 +328,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Product</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Activation</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Valid Till</th>
+                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Relation</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Action</th>
                   </tr>
                 </thead>
