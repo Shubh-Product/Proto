@@ -94,7 +94,7 @@ const Dashboard = () => {
               )}
 
               {/* Product/Upsell Offer Filter */}
-              <div className="flex items-center gap-2 border-l pl-4">
+              <div className="flex items-center gap-2 pl-4">
                 <span className="text-sm font-medium text-gray-700">
                   {leadType === 'upsell' ? 'Upsell Offer:' : 'Product:'}
                 </span>
