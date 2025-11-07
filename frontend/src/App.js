@@ -15,7 +15,11 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/dashboard/new-sales" element={<Dashboard />} />
+              <Route path="/dashboard/upsell" element={<Dashboard />} />
               <Route path="/leads" element={<LeadManagement />} />
+              <Route path="/leads/new-sales" element={<LeadManagement />} />
+              <Route path="/leads/upsell" element={<LeadManagement />} />
             </Routes>
           </Layout>
         </HeaderProvider>
