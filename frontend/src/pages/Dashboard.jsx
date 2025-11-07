@@ -482,14 +482,6 @@ const Dashboard = () => {
             </CardTitle>
             <div className="flex gap-2">
               <Button
-                variant={trendPeriod === '3M' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setTrendPeriod('3M')}
-                className="font-semibold"
-              >
-                3M
-              </Button>
-              <Button
                 variant={trendPeriod === '6M' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setTrendPeriod('6M')}
@@ -504,6 +496,14 @@ const Dashboard = () => {
                 className="font-semibold"
               >
                 12M
+              </Button>
+              <Button
+                variant={trendPeriod === '18M' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setTrendPeriod('18M')}
+                className="font-semibold"
+              >
+                18M
               </Button>
             </div>
           </div>
