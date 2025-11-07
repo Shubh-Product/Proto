@@ -49,34 +49,8 @@ const Dashboard = () => {
         <CardContent className="py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              {/* Radio Buttons for Renewal/Upsell */}
-              <div className="flex items-center gap-3">
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="leadType"
-                    value="renewal"
-                    checked={leadType === 'renewal'}
-                    onChange={(e) => setLeadType(e.target.value)}
-                    className="w-4 h-4 text-blue-600"
-                  />
-                  <span className="text-sm font-medium text-gray-700">Renewal</span>
-                </label>
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="leadType"
-                    value="upsell"
-                    checked={leadType === 'upsell'}
-                    onChange={(e) => setLeadType(e.target.value)}
-                    className="w-4 h-4 text-blue-600"
-                  />
-                  <span className="text-sm font-medium text-gray-700">Upsell</span>
-                </label>
-              </div>
-
               {/* Date Filter */}
-              <div className="flex items-center gap-2 border-l pl-4">
+              <div className="flex items-center gap-2">
                 <span className="text-sm font-medium text-gray-700">Date:</span>
                 <Select value={dateFilter} onValueChange={setDateFilter}>
                   <SelectTrigger className="w-[180px]">
