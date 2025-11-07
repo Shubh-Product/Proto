@@ -346,9 +346,10 @@ const Dashboard = () => {
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p className="text-xs">
-                                  {leadType === 'upsell' ? 'Matured (Upsell)/Total Leads assigned in that month' : 'Matured (Renewal)/Total Due leads in that month'}
-                                </p>
+                                <div className="text-xs">
+                                  <div>Matured ({leadType === 'upsell' ? 'Upsell' : 'Renewal'}) = {item.mMinus2.renewed}</div>
+                                  <div>Total {leadType === 'upsell' ? 'Leads Assigned' : 'Due Leads'} = {item.mMinus2.due}</div>
+                                </div>
                               </TooltipContent>
                             </Tooltip>
                           </td>
