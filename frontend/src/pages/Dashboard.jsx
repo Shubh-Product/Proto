@@ -195,43 +195,41 @@ const Dashboard = () => {
                     </colgroup>
                     <thead className="bg-blue-900 text-white">
                       <tr>
-                        <th rowSpan="2" className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                        <th className="py-3 px-4 text-left text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center gap-1">
                             {leadType === 'upsell' && viewType === 'offerswise' ? 'Upsell Offers' : 'Name'} <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                          Call
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Call <ArrowUpDown className="w-3 h-3" />
+                          </div>
                         </th>
-                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                          Meeting
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Meeting <ArrowUpDown className="w-3 h-3" />
+                          </div>
                         </th>
-                        <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center justify-center gap-1">
                             Matured <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                        <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center justify-center gap-1">
                             Interested <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                        <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center justify-center gap-1">
                             Payment Received <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                        <th rowSpan="2" className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
+                        <th className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center justify-center gap-1">
                             Dropped <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                      </tr>
-                      <tr>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Pending</th>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Done</th>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Pending</th>
-                        <th className="py-2 px-3 text-center text-xs font-semibold border-r border-blue-800 sticky top-[52px] bg-blue-900">Done</th>
                       </tr>
                     </thead>
                   </table>
