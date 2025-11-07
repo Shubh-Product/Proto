@@ -500,6 +500,50 @@ export const mockOperationalMetrics = [
   }
 ];
 
+// Operational Upsell Offers Metrics
+export const mockOperationalUpsellOffersMetrics = [
+  {
+    name: '720 Days',
+    callMeetingDone: 85,
+    matured: 78,
+    interested: 32,
+    paymentReceived: 72,
+    dropped: 8
+  },
+  {
+    name: 'Model Upgrade',
+    callMeetingDone: 58,
+    matured: 35,
+    interested: 18,
+    paymentReceived: 32,
+    dropped: 6
+  },
+  {
+    name: 'Mobile',
+    callMeetingDone: 48,
+    matured: 32,
+    interested: 15,
+    paymentReceived: 29,
+    dropped: 4
+  },
+  {
+    name: 'Mobile Bundle',
+    callMeetingDone: 38,
+    matured: 28,
+    interested: 12,
+    paymentReceived: 25,
+    dropped: 3
+  },
+  {
+    name: 'Busy Online',
+    callMeetingDone: 68,
+    matured: 45,
+    interested: 22,
+    paymentReceived: 41,
+    dropped: 7
+  }
+];
+
 // 4-Month Renewal Trend Metrics
 export const mockRenewal4MonthMetrics = [
   {
