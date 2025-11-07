@@ -133,8 +133,44 @@ const LeadManagement = () => {
           All Leads
         </Button>
         
+        <Button
+          size="sm"
+          variant={quickFilter === 'fresh' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('fresh')}
+          className="h-8"
+        >
+          Fresh Leads
+        </Button>
+
+        <Button
+          size="sm"
+          variant={quickFilter === 'owner' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('owner')}
+          className="h-8"
+        >
+          Owner Partner
+        </Button>
+
+        <Button
+          size="sm"
+          variant={quickFilter === 'm0' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('m0')}
+          className="h-8"
+        >
+          M0
+        </Button>
+
+        <Button
+          size="sm"
+          variant={quickFilter === 'm-1' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('m-1')}
+          className="h-8"
+        >
+          M-1
+        </Button>
+        
         {/* Due Dropdown with M-4 and M-3 added */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 border-l pl-2 ml-2">
           <span className="text-sm text-gray-700">Due:</span>
           <Select value={dueFilter} onValueChange={setDueFilter}>
             <SelectTrigger className="h-8 w-[100px]">
