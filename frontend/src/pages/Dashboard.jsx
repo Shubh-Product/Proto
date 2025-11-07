@@ -18,6 +18,7 @@ import {
   mockWeeklyMaturityData,
   mockUpsellOffersMetrics,
   mockOperationalMetrics,
+  mockOperationalUpsellOffersMetrics,
   mockRenewal4MonthMetrics
 } from '../mock';
 
