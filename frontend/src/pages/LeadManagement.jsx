@@ -148,7 +148,7 @@ const LeadManagement = () => {
           onClick={() => setQuickFilter('owner')}
           className="h-8"
         >
-          Owner Partner
+          Refer to Owner Partner
         </Button>
 
         <Button
