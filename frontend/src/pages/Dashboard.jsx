@@ -257,7 +257,10 @@ const Dashboard = () => {
                           className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
                         >
                           <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.callMeetingDone}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.callPending || 0}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.callDone || 0}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.meetingPending || 0}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.meetingDone || 0}</td>
                           <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
                           <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
                           <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
