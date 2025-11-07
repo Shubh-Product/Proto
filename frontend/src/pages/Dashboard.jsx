@@ -50,7 +50,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               {/* Date Filter */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 pl-4">
                 <span className="text-sm font-medium text-gray-700">Date:</span>
                 <Select value={dateFilter} onValueChange={setDateFilter}>
                   <SelectTrigger className="w-[180px]">
