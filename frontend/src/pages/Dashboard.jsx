@@ -23,7 +23,8 @@ const Dashboard = () => {
   const [productFilter, setProductFilter] = useState('all');
   const [leadType, setLeadType] = useState('renewal'); // Changed from typeFilter to leadType
   const [viewType, setViewType] = useState('userwise'); // userwise or offerswise
-  const [trendPeriod, setTrendPeriod] = useState('3M');
+  const [dashboardView, setDashboardView] = useState('operational'); // operational or renewal
+  const [trendPeriod, setTrendPeriod] = useState('6M');
   const { setHeaderContent } = useHeader();
 
   // Cleanup header content when component mounts/unmounts
