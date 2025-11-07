@@ -827,6 +827,45 @@ export const mockUpsellOffersMetrics = [
   }
 ];
 
+// 4-Month Upsell Offers Performance Metrics
+export const mockUpsellOffers4MonthMetrics = [
+  {
+    name: '720 Days',
+    mMinus2: { due: 72, renewed: 58, percentage: 80.6 },
+    mMinus1: { due: 85, renewed: 62, percentage: 72.9 },
+    m0: { due: 120, renewed: 78, percentage: 65.0 },
+    mPlus1: { due: 95, renewed: 0, percentage: 0 }
+  },
+  {
+    name: 'Model Upgrade',
+    mMinus2: { due: 38, renewed: 32, percentage: 84.2 },
+    mMinus1: { due: 42, renewed: 28, percentage: 66.7 },
+    m0: { due: 58, renewed: 35, percentage: 60.3 },
+    mPlus1: { due: 48, renewed: 0, percentage: 0 }
+  },
+  {
+    name: 'Mobile',
+    mMinus2: { due: 32, renewed: 28, percentage: 87.5 },
+    mMinus1: { due: 35, renewed: 25, percentage: 71.4 },
+    m0: { due: 48, renewed: 32, percentage: 66.7 },
+    mPlus1: { due: 42, renewed: 0, percentage: 0 }
+  },
+  {
+    name: 'Mobile Bundle',
+    mMinus2: { due: 25, renewed: 22, percentage: 88.0 },
+    mMinus1: { due: 28, renewed: 22, percentage: 78.6 },
+    m0: { due: 38, renewed: 28, percentage: 73.7 },
+    mPlus1: { due: 32, renewed: 0, percentage: 0 }
+  },
+  {
+    name: 'Busy Online',
+    mMinus2: { due: 48, renewed: 42, percentage: 87.5 },
+    mMinus1: { due: 52, renewed: 38, percentage: 73.1 },
+    m0: { due: 68, renewed: 45, percentage: 66.2 },
+    mPlus1: { due: 58, renewed: 0, percentage: 0 }
+  }
+];
+
 // Follow-up History
 export const mockFollowUpHistory = [
   {
