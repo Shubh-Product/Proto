@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -22,6 +23,7 @@ import AdvancedFilterModal from '../components/AdvancedFilterModal';
 import { useHeader } from '../contexts/HeaderContext';
 
 const LeadManagement = () => {
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLeads, setSelectedLeads] = useState([]);
   const [showLeadDetails, setShowLeadDetails] = useState(false);
@@ -30,10 +32,12 @@ const LeadManagement = () => {
   const [showAdvancedFilter, setShowAdvancedFilter] = useState(false);
   const [selectedLead, setSelectedLead] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [leadType, setLeadType] = useState('renewal'); // Changed from quickFilter to leadType
   const [quickFilter, setQuickFilter] = useState('all');
   const [dueFilter, setDueFilter] = useState('all');
   const { setHeaderContent } = useHeader();
+
+  // Determine leadType based on URL path
+  const leadType = location.pathname.includes('upsell') ? 'upsell' : 'renewal';
 
   // Set header content on mount
   useEffect(() => {
