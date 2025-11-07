@@ -236,6 +236,27 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
               </SelectContent>
             </Select>
           </div>
+
+          <div className="space-y-2">
+            <Label>Due</Label>
+            <Select
+              value={filters.due}
+              onValueChange={(value) => setFilters({ ...filters, due: value })}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select due period" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="m-4">M-4</SelectItem>
+                <SelectItem value="m-3">M-3</SelectItem>
+                <SelectItem value="m-2">M-2</SelectItem>
+                <SelectItem value="m-1">M-1</SelectItem>
+                <SelectItem value="m0">M0</SelectItem>
+                <SelectItem value="m+1">M+1</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         <div className="flex gap-3 pt-6 border-t">
