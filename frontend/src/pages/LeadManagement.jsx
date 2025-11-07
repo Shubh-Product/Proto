@@ -168,25 +168,6 @@ const LeadManagement = () => {
         >
           M-1
         </Button>
-        
-        {/* Due Dropdown with M-4 and M-3 added */}
-        <div className="flex items-center gap-1 border-l pl-2 ml-2">
-          <span className="text-sm text-gray-700">Due:</span>
-          <Select value={dueFilter} onValueChange={setDueFilter}>
-            <SelectTrigger className="h-8 w-[100px]">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="m-4">M-4</SelectItem>
-              <SelectItem value="m-3">M-3</SelectItem>
-              <SelectItem value="m-2">M-2</SelectItem>
-              <SelectItem value="m-1">M-1</SelectItem>
-              <SelectItem value="m0">M0</SelectItem>
-              <SelectItem value="m+1">M+1</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
 
         <Button
           size="sm"
