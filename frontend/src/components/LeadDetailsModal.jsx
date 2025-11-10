@@ -120,7 +120,6 @@ const LeadDetailsModal = ({ lead, onClose }) => {
           <TabsContent value="details" className="space-y-6 mt-4 overflow-y-auto flex-1">
             {/* Lead Details Section - All fields in one section */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Lead Details</h3>
               <div className="grid grid-cols-4 gap-4">
                 {/* Row 1 */}
                 <div className="space-y-2">
@@ -135,8 +134,6 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                   <Label className="text-sm">Product</Label>
                   <Input value={lead.product} readOnly className="bg-gray-50" />
                 </div>
-
-                {/* Row 2 */}
                 <div className="space-y-2">
                   <Label className="text-sm">Assigned To</Label>
                   <Select value={assignedTo} onValueChange={setAssignedTo}>
@@ -152,6 +149,8 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     </SelectContent>
                   </Select>
                 </div>
+
+                {/* Row 2 */}
                 <div className="space-y-2">
                   <Label className="text-sm">Owner Partner</Label>
                   <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
@@ -164,33 +163,15 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                   <Label className="text-sm">Email</Label>
                   <Input value={lead.email} readOnly className="bg-gray-50" />
                 </div>
-
-                {/* Row 4 */}
                 <div className="space-y-2">
                   <Label className="text-sm">GSTIN</Label>
                   <Input value={lead.gstin} readOnly className="bg-gray-50" />
                 </div>
+
+                {/* Row 3 */}
                 <div className="space-y-2">
                   <Label className="text-sm">City</Label>
                   <Input value={lead.city} readOnly className="bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Activeness</Label>
-                  <Input value={lead.activeness} readOnly className="bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Vintage</Label>
-                  <Input value={lead.vintage} readOnly className="bg-gray-50" />
-                </div>
-
-                {/* Row 5 */}
-                <div className="space-y-2">
-                  <Label className="text-sm">License Type</Label>
-                  <Input value={lead.licenseType} readOnly className="bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">GST Usage</Label>
-                  <Input value={lead.gstUsage} readOnly className="bg-gray-50" />
                 </div>
               </div>
             </div>
