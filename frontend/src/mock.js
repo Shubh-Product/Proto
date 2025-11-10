@@ -13,6 +13,8 @@ export const mockRenewalLeads = [
     stage: 'Interested',
     priority: 'Hot',
     mobile: '9876543210',
+    alternateNo: '9876543211',
+    contactPerson: 'Rajesh Kumar',
     email: 'contact@techvision.com',
     gstin: '27AABCT1234A1Z5',
     city: 'Mumbai',
