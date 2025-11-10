@@ -79,42 +79,8 @@ const LeadDetailsModal = ({ lead, onClose }) => {
               <div className="grid grid-cols-4 gap-4">
                 {/* Row 1 */}
                 <div className="space-y-2">
-                  <Label className="text-sm">Subscription ID</Label>
-                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
-                    <Package className="w-4 h-4 text-blue-600" />
-                    <span className="text-sm">{lead.subscriptionId}</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Activation Date</Label>
-                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
-                    <Calendar className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">{lead.activationDate}</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Valid Till</Label>
-                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50 text-red-600">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm font-medium">{lead.validTill}</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Last Active</Label>
-                  <div className="flex items-center gap-2 px-3 py-2 border rounded-md bg-gray-50">
-                    <Clock className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">{lead.lastActive}</span>
-                  </div>
-                </div>
-
-                {/* Row 2 */}
-                <div className="space-y-2">
                   <Label className="text-sm">Services</Label>
                   <Input value={lead.services.join(', ')} readOnly className="bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Offers</Label>
-                  <Input value={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'} readOnly className="bg-gray-50" />
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm">Mobile</Label>
@@ -125,7 +91,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                   <Input value={lead.product} readOnly className="bg-gray-50" />
                 </div>
 
-                {/* Row 3 */}
+                {/* Row 2 */}
                 <div className="space-y-2">
                   <Label className="text-sm">Assigned To</Label>
                   <Select value={assignedTo} onValueChange={setAssignedTo}>
