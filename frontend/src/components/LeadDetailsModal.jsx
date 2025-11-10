@@ -46,9 +46,10 @@ const LeadDetailsModal = ({ lead, onClose }) => {
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl h-[85vh] flex flex-col">
-        {/* Header Info Section - Single Row */}
+        {/* Header Info Section - Multiple Rows */}
         <div className="bg-gray-100 border-b px-6 py-3 -mt-6 -mx-6">
-          <div className="flex items-center gap-6">
+          {/* Row 1 - Main Info */}
+          <div className="flex items-center gap-6 mb-3">
             <div>
               <span className="text-sm font-bold text-gray-900">Edit Lead</span>
             </div>
@@ -71,6 +72,39 @@ const LeadDetailsModal = ({ lead, onClose }) => {
             <div>
               <span className="text-xs text-gray-600">Last Active: </span>
               <span className="text-sm font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+            </div>
+          </div>
+          
+          {/* Row 2 - Additional Details */}
+          <div className="flex items-center gap-6">
+            <div>
+              <span className="text-xs text-gray-600">Product: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.product}</span>
+            </div>
+            <div className="h-6 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs text-gray-600">Vintage: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.vintage}</span>
+            </div>
+            <div className="h-6 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs text-gray-600">Activeness: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.activeness}</span>
+            </div>
+            <div className="h-6 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs text-gray-600">License Type: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.licenseType}</span>
+            </div>
+            <div className="h-6 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs text-gray-600">GST Usage: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.gstUsage}</span>
+            </div>
+            <div className="h-6 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs text-gray-600">Offers: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}</span>
             </div>
           </div>
         </div>
