@@ -31,7 +31,16 @@ const Layout = ({ children }) => {
         { name: 'Upsell', href: '/leads/upsell' }
       ]
     },
-    { name: 'Report', href: '#', icon: BarChart3 },
+    { 
+      name: 'Report', 
+      href: '#', 
+      icon: BarChart3,
+      subMenu: [
+        { name: 'New Sales', href: '/report/new-sales' },
+        { name: 'Renewals', href: '/report' },
+        { name: 'Upsell', href: '/report/upsell' }
+      ]
+    },
     { name: 'Enquiry', href: '#', icon: MessageSquare },
     { name: 'User', href: '#', icon: UserCog },
     { name: 'ACL', href: '#', icon: ShieldCheck }
