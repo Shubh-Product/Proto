@@ -242,22 +242,22 @@ const LeadManagement = () => {
                   </th>
                   <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
-                      Owner Partner <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-2 px-4 text-left text-xs font-semibold">
-                    <div className="flex items-center gap-1">
-                      Next Follow Up <ArrowUpDown className="w-3 h-3" />
-                    </div>
-                  </th>
-                  <th className="py-2 px-4 text-left text-xs font-semibold">
-                    <div className="flex items-center gap-1">
                       {leadType === 'upsell' ? 'Upsell To' : 'Product'} <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-2 px-4 text-left text-xs font-semibold">
                     <div className="flex items-center gap-1">
                       {leadType === 'upsell' ? 'Offer Validity' : 'Valid Till'} <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
+                    <div className="flex items-center gap-1">
+                      Owner Partner <ArrowUpDown className="w-3 h-3" />
+                    </div>
+                  </th>
+                  <th className="py-2 px-4 text-left text-xs font-semibold">
+                    <div className="flex items-center gap-1">
+                      Next Follow Up <ArrowUpDown className="w-3 h-3" />
                     </div>
                   </th>
                   <th className="py-2 px-4 text-left text-xs font-semibold">
