@@ -14,6 +14,7 @@ import { toast } from '../hooks/use-toast';
 const LeadDetailsModal = ({ lead, onClose }) => {
   const [mobile, setMobile] = useState(lead.mobile);
   const [assignedTo, setAssignedTo] = useState(lead.assignedTo);
+  const [showMoreDetails, setShowMoreDetails] = useState(false);
   
   const [followUpType, setFollowUpType] = useState('call');
   const [stage, setStage] = useState(lead.stage.toLowerCase());
