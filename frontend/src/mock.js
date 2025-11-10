@@ -79,6 +79,8 @@ export const mockRenewalLeads = [
     stage: 'Payment',
     priority: 'Hot',
     mobile: '9988776655',
+    alternateNo: '9988776656',
+    contactPerson: 'Anil Deshmukh',
     email: 'accounts@sunrise.com',
     gstin: '27AABCS5678C1Z7',
     city: 'Pune',
