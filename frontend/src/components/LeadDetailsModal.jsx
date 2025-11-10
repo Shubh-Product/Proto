@@ -121,62 +121,85 @@ const LeadDetailsModal = ({ lead, onClose }) => {
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
           <TabsContent value="details" className="space-y-6 mt-4 overflow-y-auto flex-1">
-            {/* Lead Details Section - All fields in one section */}
+            {/* Lead Details Section */}
             <div>
+              {/* First Row - Always Visible */}
               <div className="grid grid-cols-4 gap-4">
-                {/* Row 1 */}
                 <div className="space-y-2">
-                  <Label className="text-sm">Services</Label>
-                  <Input value={lead.services.join(', ')} readOnly className="bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Mobile</Label>
-                  <Input value={mobile} onChange={(e) => setMobile(e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Product</Label>
-                  <Input value={lead.product} readOnly className="bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Assigned To</Label>
-                  <Select value={assignedTo} onValueChange={setAssignedTo}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {mockTeamMembers.map((member) => (
-                        <SelectItem key={member.value} value={member.label}>
-                          {member.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Row 2 */}
-                <div className="space-y-2">
-                  <Label className="text-sm">Owner Partner</Label>
-                  <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
+                  <Label className="text-sm">Contact Person</Label>
+                  <Input value={contactPerson} onChange={(e) => setContactPerson(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm">Company Name</Label>
                   <Input value={lead.company} readOnly className="bg-gray-50" />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm">Email</Label>
-                  <Input value={lead.email} readOnly className="bg-gray-50" />
+                  <Label className="text-sm">Mobile</Label>
+                  <Input value={mobile} onChange={(e) => setMobile(e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm">GSTIN</Label>
-                  <Input value={lead.gstin} readOnly className="bg-gray-50" />
-                </div>
-
-                {/* Row 3 */}
-                <div className="space-y-2">
-                  <Label className="text-sm">City</Label>
-                  <Input value={lead.city} readOnly className="bg-gray-50" />
+                  <Label className="text-sm">Alternate No.</Label>
+                  <Input value={alternateNo} onChange={(e) => setAlternateNo(e.target.value)} />
                 </div>
               </div>
+
+              {/* View More/Less Link */}
+              <div className="flex justify-end mt-2">
+                <button
+                  onClick={() => setShowMoreDetails(!showMoreDetails)}
+                  className="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                >
+                  {showMoreDetails ? 'View Less' : 'View More'}
+                </button>
+              </div>
+
+              {/* Additional Fields - Show/Hide based on state */}
+              {showMoreDetails && (
+                <div className="grid grid-cols-4 gap-4 mt-4">
+                  {/* Row 2 */}
+                  <div className="space-y-2">
+                    <Label className="text-sm">Services</Label>
+                    <Input value={lead.services.join(', ')} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Product</Label>
+                    <Input value={lead.product} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Assigned To</Label>
+                    <Select value={assignedTo} onValueChange={setAssignedTo}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {mockTeamMembers.map((member) => (
+                          <SelectItem key={member.value} value={member.label}>
+                            {member.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Owner Partner</Label>
+                    <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
+                  </div>
+
+                  {/* Row 3 */}
+                  <div className="space-y-2">
+                    <Label className="text-sm">Email</Label>
+                    <Input value={lead.email} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">GSTIN</Label>
+                    <Input value={lead.gstin} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">City</Label>
+                    <Input value={lead.city} readOnly className="bg-gray-50" />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Follow Up Update Section - Part of Details Tab */}
