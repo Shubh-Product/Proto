@@ -46,8 +46,6 @@ export const mockRenewalLeads = [
     stage: 'Due',
     priority: 'Warm',
     mobile: '9123456789',
-    alternateNo: '9123456780',
-    contactPerson: 'John Doe',
     alternateNo: '9123456790',
     contactPerson: 'Suresh Mehta',
     email: 'info@globaltraders.com',
