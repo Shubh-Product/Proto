@@ -46,38 +46,32 @@ const LeadDetailsModal = ({ lead, onClose }) => {
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl h-[85vh] flex flex-col">
-        <DialogHeader>
-          <DialogTitle className="text-base">
-            <span className="font-bold text-gray-900">Edit Lead</span>
-          </DialogTitle>
-        </DialogHeader>
-
-        {/* New Header Info Section */}
-        <div className="bg-gray-50 border rounded-lg p-4 -mt-2">
-          <div className="grid grid-cols-4 gap-4">
+        {/* Header Info Section - Single Row */}
+        <div className="bg-gray-100 border-b px-6 py-3 -mt-6 -mx-6">
+          <div className="flex items-center gap-6">
             <div>
-              <div className="text-xs text-gray-500 mb-1">Subscription ID</div>
-              <div className="text-sm font-semibold text-gray-900">{lead.subscriptionId}</div>
+              <span className="text-sm font-bold text-gray-900">Edit Lead</span>
             </div>
+            <div className="h-6 w-px bg-gray-300"></div>
             <div>
-              <div className="text-xs text-gray-500 mb-1">Activation</div>
-              <div className="text-sm font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</div>
+              <span className="text-xs text-gray-600">Subscription ID: </span>
+              <span className="text-sm font-semibold text-gray-900">{lead.subscriptionId}</span>
             </div>
+            <div className="h-6 w-px bg-gray-300"></div>
             <div>
-              <div className="text-xs text-gray-500 mb-1">Valid Till</div>
-              <div className="text-sm font-semibold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</div>
+              <span className="text-xs text-gray-600">Activation: </span>
+              <span className="text-sm font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
             </div>
+            <div className="h-6 w-px bg-gray-300"></div>
             <div>
-              <div className="text-xs text-gray-500 mb-1">Last Active</div>
-              <div className="text-sm font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</div>
+              <span className="text-xs text-gray-600">Valid Till: </span>
+              <span className="text-sm font-semibold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
             </div>
-          </div>
-          {/* Color bifurcation */}
-          <div className="flex gap-1 mt-3">
-            <div className="h-1 flex-1 bg-blue-600 rounded"></div>
-            <div className="h-1 flex-1 bg-green-600 rounded"></div>
-            <div className="h-1 flex-1 bg-orange-600 rounded"></div>
-            <div className="h-1 flex-1 bg-purple-600 rounded"></div>
+            <div className="h-6 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs text-gray-600">Last Active: </span>
+              <span className="text-sm font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+            </div>
           </div>
         </div>
 
