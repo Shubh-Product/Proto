@@ -47,22 +47,39 @@ const LeadDetailsModal = ({ lead, onClose }) => {
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl h-[85vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle className="text-base flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-gray-900">Edit Lead</span>
-              <span className="text-gray-500 font-normal">
-                | {lead.subscriptionId} | Activation: {new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')} | Valid Till: {new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')} | Last Active: {new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}
-              </span>
-            </div>
-            {/* Color bifurcation */}
-            <div className="flex gap-1 mt-1">
-              <div className="h-1 flex-1 bg-blue-600 rounded"></div>
-              <div className="h-1 flex-1 bg-green-600 rounded"></div>
-              <div className="h-1 flex-1 bg-orange-600 rounded"></div>
-              <div className="h-1 flex-1 bg-purple-600 rounded"></div>
-            </div>
+          <DialogTitle className="text-base">
+            <span className="font-bold text-gray-900">Edit Lead</span>
           </DialogTitle>
         </DialogHeader>
+
+        {/* New Header Info Section */}
+        <div className="bg-gray-50 border rounded-lg p-4 -mt-2">
+          <div className="grid grid-cols-4 gap-4">
+            <div>
+              <div className="text-xs text-gray-500 mb-1">Subscription ID</div>
+              <div className="text-sm font-semibold text-gray-900">{lead.subscriptionId}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-1">Activation</div>
+              <div className="text-sm font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-1">Valid Till</div>
+              <div className="text-sm font-semibold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-1">Last Active</div>
+              <div className="text-sm font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</div>
+            </div>
+          </div>
+          {/* Color bifurcation */}
+          <div className="flex gap-1 mt-3">
+            <div className="h-1 flex-1 bg-blue-600 rounded"></div>
+            <div className="h-1 flex-1 bg-green-600 rounded"></div>
+            <div className="h-1 flex-1 bg-orange-600 rounded"></div>
+            <div className="h-1 flex-1 bg-purple-600 rounded"></div>
+          </div>
+        </div>
 
         <Tabs defaultValue="details" className="mt-4 flex-1 flex flex-col overflow-hidden">
           <TabsList className="grid w-full grid-cols-3 flex-shrink-0">
