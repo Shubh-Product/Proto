@@ -193,6 +193,14 @@ const LeadManagement = () => {
         >
           Upcoming Follow Up
         </Button>
+        <Button
+          size="sm"
+          variant={quickFilter === 'withoffers' ? 'default' : 'outline'}
+          onClick={() => setQuickFilter('withoffers')}
+          className="h-8"
+        >
+          With Offers
+        </Button>
       </div>
 
       {/* Bulk Actions */}
