@@ -48,7 +48,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl h-[85vh] flex flex-col">
+      <DialogContent className="max-w-6xl h-[85vh] flex flex-col">
         {/* Header Info Section - Multiple Rows */}
         <div className="bg-gray-100 border-b px-6 py-3 -mt-6 -mx-6">
           {/* Row 1 - Main Info */}
