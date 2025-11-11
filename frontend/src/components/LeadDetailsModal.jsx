@@ -175,14 +175,6 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                 <div className="grid grid-cols-4 gap-4 mt-4">
                   {/* Row 2 */}
                   <div className="space-y-2">
-                    <Label className="text-sm">Services</Label>
-                    <Input value={lead.services.join(', ')} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Product</Label>
-                    <Input value={lead.product} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
                     <Label className="text-sm">Assigned To</Label>
                     <Select value={assignedTo} onValueChange={setAssignedTo}>
                       <SelectTrigger>
@@ -201,8 +193,6 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <Label className="text-sm">Owner Partner</Label>
                     <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
                   </div>
-
-                  {/* Row 3 */}
                   <div className="space-y-2">
                     <Label className="text-sm">Email</Label>
                     <Input value={lead.email} readOnly className="bg-gray-50" />
@@ -211,6 +201,8 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                     <Label className="text-sm">GSTIN</Label>
                     <Input value={lead.gstin} readOnly className="bg-gray-50" />
                   </div>
+
+                  {/* Row 3 */}
                   <div className="space-y-2">
                     <Label className="text-sm">City</Label>
                     <Input value={lead.city} readOnly className="bg-gray-50" />
