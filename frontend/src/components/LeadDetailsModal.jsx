@@ -173,39 +173,50 @@ const LeadDetailsModal = ({ lead, onClose }) => {
               {/* Additional Fields - Show/Hide based on state */}
               {showMoreDetails && (
                 <div className="grid grid-cols-4 gap-4 mt-4">
-                  {/* Row 2 */}
-                  <div className="space-y-2">
-                    <Label className="text-sm">Assigned To</Label>
-                    <Select value={assignedTo} onValueChange={setAssignedTo}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {mockTeamMembers.map((member) => (
-                          <SelectItem key={member.value} value={member.label}>
-                            {member.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                  {/* Row 1 */}
                   <div className="space-y-2">
                     <Label className="text-sm">Owner Partner</Label>
                     <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-sm">Email</Label>
-                    <Input value={lead.email} readOnly className="bg-gray-50" />
+                    <Label className="text-sm">Email ID</Label>
+                    <Input value={lead.email} onChange={(e) => {}} />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-sm">GSTIN</Label>
-                    <Input value={lead.gstin} readOnly className="bg-gray-50" />
+                    <Label className="text-sm">Pincode</Label>
+                    <Input value={lead.pincode || 'N/A'} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">City</Label>
+                    <Input value={lead.city} readOnly className="bg-gray-50" />
+                  </div>
+
+                  {/* Row 2 */}
+                  <div className="space-y-2">
+                    <Label className="text-sm">State</Label>
+                    <Input value={lead.state || 'N/A'} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Status</Label>
+                    <Input value={lead.status || 'Active'} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Subscription Status</Label>
+                    <Input value={lead.subscriptionStatus || 'Active'} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Model</Label>
+                    <Input value={lead.model || 'N/A'} readOnly className="bg-gray-50" />
                   </div>
 
                   {/* Row 3 */}
                   <div className="space-y-2">
-                    <Label className="text-sm">City</Label>
-                    <Input value={lead.city} readOnly className="bg-gray-50" />
+                    <Label className="text-sm">Release</Label>
+                    <Input value={lead.release || 'N/A'} readOnly className="bg-gray-50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-sm">Version</Label>
+                    <Input value={lead.version || 'N/A'} readOnly className="bg-gray-50" />
                   </div>
                 </div>
               )}
