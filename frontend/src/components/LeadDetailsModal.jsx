@@ -50,64 +50,80 @@ const LeadDetailsModal = ({ lead, onClose }) => {
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl h-[85vh] flex flex-col">
         {/* Header Info Section - Multiple Rows */}
-        <div className="bg-gray-100 border-b px-6 py-3 -mt-6 -mx-6">
-          {/* Row 1 - Main Info */}
-          <div className="flex items-center gap-6 mb-3">
+        <div className="bg-gray-100 border-b px-6 py-4 -mt-6 -mx-6">
+          {/* Row 1 - Primary Details */}
+          <div className="flex items-center gap-4 mb-3 flex-wrap">
             <div>
-              <span className="text-sm font-bold text-gray-900">Edit Lead</span>
+              <span className="text-xs font-semibold text-gray-600">Lead ID: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.id}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Subscription ID: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.subscriptionId}</span>
+              <span className="text-xs font-semibold text-gray-600">Subscription ID: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.subscriptionId}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Activation: </span>
-              <span className="text-sm font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+              <span className="text-xs font-semibold text-gray-600">Product: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.product}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Valid Till: </span>
-              <span className="text-sm font-semibold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+              <span className="text-xs font-semibold text-gray-600">Activation: </span>
+              <span className="text-sm font-medium text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Last Active: </span>
-              <span className="text-sm font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+              <span className="text-xs font-semibold text-gray-600">Valid Till: </span>
+              <span className="text-sm font-medium text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+            </div>
+            <div className="h-5 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs font-semibold text-gray-600">Last Active: </span>
+              <span className="text-sm font-medium text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+            </div>
+            <div className="h-5 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs font-semibold text-gray-600">Vintage: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.vintage}</span>
             </div>
           </div>
           
-          {/* Row 2 - Additional Details */}
-          <div className="flex items-center gap-6">
+          {/* Row 2 - Secondary Details */}
+          <div className="flex items-center gap-4 flex-wrap">
             <div>
-              <span className="text-xs text-gray-600">Product: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.product}</span>
+              <span className="text-xs font-semibold text-gray-600">Activeness: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.activeness}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Vintage: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.vintage}</span>
+              <span className="text-xs font-semibold text-gray-600">License Type: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.licenseType}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Activeness: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.activeness}</span>
+              <span className="text-xs font-semibold text-gray-600">Return Download: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.gstUsage === 'Active' ? 'Yes' : 'No'}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">License Type: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.licenseType}</span>
+              <span className="text-xs font-semibold text-gray-600">Return Upload: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.gstUsage === 'Active' ? 'Yes' : 'No'}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">GST Usage: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.gstUsage}</span>
+              <span className="text-xs font-semibold text-gray-600">E-Way Bill: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.gstUsage === 'Active' ? 'Yes' : 'No'}</span>
             </div>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-5 w-px bg-gray-300"></div>
             <div>
-              <span className="text-xs text-gray-600">Offers: </span>
-              <span className="text-sm font-semibold text-gray-900">{lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}</span>
+              <span className="text-xs font-semibold text-gray-600">E-Invoice: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.gstUsage === 'Active' ? 'Yes' : 'No'}</span>
+            </div>
+            <div className="h-5 w-px bg-gray-300"></div>
+            <div>
+              <span className="text-xs font-semibold text-gray-600">Offers: </span>
+              <span className="text-sm font-medium text-gray-900">{lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}</span>
             </div>
           </div>
         </div>
