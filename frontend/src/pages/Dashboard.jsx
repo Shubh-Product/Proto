@@ -471,7 +471,7 @@ const Dashboard = () => {
           <CardHeader className="border-b pb-3">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
               <Package className="w-5 h-5 text-green-600" />
-              Leads with Offers
+              Leads with Offers (100)
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
