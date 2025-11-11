@@ -141,7 +141,7 @@ const Dashboard = () => {
                     onChange={(e) => setViewType(e.target.value)}
                     className="w-4 h-4 text-blue-600"
                   />
-                  <span className="text-sm font-medium text-gray-700">Upsell Offers Wise</span>
+                  <span className="text-sm font-medium text-gray-700">Offers Wise</span>
                 </label>
               </div>
             )}
