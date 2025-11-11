@@ -466,56 +466,42 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Work Done Table */}
+        {/* Leads with Offers Table */}
         <Card className="shadow-md">
           <CardHeader className="border-b pb-3">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
-              <Phone className="w-5 h-5 text-blue-600" />
-              Work Done
+              <Package className="w-5 h-5 text-green-600" />
+              Leads with Offers
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto max-h-[280px]">
               <table className="w-full">
-                <thead className="bg-blue-900 text-white">
+                <thead className="bg-blue-900 text-white sticky top-0">
                   <tr>
-                    <th className="py-3 px-4 text-left text-sm font-semibold"></th>
-                    <th className="py-3 px-4 text-center text-sm font-semibold">Hot</th>
-                    <th className="py-3 px-4 text-center text-sm font-semibold">Warm</th>
-                    <th className="py-3 px-4 text-center text-sm font-semibold">Cold</th>
-                    <th className="py-3 px-4 text-center text-sm font-semibold">Other</th>
+                    <th className="py-3 px-4 text-left text-sm font-semibold">Company</th>
+                    <th className="py-3 px-4 text-left text-sm font-semibold">Offers</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-100 bg-white">
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Call</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.hot}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.warm}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.cold}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.calls.other}</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 bg-gray-50">
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900">Meeting</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.hot}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.warm}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.cold}</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">{mockWorkDone.meetings.other}</td>
-                  </tr>
-                  <tr className="bg-gray-100 font-semibold">
-                    <td className="py-3 px-4 text-sm text-gray-900">Total</td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.calls.hot + mockWorkDone.meetings.hot}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.calls.warm + mockWorkDone.meetings.warm}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.calls.cold + mockWorkDone.meetings.cold}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-center text-gray-900">
-                      {mockWorkDone.calls.other + mockWorkDone.meetings.other}
-                    </td>
-                  </tr>
+                  {mockRenewalLeads
+                    .filter(lead => lead.offers && lead.offers.length > 0)
+                    .slice(0, 8)
+                    .map((lead, index) => (
+                      <tr key={lead.id} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                        <td className="py-3 px-4 text-sm font-medium text-gray-900">{lead.company}</td>
+                        <td className="py-3 px-4 text-sm text-gray-700">
+                          {lead.offers.join(', ')}
+                        </td>
+                      </tr>
+                    ))}
+                  {mockRenewalLeads.filter(lead => lead.offers && lead.offers.length > 0).length === 0 && (
+                    <tr className="bg-white">
+                      <td colSpan="2" className="py-8 px-4 text-sm text-center text-gray-500">
+                        No leads with offers available
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
