@@ -238,7 +238,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                       onChange={(e) => setFollowUpType(e.target.value)}
                       className="w-4 h-4"
                     />
-                    <span className="text-sm">Call</span>
+                    <span className="text-sm">Call (Phone/VC)</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input
@@ -248,7 +248,7 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                       onChange={(e) => setFollowUpType(e.target.value)}
                       className="w-4 h-4"
                     />
-                    <span className="text-sm">Meeting</span>
+                    <span className="text-sm">Meeting (In-Person)</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input
