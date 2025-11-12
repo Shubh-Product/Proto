@@ -316,8 +316,8 @@ const LeadDetailsModal = ({ lead, onClose }) => {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="call">Call</SelectItem>
-                      <SelectItem value="meeting">Meeting</SelectItem>
+                      <SelectItem value="call">Call (Phone/VC)</SelectItem>
+                      <SelectItem value="meeting">Meeting (In-Person)</SelectItem>
                       <SelectItem value="general">General</SelectItem>
                     </SelectContent>
                   </Select>
