@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     },
     { 
       name: 'Report', 
-      href: '#', 
+      href: '/reports', 
       icon: BarChart3
     },
     { name: 'Enquiry', href: '#', icon: MessageSquare },
