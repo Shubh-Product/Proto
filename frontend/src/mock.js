@@ -48,7 +48,8 @@ export const mockRenewalLeads = [
     proposedUsers: '10',
     currentValue: '₹15,000',
     proposedValue: '₹35,000',
-    incrementalValue: '₹20,000'
+    incrementalValue: '₹20,000',
+    upsellReason: 'Client needs additional user licenses and advanced reporting features'
   },
   {
     id: 'R002',
