@@ -40,7 +40,7 @@ const Reports = () => {
   };
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-3 p-6">
       {/* Radio Buttons Section */}
       <div className="flex items-center justify-end gap-6">
         <label className="flex items-center gap-2 cursor-pointer">
