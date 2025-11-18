@@ -87,8 +87,8 @@ const Reports = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredReports.length > 0 ? (
-                  filteredReports.map((report, index) => (
+                {reports.length > 0 ? (
+                  reports.map((report, index) => (
                     <tr
                       key={report.id}
                       className={`border-b border-gray-100 hover:bg-gray-50 transition-colors ${
