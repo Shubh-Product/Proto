@@ -40,7 +40,15 @@ export const mockRenewalLeads = [
     offers: ['720 Days Offer', 'Upgrade Discount'],
     gstUsage: 'Active',
     upsellTo: '720 Days',
-    offerValidity: '2024-09-30'
+    offerValidity: '2024-09-30',
+    // Upsell specific fields
+    currentProduct: 'Busy Standard',
+    targetProduct: 'Busy Professional',
+    currentUsers: '5',
+    proposedUsers: '10',
+    currentValue: '₹15,000',
+    proposedValue: '₹35,000',
+    incrementalValue: '₹20,000'
   },
   {
     id: 'R002',
