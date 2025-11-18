@@ -398,6 +398,7 @@ const LeadManagement = () => {
       {showLeadDetails && selectedLead && (
         <LeadDetailsModal
           lead={selectedLead}
+          leadType={leadType}
           onClose={() => setShowLeadDetails(false)}
         />
       )}
