@@ -60,12 +60,12 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-sm font-semibold text-gray-900">{lead.id}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Upsell To</span>
-                  <span className="text-sm font-semibold text-blue-700">{lead.upsellTo || 'SS 21'}</span>
-                </div>
-                <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Subscription ID</span>
                   <span className="text-sm font-semibold text-gray-900">{lead.subscriptionId}</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Upsell To</span>
+                  <span className="text-sm font-semibold text-blue-700">{lead.upsellTo || 'SS 21'}</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Offer Validity</span>
@@ -88,7 +88,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
               <div className="grid grid-cols-6 gap-x-6 gap-y-1 mb-4">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Activeness</span>
-                  <span className="text-sm font-semibold text-blue-700">{lead.activeness}</span>
+                  <span className="text-sm font-semibold text-blue-700">Monthly</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Return Download</span>
