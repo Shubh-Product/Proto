@@ -54,34 +54,30 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
           {leadType === 'upsell' ? (
             <>
               {/* Row 1 - Upsell Primary Details */}
-              <div className="grid grid-cols-7 gap-x-6 gap-y-1 mb-4">
+              <div className="grid grid-cols-6 gap-x-6 gap-y-1 mb-4">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Lead ID</span>
                   <span className="text-sm font-semibold text-gray-900">{lead.id}</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Upsell To</span>
+                  <span className="text-sm font-semibold text-blue-700">{lead.upsellTo || 'SS 21'}</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Subscription ID</span>
                   <span className="text-sm font-semibold text-gray-900">{lead.subscriptionId}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Current Product</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.currentProduct || lead.product}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Offer Validity</span>
+                  <span className="text-sm font-semibold text-gray-900">{lead.offerValidity ? new Date(lead.offerValidity).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-') : '15-Aug-23'}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Target Product</span>
-                  <span className="text-sm font-semibold text-blue-700">{lead.targetProduct || lead.upsellTo}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Last Active</span>
+                  <span className="text-sm font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Current Value</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.currentValue || 'N/A'}</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Proposed Value</span>
-                  <span className="text-sm font-semibold text-green-700">{lead.proposedValue || 'N/A'}</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Incremental</span>
-                  <span className="text-sm font-bold text-green-600">{lead.incrementalValue || 'N/A'}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Vintage</span>
+                  <span className="text-sm font-semibold text-gray-900">{lead.vintage}</span>
                 </div>
               </div>
 
@@ -89,36 +85,49 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
               <div className="border-t border-gray-300 mb-4"></div>
               
               {/* Row 2 - Upsell Secondary Details */}
-              <div className="grid grid-cols-7 gap-x-6 gap-y-1">
+              <div className="grid grid-cols-6 gap-x-6 gap-y-1 mb-4">
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Current Users</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.currentUsers || 'N/A'}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Activeness</span>
+                  <span className="text-sm font-semibold text-blue-700">{lead.activeness}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Proposed Users</span>
-                  <span className="text-sm font-semibold text-blue-700">{lead.proposedUsers || 'N/A'}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Return Download</span>
+                  <span className={`text-sm font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">License Type</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.licenseType}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Return Upload</span>
+                  <span className={`text-sm font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Activation</span>
-                  <span className="text-sm font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">E-Way Bill</span>
+                  <span className={`text-sm font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Valid Till</span>
-                  <span className="text-sm font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Vintage</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.vintage}</span>
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">E-Invoice Bill</span>
+                  <span className="text-sm font-semibold text-red-600">No</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Offers</span>
                   <span className="text-sm font-semibold text-purple-700 truncate" title={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}>
                     {lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}
                   </span>
+                </div>
+              </div>
+
+              {/* Divider Line */}
+              <div className="border-t border-gray-300 mb-4"></div>
+
+              {/* Row 3 - Upsell Reason */}
+              <div className="grid grid-cols-1 gap-x-6 gap-y-1">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Upsell Reason</span>
+                  <span className="text-sm font-semibold text-gray-900">{lead.upsellReason || 'Not specified'}</span>
                 </div>
               </div>
             </>
