@@ -11,7 +11,7 @@ import { Calendar, Clock, Package, User, Building2 } from 'lucide-react';
 import { mockDispositions, mockStages, mockPriorities, mockRelatedSubscriptions, mockTeamMembers } from '../mock';
 import { toast } from '../hooks/use-toast';
 
-const LeadDetailsModal = ({ lead, onClose }) => {
+const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
   const [mobile, setMobile] = useState(lead.mobile);
   const [alternateNo, setAlternateNo] = useState(lead.alternateNo || '');
   const [contactPerson, setContactPerson] = useState(lead.contactPerson || '');
