@@ -71,7 +71,7 @@ const Reports = () => {
             onChange={(e) => setReportType(e.target.value)}
             className="w-4 h-4 text-blue-600"
           />
-          <span className="text-sm font-medium text-gray-700">Upgrade</span>
+          <span className="text-sm font-medium text-gray-700">Upsell</span>
         </label>
       </div>
 
