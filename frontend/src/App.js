@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import LeadManagement from './pages/LeadManagement';
+import Reports from './pages/Reports';
 import { Toaster } from './components/ui/toaster';
 import { HeaderProvider } from './contexts/HeaderContext';
 
@@ -20,6 +21,7 @@ function App() {
               <Route path="/leads" element={<LeadManagement />} />
               <Route path="/leads/new-sales" element={<LeadManagement />} />
               <Route path="/leads/upsell" element={<LeadManagement />} />
+              <Route path="/reports" element={<Reports />} />
             </Routes>
           </Layout>
         </HeaderProvider>
