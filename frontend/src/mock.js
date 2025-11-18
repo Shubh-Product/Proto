@@ -1113,16 +1113,19 @@ export const mockUpsellOffers = [
 
 // Dispositions
 export const mockDispositions = [
-  'Interested',
-  'Not interested',
-  'Budget approval pending',
-  'Callback requested',
-  'Wrong number',
-  'Not reachable',
-  'Already renewed',
-  'Payment pending',
-  'Switched to competitor',
-  'Demo requested'
+  'NATC',
+  'Follow Up - Customer',
+  'Follow Up - Refer to Owner',
+  'Dropped - Not Interested',
+  'Dropped - Pricing Issue',
+  'Dropped - Business Closed',
+  'Dropped - Switched Software',
+  'Dropped - Using Another Serial No',
+  'Dropped - BLS Features Not Required',
+  'Dropped - Moved to Busy on RDP',
+  'Dropped - Wrong Number',
+  'Matured - Other Partner',
+  'Matured - Self'
 ];
 
 // Stages
