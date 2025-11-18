@@ -128,7 +128,7 @@ const Reports = () => {
                 ) : (
                   <tr>
                     <td colSpan="2" className="py-8 px-6 text-center text-gray-500">
-                      No reports found matching "{searchQuery}"
+                      No reports available for this category
                     </td>
                   </tr>
                 )}
