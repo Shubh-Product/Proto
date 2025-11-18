@@ -44,6 +44,7 @@ const Layout = ({ children }) => {
   const getPageTitle = () => {
     const currentPath = location.pathname;
     if (currentPath === '/leads') return 'Lead Management';
+    if (currentPath === '/reports') return 'Reports';
     if (currentPath === '/') return 'Dashboard';
     return 'Busy CRM';
   };
