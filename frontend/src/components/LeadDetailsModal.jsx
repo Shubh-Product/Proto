@@ -77,7 +77,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Vintage</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.vintage}</span>
+                  <span className="text-sm font-semibold text-gray-900">1st Year</span>
                 </div>
               </div>
 
@@ -161,7 +161,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Vintage</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.vintage}</span>
+                  <span className="text-sm font-semibold text-gray-900">1st Year</span>
                 </div>
               </div>
 
