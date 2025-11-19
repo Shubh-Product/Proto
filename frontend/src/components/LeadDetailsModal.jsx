@@ -172,11 +172,11 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
               <div className="grid grid-cols-7 gap-x-6 gap-y-1">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Activeness</span>
-                  <span className="text-sm font-semibold text-blue-700">{lead.activeness}</span>
+                  <span className="text-sm font-semibold text-blue-700">Weekly</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">License Type</span>
-                  <span className="text-sm font-semibold text-gray-900">{lead.licenseType}</span>
+                  <span className="text-sm font-semibold text-gray-900">Regular</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Return Download</span>
