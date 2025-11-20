@@ -204,7 +204,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
           )}
         </div>
 
-        <Tabs defaultValue="details" className="mt-2 flex-1 flex flex-col overflow-hidden">
+        <Tabs defaultValue="details" className="mt-0 flex-1 flex flex-col overflow-hidden">
           <TabsList className="grid w-full grid-cols-3 flex-shrink-0">
             <TabsTrigger value="details">Details</TabsTrigger>
             <TabsTrigger value="addons">Direct Linked</TabsTrigger>
