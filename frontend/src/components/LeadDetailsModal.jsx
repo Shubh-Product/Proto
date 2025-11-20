@@ -568,7 +568,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   {mockRelatedSubscriptions.map((sub) => (
                     <tr key={sub.subscription} className="border-t border-gray-100">
                       <td className="py-3 px-4 text-sm">{sub.subscription}</td>
-                      <td className="py-3 px-4 text-sm">{sub.mobile}</td>
+                      <td className="py-3 px-4 text-sm">{sub.leadId}</td>
                       <td className="py-3 px-4 text-sm">{sub.product}</td>
                       <td className="py-3 px-4 text-sm">{sub.activation}</td>
                       <td className="py-3 px-4 text-sm">{sub.validTill}</td>
@@ -581,7 +581,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   ))}
                   <tr className="border-t border-gray-100">
                     <td className="py-3 px-4 text-sm">SUB-2023-789</td>
-                    <td className="py-3 px-4 text-sm">9876543299</td>
+                    <td className="py-3 px-4 text-sm">-</td>
                     <td className="py-3 px-4 text-sm">Busy Desktop</td>
                     <td className="py-3 px-4 text-sm">2023-05-10</td>
                     <td className="py-3 px-4 text-sm">2024-05-10</td>
@@ -593,8 +593,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   </tr>
                   <tr className="border-t border-gray-100">
                     <td className="py-3 px-4 text-sm">SUB-2024-456</td>
-                    <td className="py-3 px-4 text-sm">9876543288</td>
-                    <td className="py-3 px-4 text-sm">Busy Mandi</td>
+                    <td className="py-3 px-4 text-sm">L456</td>
+                    <td className="py-3 px-4 text-sm">Busy Mobile</td>
                     <td className="py-3 px-4 text-sm">2024-02-20</td>
                     <td className="py-3 px-4 text-sm">2025-02-20</td>
                     <td className="py-3 px-4 text-sm">
