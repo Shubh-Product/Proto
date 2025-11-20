@@ -312,17 +312,23 @@ const LeadManagement = () => {
                       <div className="text-sm text-gray-900">
                         {leadType === 'upsell' ? 
                           (lead.offerValidity ? 
-                            new Date(lead.offerValidity).toLocaleDateString('en-GB', { 
-                              day: '2-digit', 
-                              month: 'short', 
-                              year: '2-digit' 
-                            }).replace(/,/g, '') : '-') : 
+                            (() => {
+                              const date = new Date(lead.offerValidity);
+                              return isNaN(date.getTime()) ? '-' : date.toLocaleDateString('en-GB', { 
+                                day: '2-digit', 
+                                month: 'short', 
+                                year: '2-digit' 
+                              }).replace(/,/g, '');
+                            })() : '-') : 
                           (lead.validTill ? 
-                            new Date(lead.validTill).toLocaleDateString('en-GB', { 
-                              day: '2-digit', 
-                              month: 'short', 
-                              year: '2-digit' 
-                            }).replace(/,/g, '') : '-')
+                            (() => {
+                              const date = new Date(lead.validTill);
+                              return isNaN(date.getTime()) ? '-' : date.toLocaleDateString('en-GB', { 
+                                day: '2-digit', 
+                                month: 'short', 
+                                year: '2-digit' 
+                              }).replace(/,/g, '');
+                            })() : '-')
                         }
                       </div>
                     </td>
