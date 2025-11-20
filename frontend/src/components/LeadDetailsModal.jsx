@@ -302,48 +302,48 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
               <h3 className="text-lg font-semibold mb-4">Follow Up Update</h3>
               
               {/* First Row: Update Type, Stage, Priority, Call Disposition */}
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                {/* Update Type */}
-                <div className="space-y-2">
+              <div className="grid grid-cols-12 gap-4 mb-4">
+                {/* Update Type - Takes 4 columns */}
+                <div className="col-span-4 space-y-2">
                   <Label className="text-sm">Update Type</Label>
                   <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-4">
-                      <label className="flex items-center gap-2 cursor-pointer">
+                    <div className="flex items-center gap-3">
+                      <label className="flex items-center gap-1.5 cursor-pointer">
                         <input
                           type="radio"
                           value="call"
                           checked={followUpType === 'call'}
                           onChange={(e) => setFollowUpType(e.target.value)}
-                          className="w-4 h-4 accent-blue-600"
+                          className="w-4 h-4 accent-blue-600 flex-shrink-0"
                         />
                         <span className="text-sm whitespace-nowrap">Call (Phone/VC)</span>
                       </label>
-                      <label className="flex items-center gap-2 cursor-pointer">
+                      <label className="flex items-center gap-1.5 cursor-pointer">
                         <input
                           type="radio"
                           value="meeting"
                           checked={followUpType === 'meeting'}
                           onChange={(e) => setFollowUpType(e.target.value)}
-                          className="w-4 h-4 accent-blue-600"
+                          className="w-4 h-4 accent-blue-600 flex-shrink-0"
                         />
                         <span className="text-sm whitespace-nowrap">Meeting (In-Person)</span>
                       </label>
                     </div>
-                    <label className="flex items-center gap-2 cursor-pointer">
+                    <label className="flex items-center gap-1.5 cursor-pointer">
                       <input
                         type="radio"
                         value="general"
                         checked={followUpType === 'general'}
                         onChange={(e) => setFollowUpType(e.target.value)}
-                        className="w-4 h-4 accent-blue-600"
+                        className="w-4 h-4 accent-blue-600 flex-shrink-0"
                       />
                       <span className="text-sm">General</span>
                     </label>
                   </div>
                 </div>
                 
-                {/* Stage */}
-                <div className="space-y-2">
+                {/* Stage - Takes 2 columns */}
+                <div className="col-span-2 space-y-2">
                   <Label className="text-sm">
                     Stage <span className="text-red-500">*</span>
                   </Label>
@@ -361,8 +361,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   </Select>
                 </div>
                 
-                {/* Priority */}
-                <div className="space-y-2">
+                {/* Priority - Takes 3 columns */}
+                <div className="col-span-3 space-y-2">
                   <Label className="text-sm">Priority</Label>
                   <Select value={priority} onValueChange={setPriority}>
                     <SelectTrigger>
@@ -378,8 +378,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   </Select>
                 </div>
                 
-                {/* Call Disposition */}
-                <div className="space-y-2">
+                {/* Call Disposition - Takes 3 columns */}
+                <div className="col-span-3 space-y-2">
                   <Label className="text-sm">
                     Call Disposition <span className="text-red-500">*</span>
                   </Label>
