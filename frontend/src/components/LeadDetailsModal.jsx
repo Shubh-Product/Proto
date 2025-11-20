@@ -557,7 +557,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <thead className="bg-gray-50 sticky top-0">
                   <tr>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Subscription</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Mobile</th>
+                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Lead ID</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Product</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Activation</th>
                     <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Valid Till</th>
