@@ -1072,7 +1072,7 @@ export const mockWhatsAppHistory = [
 export const mockRelatedSubscriptions = [
   {
     subscription: 'SUB-2024-001-A',
-    mobile: '9876543211',
+    leadId: 'L001',
     product: 'Busy Online',
     activation: '2024-01-15',
     validTill: '2025-01-15',
@@ -1081,7 +1081,7 @@ export const mockRelatedSubscriptions = [
   },
   {
     subscription: 'SUB-2024-002-B',
-    mobile: '9876543222',
+    leadId: '-',
     product: 'Busy Desktop',
     activation: '2024-02-20',
     validTill: '2025-02-20',
@@ -1090,7 +1090,7 @@ export const mockRelatedSubscriptions = [
   },
   {
     subscription: 'SUB-2024-003-C',
-    mobile: '9876543233',
+    leadId: 'L003',
     product: 'Busy Mandi',
     activation: '2024-03-10',
     validTill: '2025-03-10',
