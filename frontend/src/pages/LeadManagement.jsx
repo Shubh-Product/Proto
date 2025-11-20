@@ -139,7 +139,7 @@ const LeadManagement = () => {
           onClick={() => setQuickFilter('fresh')}
           className="h-8"
         >
-          Fresh Leads
+          Not Attempted
         </Button>
 
         <Button
