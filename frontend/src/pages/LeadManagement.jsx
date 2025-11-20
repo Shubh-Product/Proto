@@ -336,7 +336,21 @@ const LeadManagement = () => {
                       <div className="text-sm text-gray-900">{lead.ownerPartner}</div>
                     </td>
                     <td className="py-1.5 px-4">
-                      <div className="text-sm text-gray-900">{lead.nextFollowUp}</div>
+                      <div className="text-sm text-gray-900">
+                        {lead.nextFollowUp ? 
+                          (() => {
+                            const date = new Date(lead.nextFollowUp);
+                            return isNaN(date.getTime()) ? '-' : date.toLocaleDateString('en-GB', { 
+                              day: '2-digit', 
+                              month: 'short' 
+                            }).replace(/,/g, '') + ' ' + date.toLocaleTimeString('en-GB', {
+                              hour: '2-digit',
+                              minute: '2-digit',
+                              hour12: false
+                            });
+                          })() : '-'
+                        }
+                      </div>
                     </td>
                     <td className="py-1.5 px-4">
                       <Badge className={`${getStageColor(lead.stage)} text-xs`}>
