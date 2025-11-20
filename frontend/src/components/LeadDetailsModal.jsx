@@ -77,12 +77,9 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Vintage</span>
-                  <span className="text-xs font-semibold text-gray-900">1st Year</span>
+                  <span className="text-xs font-semibold text-gray-900">{lead.vintage}</span>
                 </div>
               </div>
-
-              {/* Divider Line */}
-              <div className="border-t border-gray-300 mb-2"></div>
               
               {/* Row 2 - Upsell Secondary Details */}
               <div className="grid grid-cols-6 gap-x-4 gap-y-0 mb-2">
@@ -119,9 +116,6 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   </span>
                 </div>
               </div>
-
-              {/* Divider Line */}
-              <div className="border-t border-gray-300 mb-2"></div>
 
               {/* Row 3 - Upsell Reason */}
               <div className="grid grid-cols-1 gap-x-4 gap-y-0">
@@ -164,9 +158,6 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-xs font-semibold text-gray-900">1st Year</span>
                 </div>
               </div>
-
-              {/* Divider Line */}
-              <div className="border-t border-gray-300 mb-2"></div>
               
               {/* Row 2 - Renewal Secondary Details */}
               <div className="grid grid-cols-7 gap-x-4 gap-y-0">
