@@ -301,46 +301,50 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
             <div className="border-t pt-6">
               <h3 className="text-lg font-semibold mb-4">Follow Up Update</h3>
               
-              {/* Update Type */}
-              <div className="mb-4">
-                <Label className="text-sm mb-2 block">Update Type</Label>
-                <div className="flex gap-6">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      value="call"
-                      checked={followUpType === 'call'}
-                      onChange={(e) => setFollowUpType(e.target.value)}
-                      className="w-4 h-4"
-                    />
-                    <span className="text-sm">Call (Phone/VC)</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      value="meeting"
-                      checked={followUpType === 'meeting'}
-                      onChange={(e) => setFollowUpType(e.target.value)}
-                      className="w-4 h-4"
-                    />
-                    <span className="text-sm">Meeting (In-Person)</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      value="general"
-                      checked={followUpType === 'general'}
-                      onChange={(e) => setFollowUpType(e.target.value)}
-                      className="w-4 h-4"
-                    />
-                    <span className="text-sm">General</span>
-                  </label>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-4 gap-4">
+              {/* First Row: Update Type, Stage, Priority, Call Disposition */}
+              <div className="grid grid-cols-4 gap-4 mb-4">
+                {/* Update Type */}
                 <div className="space-y-2">
-                  <Label className="text-sm">Stage</Label>
+                  <Label className="text-sm">Update Type</Label>
+                  <div className="flex flex-col gap-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        value="call"
+                        checked={followUpType === 'call'}
+                        onChange={(e) => setFollowUpType(e.target.value)}
+                        className="w-4 h-4 accent-blue-600"
+                      />
+                      <span className="text-sm">Call (Phone/VC)</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        value="meeting"
+                        checked={followUpType === 'meeting'}
+                        onChange={(e) => setFollowUpType(e.target.value)}
+                        className="w-4 h-4 accent-blue-600"
+                      />
+                      <span className="text-sm">Meeting (In-Person)</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        value="general"
+                        checked={followUpType === 'general'}
+                        onChange={(e) => setFollowUpType(e.target.value)}
+                        className="w-4 h-4 accent-blue-600"
+                      />
+                      <span className="text-sm">General</span>
+                    </label>
+                  </div>
+                </div>
+                
+                {/* Stage */}
+                <div className="space-y-2">
+                  <Label className="text-sm">
+                    Stage <span className="text-red-500">*</span>
+                  </Label>
                   <Select value={stage} onValueChange={setStage}>
                     <SelectTrigger>
                       <SelectValue />
@@ -354,6 +358,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                     </SelectContent>
                   </Select>
                 </div>
+                
+                {/* Priority */}
                 <div className="space-y-2">
                   <Label className="text-sm">Priority</Label>
                   <Select value={priority} onValueChange={setPriority}>
@@ -369,11 +375,15 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                     </SelectContent>
                   </Select>
                 </div>
+                
+                {/* Call Disposition */}
                 <div className="space-y-2">
-                  <Label className="text-sm">Call Disposition</Label>
+                  <Label className="text-sm">
+                    Call Disposition <span className="text-red-500">*</span>
+                  </Label>
                   <Select value={disposition} onValueChange={setDisposition}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select" />
+                      <SelectValue placeholder="Select Call Disposition" />
                     </SelectTrigger>
                     <SelectContent>
                       {mockDispositions.map((d) => (
@@ -384,38 +394,49 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                     </SelectContent>
                   </Select>
                 </div>
+              </div>
+
+              {/* Second Row: Next Follow Up Type, Next Follow Up */}
+              <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="space-y-2">
-                  <Label className="text-sm">Next FU Type</Label>
+                  <Label className="text-sm">
+                    Next Follow Up Type <span className="text-red-500">*</span>
+                  </Label>
                   <Select value={nextFUType} onValueChange={setNextFUType} disabled={stage === 'matured' || stage === 'dropped'}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="call">Call (Phone/VC)</SelectItem>
-                      <SelectItem value="meeting">Meeting (In-Person)</SelectItem>
+                      <SelectItem value="call">Call</SelectItem>
+                      <SelectItem value="meeting">Meeting</SelectItem>
                       <SelectItem value="general">General</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="space-y-2 col-span-2">
-                  <Label className="text-sm">Next Follow Up Date Time</Label>
+                <div className="space-y-2">
+                  <Label className="text-sm">
+                    Next Follow Up <span className="text-red-500">*</span>
+                  </Label>
                   <Input
                     type="datetime-local"
                     value={nextFUDateTime}
                     onChange={(e) => setNextFUDateTime(e.target.value)}
                     disabled={stage === 'matured' || stage === 'dropped'}
-                    placeholder="Auto +30min"
+                    placeholder="Select Next Follow Up"
                   />
                 </div>
-                <div className="space-y-2 col-span-2">
-                  <Label className="text-sm">Remarks</Label>
-                  <Textarea
-                    value={remarks}
-                    onChange={(e) => setRemarks(e.target.value)}
-                    placeholder="Enter remarks..."
-                    rows={3}
-                  />
-                </div>
+              </div>
+
+              {/* Third Row: Follow Up Remarks */}
+              <div className="space-y-2">
+                <Label className="text-sm">Follow Up Remarks</Label>
+                <Textarea
+                  value={remarks}
+                  onChange={(e) => setRemarks(e.target.value)}
+                  placeholder="Enter Remarks"
+                  rows={4}
+                  className="resize-none"
+                />
               </div>
             </div>
 
