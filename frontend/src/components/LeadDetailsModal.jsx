@@ -307,26 +307,28 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="space-y-2">
                   <Label className="text-sm">Update Type</Label>
                   <div className="flex flex-col gap-2">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        value="call"
-                        checked={followUpType === 'call'}
-                        onChange={(e) => setFollowUpType(e.target.value)}
-                        className="w-4 h-4 accent-blue-600"
-                      />
-                      <span className="text-sm">Call (Phone/VC)</span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        value="meeting"
-                        checked={followUpType === 'meeting'}
-                        onChange={(e) => setFollowUpType(e.target.value)}
-                        className="w-4 h-4 accent-blue-600"
-                      />
-                      <span className="text-sm">Meeting (In-Person)</span>
-                    </label>
+                    <div className="flex items-center gap-4">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          value="call"
+                          checked={followUpType === 'call'}
+                          onChange={(e) => setFollowUpType(e.target.value)}
+                          className="w-4 h-4 accent-blue-600"
+                        />
+                        <span className="text-sm whitespace-nowrap">Call (Phone/VC)</span>
+                      </label>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          value="meeting"
+                          checked={followUpType === 'meeting'}
+                          onChange={(e) => setFollowUpType(e.target.value)}
+                          className="w-4 h-4 accent-blue-600"
+                        />
+                        <span className="text-sm whitespace-nowrap">Meeting (In-Person)</span>
+                      </label>
+                    </div>
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
