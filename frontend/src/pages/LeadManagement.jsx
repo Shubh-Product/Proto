@@ -310,7 +310,20 @@ const LeadManagement = () => {
                     </td>
                     <td className="py-1.5 px-4">
                       <div className="text-sm text-gray-900">
-                        {leadType === 'upsell' ? (lead.offerValidity || '-') : lead.validTill}
+                        {leadType === 'upsell' ? 
+                          (lead.offerValidity ? 
+                            new Date(lead.offerValidity).toLocaleDateString('en-GB', { 
+                              day: '2-digit', 
+                              month: 'short', 
+                              year: '2-digit' 
+                            }).replace(/,/g, '') : '-') : 
+                          (lead.validTill ? 
+                            new Date(lead.validTill).toLocaleDateString('en-GB', { 
+                              day: '2-digit', 
+                              month: 'short', 
+                              year: '2-digit' 
+                            }).replace(/,/g, '') : '-')
+                        }
                       </div>
                     </td>
                     <td className="py-1.5 px-4">
