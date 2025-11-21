@@ -262,8 +262,23 @@ const Dashboard = () => {
                           <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
                         </tr>
                       ))}
-                      {/* Total Row */}
-                      <tr className="bg-gray-200 font-semibold border-t-2 border-gray-400">
+                    </tbody>
+                  </table>
+                </div>
+                {/* Fixed Total Row */}
+                <div className="overflow-x-auto border-t-2 border-gray-400">
+                  <table className="w-full table-fixed">
+                    <colgroup>
+                      <col style={{ width: '200px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
+                      <col style={{ width: '150px' }} />
+                      <col style={{ width: '120px' }} />
+                    </colgroup>
+                    <tbody>
+                      <tr className="bg-gray-200 font-semibold">
                         <td className="py-3 px-4 text-sm text-gray-900">Total</td>
                         <td className="py-3 px-4 text-sm text-center text-gray-900">
                           {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.call.done, 0)}
