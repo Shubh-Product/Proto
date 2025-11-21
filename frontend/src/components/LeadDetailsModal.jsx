@@ -182,9 +182,9 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
               
               {/* Compact Inline Header - Line 2 - Date fields and Offers */}
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
-                {/* Act */}
+                {/* Activation */}
                 <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Act:</span>
+                  <span className="text-gray-600 font-medium">Activation:</span>
                   <span className="font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
@@ -200,9 +200,9 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
-                {/* Last Ren */}
+                {/* Last Renewal */}
                 <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Last Ren:</span>
+                  <span className="text-gray-600 font-medium">Last Renewal:</span>
                   <span className="font-semibold text-gray-900">15-Jan-24</span>
                 </div>
                 <span className="text-gray-300">|</span>
