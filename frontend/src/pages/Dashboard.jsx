@@ -193,7 +193,6 @@ const Dashboard = () => {
                       <col style={{ width: '120px' }} />
                       <col style={{ width: '150px' }} />
                       <col style={{ width: '120px' }} />
-                      <col style={{ width: '120px' }} />
                     </colgroup>
                     <thead className="bg-blue-900 text-white">
                       <tr>
@@ -227,14 +226,9 @@ const Dashboard = () => {
                             Payment Received <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
-                          <div className="flex items-center justify-center gap-1">
-                            Dropped <ArrowUpDown className="w-3 h-3" />
-                          </div>
-                        </th>
                         <th className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center justify-center gap-1">
-                            Total <ArrowUpDown className="w-3 h-3" />
+                            Dropped <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
                       </tr>
@@ -252,27 +246,44 @@ const Dashboard = () => {
                       <col style={{ width: '120px' }} />
                       <col style={{ width: '150px' }} />
                       <col style={{ width: '120px' }} />
-                      <col style={{ width: '120px' }} />
                     </colgroup>
                     <tbody>
-                      {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).map((item, index) => {
-                        const total = item.call.done + item.meeting.done + item.matured + item.interested + item.paymentReceived + item.dropped;
-                        return (
-                          <tr 
-                            key={item.name} 
-                            className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
-                          >
-                            <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
-                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.call.done}</td>
-                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.meeting.done}</td>
-                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
-                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
-                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
-                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
-                            <td className="py-3 px-4 text-sm text-center font-semibold text-gray-900">{total}</td>
-                          </tr>
-                        );
-                      })}
+                      {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).map((item, index) => (
+                        <tr 
+                          key={item.name} 
+                          className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
+                        >
+                          <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.call.done}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.meeting.done}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
+                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
+                        </tr>
+                      ))}
+                      {/* Total Row */}
+                      <tr className="bg-gray-200 font-semibold border-t-2 border-gray-400">
+                        <td className="py-3 px-4 text-sm text-gray-900">Total</td>
+                        <td className="py-3 px-4 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.call.done, 0)}
+                        </td>
+                        <td className="py-3 px-4 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.meeting.done, 0)}
+                        </td>
+                        <td className="py-3 px-4 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.matured, 0)}
+                        </td>
+                        <td className="py-3 px-4 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.interested, 0)}
+                        </td>
+                        <td className="py-3 px-4 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.paymentReceived, 0)}
+                        </td>
+                        <td className="py-3 px-4 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).reduce((sum, item) => sum + item.dropped, 0)}
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
