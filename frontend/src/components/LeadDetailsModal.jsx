@@ -127,75 +127,77 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
             </>
           ) : (
             <>
-              {/* Row 1 - Renewal Primary Details */}
-              <div className="grid grid-cols-7 gap-x-4 gap-y-0 mb-2">
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Lead ID</span>
-                  <span className="text-xs font-semibold text-gray-900">{lead.id}</span>
+              {/* Compact Inline Header - Line 1 */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mb-2">
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold text-gray-900">{lead.id}</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Subscription ID</span>
-                  <span className="text-xs font-semibold text-gray-900">{lead.subscriptionId}</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold text-gray-900">{lead.subscriptionId}</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Product</span>
-                  <span className="text-xs font-semibold text-gray-900">{lead.product}</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold text-gray-900">{lead.product}</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Activation</span>
-                  <span className="text-xs font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold text-gray-900">1st Year</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Valid Till</span>
-                  <span className="text-xs font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold text-blue-700">Weekly</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Last Active</span>
-                  <span className="text-xs font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold text-gray-900">Regular</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Vintage</span>
-                  <span className="text-xs font-semibold text-gray-900">1st Year</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
+                </div>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
+                </div>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
+                </div>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1">
+                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
+                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
+                  </span>
                 </div>
               </div>
               
-              {/* Row 2 - Renewal Secondary Details */}
-              <div className="grid grid-cols-7 gap-x-4 gap-y-0">
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Activeness</span>
-                  <span className="text-xs font-semibold text-blue-700">Weekly</span>
+              {/* Compact Inline Header - Line 2 */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Activation:</span>
+                  <span className="font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">License Type</span>
-                  <span className="text-xs font-semibold text-gray-900">Regular</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Valid Till:</span>
+                  <span className="font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Return Download</span>
-                  <span className={`text-xs font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Last Active:</span>
+                  <span className="font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Return Upload</span>
-                  <span className={`text-xs font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">E-Way Bill</span>
-                  <span className={`text-xs font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">E-Invoice</span>
-                  <span className={`text-xs font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Offers</span>
-                  <span className="text-xs font-semibold text-purple-700 truncate" title={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Offers:</span>
+                  <span className="font-semibold text-purple-700 truncate max-w-[200px]" title={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}>
                     {lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}
                   </span>
                 </div>
