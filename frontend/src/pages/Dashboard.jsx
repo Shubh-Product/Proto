@@ -427,7 +427,7 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* To Do & Actionables Tables - Both in same row */}
+      {/* To Do & Expiring Tables - Both in same row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* To Do Table */}
         <Card className="shadow-md">
