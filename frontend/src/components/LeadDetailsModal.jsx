@@ -158,13 +158,13 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">G-Upload</span>
                 </div>
-                {/* EWB - Title only */}
+                {/* E-WB - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">EWB</span>
+                  <span className="font-semibold text-gray-900">E-WB</span>
                 </div>
-                {/* EINV - Title only */}
+                {/* E-INV - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">EINV</span>
+                  <span className="font-semibold text-gray-900">E-INV</span>
                 </div>
                 {/* PERP EM */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
@@ -173,6 +173,10 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 {/* VER 21 (13.3) */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">VER 21 (13.3)</span>
+                </div>
+                {/* Active - Green color */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-green-600">Active</span>
                 </div>
               </div>
               
