@@ -214,77 +214,77 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
           <TabsContent value="details" className="space-y-6 mt-4 overflow-y-auto flex-1">
-            {/* Lead Details Section */}
+            {/* Lead Details Section - Plain Text Display */}
             <div>
               {/* Row 1 */}
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                <div className="space-y-2">
-                  <Label className="text-sm">Contact Person</Label>
-                  <Input value="Dheeraj Kumar" readOnly className="bg-gray-50" />
+              <div className="grid grid-cols-4 gap-x-8 gap-y-3 mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Contact Person:</span>
+                  <span className="text-sm text-gray-900 font-semibold">Dheeraj Kumar</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Company Name</Label>
-                  <Input value="Shree Mahavir Steel" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Company Name:</span>
+                  <span className="text-sm text-gray-900 font-semibold">Shree Mahavir Steel</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Mobile</Label>
-                  <Input value="9999888877" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[80px]">Mobile:</span>
+                  <span className="text-sm text-gray-900 font-semibold">9999888877</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Alternate No.</Label>
-                  <Input value="9876543210" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[100px]">Alternate No.:</span>
+                  <span className="text-sm text-gray-900 font-semibold">9876543210</span>
                 </div>
               </div>
 
               {/* Row 2 */}
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                <div className="space-y-2">
-                  <Label className="text-sm">Owner Partner</Label>
-                  <Input value="Sudhanshu Kumar" readOnly className="bg-gray-50" />
+              <div className="grid grid-cols-4 gap-x-8 gap-y-3 mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Owner Partner:</span>
+                  <span className="text-sm text-gray-900 font-semibold">Sudhanshu Kumar</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Email ID</Label>
-                  <Input value="dheeraj@mahavirsteel.com" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Email ID:</span>
+                  <span className="text-sm text-gray-900 font-semibold">dheeraj@mahavirsteel.com</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Pincode</Label>
-                  <Input value="110001" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[80px]">Pincode:</span>
+                  <span className="text-sm text-gray-900 font-semibold">110001</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">City</Label>
-                  <Input value="New Delhi" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[100px]">City:</span>
+                  <span className="text-sm text-gray-900 font-semibold">New Delhi</span>
                 </div>
               </div>
 
               {/* Row 3 */}
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                <div className="space-y-2">
-                  <Label className="text-sm">State</Label>
-                  <Input value="Delhi" readOnly className="bg-gray-50" />
+              <div className="grid grid-cols-4 gap-x-8 gap-y-3 mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">State:</span>
+                  <span className="text-sm text-gray-900 font-semibold">Delhi</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Status</Label>
-                  <Input value="Active" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Status:</span>
+                  <span className="text-sm text-gray-900 font-semibold">Active</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Subscription Status</Label>
-                  <Input value="Active" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[80px]">Subscription Status:</span>
+                  <span className="text-sm text-gray-900 font-semibold">Active</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Model</Label>
-                  <Input value="23.0" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[100px]">Model:</span>
+                  <span className="text-sm text-gray-900 font-semibold">23.0</span>
                 </div>
               </div>
 
               {/* Row 4 */}
-              <div className="grid grid-cols-4 gap-4">
-                <div className="space-y-2">
-                  <Label className="text-sm">Release</Label>
-                  <Input value="5.1" readOnly className="bg-gray-50" />
+              <div className="grid grid-cols-4 gap-x-8 gap-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Release:</span>
+                  <span className="text-sm text-gray-900 font-semibold">5.1</span>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm">Version</Label>
-                  <Input value="23.0.5.1" readOnly className="bg-gray-50" />
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-600 min-w-[120px]">Version:</span>
+                  <span className="text-sm text-gray-900 font-semibold">23.0.5.1</span>
                 </div>
               </div>
             </div>
