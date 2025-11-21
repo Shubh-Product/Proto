@@ -186,6 +186,11 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 </div>
                 <span className="text-gray-300">|</span>
                 <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Last Renewal:</span>
+                  <span className="font-semibold text-gray-900">15-Jan-24</span>
+                </div>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Offers:</span>
                   <span className="font-semibold text-purple-700 truncate max-w-[200px]" title={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}>
                     {lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}
