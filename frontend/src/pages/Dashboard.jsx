@@ -252,22 +252,27 @@ const Dashboard = () => {
                       <col style={{ width: '120px' }} />
                       <col style={{ width: '150px' }} />
                       <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
                     </colgroup>
                     <tbody>
-                      {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).map((item, index) => (
-                        <tr 
-                          key={item.name} 
-                          className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
-                        >
-                          <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.call.done}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.meeting.done}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
-                          <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
-                        </tr>
-                      ))}
+                      {(leadType === 'upsell' && viewType === 'offerswise' ? mockOperationalUpsellOffersMetrics : mockOperationalMetrics).map((item, index) => {
+                        const total = item.call.done + item.meeting.done + item.matured + item.interested + item.paymentReceived + item.dropped;
+                        return (
+                          <tr 
+                            key={item.name} 
+                            className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
+                          >
+                            <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
+                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.call.done}</td>
+                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.meeting.done}</td>
+                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.matured}</td>
+                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.interested}</td>
+                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.paymentReceived}</td>
+                            <td className="py-3 px-4 text-sm text-center text-gray-900">{item.dropped}</td>
+                            <td className="py-3 px-4 text-sm text-center font-semibold text-gray-900">{total}</td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
