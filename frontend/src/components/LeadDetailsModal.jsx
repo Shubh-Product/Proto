@@ -176,8 +176,33 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 </div>
               </div>
               
-              {/* Compact Inline Header - Line 2 - Offers only */}
+              {/* Compact Inline Header - Line 2 - Date fields and Offers */}
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+                {/* Act */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Act:</span>
+                  <span className="font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                </div>
+                <span className="text-gray-300">|</span>
+                {/* Valid Till */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Valid Till:</span>
+                  <span className="font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                </div>
+                <span className="text-gray-300">|</span>
+                {/* Last Active */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Last Active:</span>
+                  <span className="font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                </div>
+                <span className="text-gray-300">|</span>
+                {/* Last Ren */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-600 font-medium">Last Ren:</span>
+                  <span className="font-semibold text-gray-900">15-Jan-24</span>
+                </div>
+                <span className="text-gray-300">|</span>
+                {/* Offers */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Offers:</span>
                   <span className="font-semibold text-purple-700 truncate max-w-[200px]" title={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}>
