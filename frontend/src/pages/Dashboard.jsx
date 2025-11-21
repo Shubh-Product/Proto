@@ -447,6 +447,59 @@ const Dashboard = () => {
                     </tbody>
                   </table>
                 </div>
+                {/* Fixed Total Row */}
+                <div className="overflow-x-auto border-t-2 border-gray-400">
+                  <table className="w-full table-fixed">
+                    <colgroup>
+                      <col style={{ width: '180px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                      <col style={{ width: '100px' }} />
+                    </colgroup>
+                    <tbody>
+                      <tr className="bg-gray-200 font-semibold">
+                        <td className="py-3 px-4 text-sm text-gray-900">Total</td>
+                        {/* M-1 Totals */}
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mMinus1.due, 0)}
+                        </td>
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {((leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mMinus1.renewed, 0) / 
+                            (leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mMinus1.due, 0) * 100).toFixed(1)}%
+                        </td>
+                        {/* M0 Totals */}
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.m0.due, 0)}
+                        </td>
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {((leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.m0.renewed, 0) / 
+                            (leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.m0.due, 0) * 100).toFixed(1)}%
+                        </td>
+                        {/* M+1 Totals */}
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mPlus1.due, 0)}
+                        </td>
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {((leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mPlus1.renewed, 0) / 
+                            (leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mPlus1.due, 0) * 100).toFixed(1)}%
+                        </td>
+                        {/* M+2 Totals */}
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {(leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mPlus2.due, 0)}
+                        </td>
+                        <td className="py-3 px-3 text-sm text-center text-gray-900">
+                          {((leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mPlus2.renewed, 0) / 
+                            (leadType === 'upsell' && viewType === 'offerswise' ? mockUpsellOffers4MonthMetrics : mockRenewal4MonthMetrics).reduce((sum, item) => sum + item.mPlus2.due, 0) * 100).toFixed(1)}%
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </>
             )}
           </div>
