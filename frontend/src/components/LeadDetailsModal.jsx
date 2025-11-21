@@ -128,7 +128,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
           ) : (
             <>
               {/* Compact Inline Header - Line 1 with Cell Style */}
-              <div className="flex flex-wrap items-center gap-2 text-xs mb-2">
+              <div className="flex items-center gap-2 text-xs mb-2 overflow-x-auto">
                 {/* Subscription ID - Outside cell, larger and bold */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-base font-bold text-gray-900">1127588751</span>
