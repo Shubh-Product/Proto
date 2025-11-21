@@ -166,29 +166,13 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">EINV</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                {/* Act */}
-                <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Act:</span>
-                  <span className="font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
+                {/* PERP EM */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">PERP EM</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                {/* Valid Till */}
-                <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Valid Till:</span>
-                  <span className="font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
-                </div>
-                <span className="text-gray-300">|</span>
-                {/* Last Active */}
-                <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Last Active:</span>
-                  <span className="font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
-                </div>
-                <span className="text-gray-300">|</span>
-                {/* Last Ren */}
-                <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Last Ren:</span>
-                  <span className="font-semibold text-gray-900">15-Jan-24</span>
+                {/* VER 21 (13.3) */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">VER 21 (13.3)</span>
                 </div>
               </div>
               
