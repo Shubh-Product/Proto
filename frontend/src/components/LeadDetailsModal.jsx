@@ -127,51 +127,42 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
             </>
           ) : (
             <>
-              {/* Compact Inline Header - Line 1 */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs mb-2">
-                <div className="flex items-center gap-1">
+              {/* Compact Inline Header - Line 1 with Cell Style */}
+              <div className="flex flex-wrap items-center gap-2 text-xs mb-2">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">{lead.id}</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">{lead.subscriptionId}</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">{lead.product}</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">1st Year</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-blue-700">Weekly</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">Regular</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
                     {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
                   </span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
                     {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
                   </span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
                     {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
                   </span>
                 </div>
-                <span className="text-gray-300">|</span>
-                <div className="flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
                     {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
                   </span>
