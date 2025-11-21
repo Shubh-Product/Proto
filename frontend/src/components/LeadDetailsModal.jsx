@@ -166,30 +166,34 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">EINV</span>
                 </div>
-              </div>
-              
-              {/* Compact Inline Header - Line 2 */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+                <span className="text-gray-300">|</span>
+                {/* Activation */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Activation:</span>
                   <span className="font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
+                {/* Valid Till */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Valid Till:</span>
                   <span className="font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
+                {/* Last Active */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Last Active:</span>
                   <span className="font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
+                {/* Last Renewal */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Last Renewal:</span>
                   <span className="font-semibold text-gray-900">15-Jan-24</span>
                 </div>
-                <span className="text-gray-300">|</span>
+              </div>
+              
+              {/* Compact Inline Header - Line 2 - Offers only */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                 <div className="flex items-center gap-1.5">
                   <span className="text-gray-600 font-medium">Offers:</span>
                   <span className="font-semibold text-purple-700 truncate max-w-[200px]" title={lead.offers.length > 0 ? lead.offers.join(', ') : 'No offers'}>
