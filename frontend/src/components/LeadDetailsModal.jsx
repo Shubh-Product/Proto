@@ -134,9 +134,9 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-base font-bold text-gray-900">1127588751</span>
                 </div>
                 <span className="text-gray-300">|</span>
-                {/* Product */}
+                {/* Product - Replace "Busy Desktop" with "Desktop" */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">{lead.product}</span>
+                  <span className="font-semibold text-gray-900">{lead.product.replace('Busy Desktop', 'Desktop')}</span>
                 </div>
                 {/* Vintage */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
@@ -150,21 +150,21 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">Regular</span>
                 </div>
-                {/* Return Download - Title only */}
+                {/* G-Download - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">Return Download</span>
+                  <span className="font-semibold text-gray-900">G-Download</span>
                 </div>
-                {/* Return Upload - Title only */}
+                {/* G-Upload - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">Return Upload</span>
+                  <span className="font-semibold text-gray-900">G-Upload</span>
                 </div>
-                {/* E-Way Bill - Title only */}
+                {/* EWB - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">E-Way Bill</span>
+                  <span className="font-semibold text-gray-900">EWB</span>
                 </div>
-                {/* E-Invoice - Title only */}
+                {/* EINV - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">E-Invoice</span>
+                  <span className="font-semibold text-gray-900">EINV</span>
                 </div>
               </div>
               
