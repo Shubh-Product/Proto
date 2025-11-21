@@ -129,43 +129,42 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
             <>
               {/* Compact Inline Header - Line 1 with Cell Style */}
               <div className="flex flex-wrap items-center gap-2 text-xs mb-2">
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">{lead.id}</span>
-                </div>
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                {/* Subscription ID - Outside cell */}
+                <div className="flex items-center gap-1.5">
                   <span className="font-semibold text-gray-900">{lead.subscriptionId}</span>
                 </div>
+                <span className="text-gray-300">|</span>
+                {/* Product */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">{lead.product}</span>
                 </div>
+                {/* Vintage */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">1st Year</span>
                 </div>
+                {/* Activeness */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-blue-700">Weekly</span>
                 </div>
+                {/* License Type */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">Regular</span>
                 </div>
+                {/* Return Download - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
+                  <span className="font-semibold text-gray-900">Return Download</span>
                 </div>
+                {/* Return Upload - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
+                  <span className="font-semibold text-gray-900">Return Upload</span>
                 </div>
+                {/* E-Way Bill - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
+                  <span className="font-semibold text-gray-900">E-Way Bill</span>
                 </div>
+                {/* E-Invoice - Title only */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className={`font-semibold ${lead.gstUsage === 'Active' ? 'text-green-600' : 'text-red-600'}`}>
-                    {lead.gstUsage === 'Active' ? 'Yes' : 'No'}
-                  </span>
+                  <span className="font-semibold text-gray-900">E-Invoice</span>
                 </div>
               </div>
               
