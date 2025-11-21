@@ -374,23 +374,6 @@ const Dashboard = () => {
                           className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-gray-100`}
                         >
                           <td className="py-3 px-4 text-sm font-medium text-gray-900">{item.name}</td>
-                          {/* M-2 Data */}
-                          <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus2.due}</td>
-                          <td className="py-3 px-3 text-sm text-center">
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <span className={`font-semibold cursor-help ${item.mMinus2.percentage > 70 ? 'text-green-600' : item.mMinus2.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
-                                  {item.mMinus2.percentage}%
-                                </span>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <div className="text-xs">
-                                  <div>Matured ({leadType === 'upsell' ? 'Upsell' : 'Renewal'}) = {item.mMinus2.renewed}</div>
-                                  <div>Total {leadType === 'upsell' ? 'Leads Assigned' : 'Due Leads'} = {item.mMinus2.due}</div>
-                                </div>
-                              </TooltipContent>
-                            </Tooltip>
-                          </td>
                           {/* M-1 Data */}
                           <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mMinus1.due}</td>
                           <td className="py-3 px-3 text-sm text-center">
@@ -438,6 +421,23 @@ const Dashboard = () => {
                                 <div className="text-xs">
                                   <div>Matured ({leadType === 'upsell' ? 'Upsell' : 'Renewal'}) = {item.mPlus1.renewed}</div>
                                   <div>Total {leadType === 'upsell' ? 'Leads Assigned' : 'Due Leads'} = {item.mPlus1.due}</div>
+                                </div>
+                              </TooltipContent>
+                            </Tooltip>
+                          </td>
+                          {/* M+2 Data */}
+                          <td className="py-3 px-3 text-sm text-center text-gray-900">{item.mPlus2.due}</td>
+                          <td className="py-3 px-3 text-sm text-center">
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <span className="text-gray-400 font-semibold cursor-help">
+                                  {item.mPlus2.percentage}%
+                                </span>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <div className="text-xs">
+                                  <div>Matured ({leadType === 'upsell' ? 'Upsell' : 'Renewal'}) = {item.mPlus2.renewed}</div>
+                                  <div>Total {leadType === 'upsell' ? 'Leads Assigned' : 'Due Leads'} = {item.mPlus2.due}</div>
                                 </div>
                               </TooltipContent>
                             </Tooltip>
