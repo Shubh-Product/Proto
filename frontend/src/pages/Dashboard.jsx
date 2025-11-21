@@ -613,14 +613,12 @@ const Dashboard = () => {
                   radius={[6, 6, 0, 0]}
                   maxBarSize={60}
                 >
-                  {trendPeriod === '18M' && (
-                    <LabelList 
-                      dataKey="percentage" 
-                      position="top" 
-                      style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1f2937' }}
-                      formatter={(value) => `${value}%`}
-                    />
-                  )}
+                  <LabelList 
+                    dataKey="percentage" 
+                    position="top" 
+                    style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1f2937' }}
+                    formatter={(value) => `${value}%`}
+                  />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
