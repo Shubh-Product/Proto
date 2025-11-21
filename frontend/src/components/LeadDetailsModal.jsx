@@ -216,86 +216,77 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
           <TabsContent value="details" className="space-y-6 mt-4 overflow-y-auto flex-1">
             {/* Lead Details Section */}
             <div>
-              {/* First Row - Always Visible */}
-              <div className="grid grid-cols-4 gap-4">
+              {/* Row 1 */}
+              <div className="grid grid-cols-4 gap-4 mb-4">
                 <div className="space-y-2">
                   <Label className="text-sm">Contact Person</Label>
-                  <Input value={contactPerson} onChange={(e) => setContactPerson(e.target.value)} />
+                  <Input value="Dheeraj Kumar" readOnly className="bg-gray-50" />
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm">Company Name</Label>
-                  <Input value={lead.company} readOnly className="bg-gray-50" />
+                  <Input value="Shree Mahavir Steel" readOnly className="bg-gray-50" />
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm">Mobile</Label>
-                  <Input value={mobile} onChange={(e) => setMobile(e.target.value)} />
+                  <Input value="9999888877" readOnly className="bg-gray-50" />
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm">Alternate No.</Label>
-                  <Input value={alternateNo} onChange={(e) => setAlternateNo(e.target.value)} />
+                  <Input value="9876543210" readOnly className="bg-gray-50" />
                 </div>
               </div>
 
-              {/* View More/Less Link */}
-              <div className="flex justify-end mt-2">
-                <button
-                  onClick={() => setShowMoreDetails(!showMoreDetails)}
-                  className="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
-                >
-                  {showMoreDetails ? 'View Less' : 'View More'}
-                </button>
+              {/* Row 2 */}
+              <div className="grid grid-cols-4 gap-4 mb-4">
+                <div className="space-y-2">
+                  <Label className="text-sm">Owner Partner</Label>
+                  <Input value="Sudhanshu Kumar" readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Email ID</Label>
+                  <Input value="dheeraj@mahavirsteel.com" readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Pincode</Label>
+                  <Input value="110001" readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">City</Label>
+                  <Input value="New Delhi" readOnly className="bg-gray-50" />
+                </div>
               </div>
 
-              {/* Additional Fields - Show/Hide based on state */}
-              {showMoreDetails && (
-                <div className="grid grid-cols-4 gap-4 mt-4">
-                  {/* Row 1 */}
-                  <div className="space-y-2">
-                    <Label className="text-sm">Owner Partner</Label>
-                    <Input value={lead.ownerPartner} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Email ID</Label>
-                    <Input value={lead.email} onChange={(e) => {}} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Pincode</Label>
-                    <Input value={lead.pincode || 'N/A'} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">City</Label>
-                    <Input value={lead.city} readOnly className="bg-gray-50" />
-                  </div>
-
-                  {/* Row 2 */}
-                  <div className="space-y-2">
-                    <Label className="text-sm">State</Label>
-                    <Input value={lead.state || 'N/A'} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Status</Label>
-                    <Input value={lead.status || 'Active'} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Subscription Status</Label>
-                    <Input value={lead.subscriptionStatus || 'Active'} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Model</Label>
-                    <Input value={lead.model || 'N/A'} readOnly className="bg-gray-50" />
-                  </div>
-
-                  {/* Row 3 */}
-                  <div className="space-y-2">
-                    <Label className="text-sm">Release</Label>
-                    <Input value={lead.release || 'N/A'} readOnly className="bg-gray-50" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-sm">Version</Label>
-                    <Input value={lead.version || 'N/A'} readOnly className="bg-gray-50" />
-                  </div>
+              {/* Row 3 */}
+              <div className="grid grid-cols-4 gap-4 mb-4">
+                <div className="space-y-2">
+                  <Label className="text-sm">State</Label>
+                  <Input value="Delhi" readOnly className="bg-gray-50" />
                 </div>
-              )}
+                <div className="space-y-2">
+                  <Label className="text-sm">Status</Label>
+                  <Input value="Active" readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Subscription Status</Label>
+                  <Input value="Active" readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Model</Label>
+                  <Input value="23.0" readOnly className="bg-gray-50" />
+                </div>
+              </div>
+
+              {/* Row 4 */}
+              <div className="grid grid-cols-4 gap-4">
+                <div className="space-y-2">
+                  <Label className="text-sm">Release</Label>
+                  <Input value="5.1" readOnly className="bg-gray-50" />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-sm">Version</Label>
+                  <Input value="23.0.5.1" readOnly className="bg-gray-50" />
+                </div>
+              </div>
             </div>
 
             {/* Follow Up Update Section - Part of Details Tab */}
