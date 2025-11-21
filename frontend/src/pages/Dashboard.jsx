@@ -392,8 +392,8 @@ const Dashboard = () => {
                             </Tooltip>
                           </td>
                           {/* M0 Data - Current Month Highlighted */}
-                          <td className="py-3 px-3 text-sm text-center text-gray-900 bg-blue-50">{item.m0.due}</td>
-                          <td className="py-3 px-3 text-sm text-center bg-blue-50">
+                          <td className="py-3 px-3 text-sm text-center text-gray-900 bg-gray-100">{item.m0.due}</td>
+                          <td className="py-3 px-3 text-sm text-center bg-gray-100">
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <span className={`font-semibold cursor-help ${item.m0.percentage > 70 ? 'text-green-600' : item.m0.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
