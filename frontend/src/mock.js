@@ -889,6 +889,26 @@ export const mockTrendData = {
     { month: 'May 24', percentage: 58.5 },
     { month: 'Jun 24', percentage: 62.3 },
     { month: 'Jul 24', percentage: 65.8 }
+  ],
+  '18M': [
+    { month: 'Feb 23', percentage: 48.3 },
+    { month: 'Mar 23', percentage: 49.1 },
+    { month: 'Apr 23', percentage: 49.8 },
+    { month: 'May 23', percentage: 50.5 },
+    { month: 'Jun 23', percentage: 50.9 },
+    { month: 'Jul 23', percentage: 51.0 },
+    { month: 'Aug 23', percentage: 51.2 },
+    { month: 'Sep 23', percentage: 52.8 },
+    { month: 'Oct 23', percentage: 53.5 },
+    { month: 'Nov 23', percentage: 54.1 },
+    { month: 'Dec 23', percentage: 55.3 },
+    { month: 'Jan 24', percentage: 53.9 },
+    { month: 'Feb 24', percentage: 54.2 },
+    { month: 'Mar 24', percentage: 56.8 },
+    { month: 'Apr 24', percentage: 57.9 },
+    { month: 'May 24', percentage: 58.5 },
+    { month: 'Jun 24', percentage: 62.3 },
+    { month: 'Jul 24', percentage: 65.8 }
   ]
 };
 
