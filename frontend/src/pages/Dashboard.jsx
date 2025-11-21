@@ -466,12 +466,12 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Actionables Table */}
+        {/* Expiring Table */}
         <Card className="shadow-md">
           <CardHeader className="border-b pb-3">
             <CardTitle className="text-lg font-bold flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-orange-600" />
-              Actionables
+              Expiring
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
