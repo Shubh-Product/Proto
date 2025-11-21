@@ -224,8 +224,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 </div>
               </div>
 
-              {/* Row 2 - 9 fields (including date fields) */}
-              <div className="grid grid-cols-9 gap-x-4 gap-y-3 mb-3">
+              {/* Row 2 - 5 fields */}
+              <div className="grid grid-cols-5 gap-x-6 gap-y-3 mb-3">
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-medium text-gray-600">Email ID:</span>
                   <span className="text-sm text-gray-900 font-semibold">dheeraj@mahavirsteel.com</span>
@@ -245,26 +245,6 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-medium text-gray-600">Status:</span>
                   <span className="text-sm text-gray-900 font-semibold">Active</span>
-                </div>
-                {/* Act */}
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Act:</span>
-                  <span className="text-sm text-gray-900 font-semibold">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
-                </div>
-                {/* Valid Till */}
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Valid Till:</span>
-                  <span className="text-sm font-bold text-red-600">{new Date(lead.validTill).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
-                </div>
-                {/* Last Active */}
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Last Active:</span>
-                  <span className="text-sm text-gray-900 font-semibold">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
-                </div>
-                {/* Last Ren */}
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Last Ren:</span>
-                  <span className="text-sm text-gray-900 font-semibold">15-Jan-24</span>
                 </div>
               </div>
 
