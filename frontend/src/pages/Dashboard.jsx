@@ -413,7 +413,7 @@ const Dashboard = () => {
                           <td className="py-3 px-3 text-sm text-center">
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                <span className="text-gray-400 font-semibold cursor-help">
+                                <span className={`font-semibold cursor-help ${item.mPlus1.percentage > 70 ? 'text-green-600' : item.mPlus1.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
                                   {item.mPlus1.percentage}%
                                 </span>
                               </TooltipTrigger>
@@ -430,7 +430,7 @@ const Dashboard = () => {
                           <td className="py-3 px-3 text-sm text-center">
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                <span className="text-gray-400 font-semibold cursor-help">
+                                <span className={`font-semibold cursor-help ${item.mPlus2.percentage > 70 ? 'text-green-600' : item.mPlus2.percentage > 60 ? 'text-blue-600' : 'text-orange-600'}`}>
                                   {item.mPlus2.percentage}%
                                 </span>
                               </TooltipTrigger>
