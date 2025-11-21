@@ -330,11 +330,8 @@ const Dashboard = () => {
                         <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
                           Oct 25
                         </th>
-                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-700">
-                          <div className="flex items-center justify-center gap-1">
-                            <span>Nov 25</span>
-                            <span className="text-xs bg-yellow-400 text-blue-900 px-1.5 py-0.5 rounded font-bold">Current</span>
-                          </div>
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-800">
+                          Nov 25
                         </th>
                         <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
                           Dec 25
