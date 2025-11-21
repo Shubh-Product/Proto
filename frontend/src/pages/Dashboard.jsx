@@ -328,16 +328,16 @@ const Dashboard = () => {
                           </div>
                         </th>
                         <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
-                          Past Month (M-2)
-                        </th>
-                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
                           Previous Month (M-1)
                         </th>
                         <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
                           Current Month (M0)
                         </th>
-                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900">
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900">
                           Upcoming Month (M+1)
+                        </th>
+                        <th colSpan="2" className="py-2 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900">
+                          Next Month (M+2)
                         </th>
                       </tr>
                       <tr>
