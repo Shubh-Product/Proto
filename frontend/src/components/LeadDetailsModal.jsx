@@ -127,44 +127,15 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
             </>
           ) : (
             <>
-              {/* Compact Inline Header - Line 1 with Cell Style */}
+              {/* Compact Inline Header - Line 1 with Cell Style - Rearranged */}
               <div className="flex items-center gap-2 text-xs mb-2 overflow-x-auto">
-                {/* Subscription ID - Outside cell, larger and bold */}
+                {/* 1127588751 - Subscription ID - Outside cell, larger and bold */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-base font-bold text-gray-900">1127588751</span>
                 </div>
-                <span className="text-gray-300">|</span>
-                {/* Product - Replace "Busy Desktop" with "Desktop" */}
+                {/* Desktop - Product */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">{lead.product.replace('Busy Desktop', 'Desktop')}</span>
-                </div>
-                {/* Vintage */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">1st Year</span>
-                </div>
-                {/* Activeness */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-blue-700">Weekly</span>
-                </div>
-                {/* License Type */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">Regular</span>
-                </div>
-                {/* G-Download - Title only */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">G-Download</span>
-                </div>
-                {/* G-Upload - Title only */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">G-Upload</span>
-                </div>
-                {/* E-WB - Title only */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">E-WB</span>
-                </div>
-                {/* E-INV - Title only */}
-                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
-                  <span className="font-semibold text-gray-900">E-INV</span>
+                  <span className="font-semibold text-gray-900">Desktop</span>
                 </div>
                 {/* PERP EM */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
@@ -174,9 +145,37 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-gray-900">VER 21 (13.3)</span>
                 </div>
+                {/* Regular - License Type */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">Regular</span>
+                </div>
                 {/* Active - Green color */}
                 <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
                   <span className="font-semibold text-green-600">Active</span>
+                </div>
+                {/* 1st Year - Vintage */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">1st Year</span>
+                </div>
+                {/* Weekly - Activeness */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-blue-700">Weekly</span>
+                </div>
+                {/* G-Download */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">G-Download</span>
+                </div>
+                {/* G-Upload */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">G-Upload</span>
+                </div>
+                {/* E-WB */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">E-WB</span>
+                </div>
+                {/* E-INV */}
+                <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded">
+                  <span className="font-semibold text-gray-900">E-INV</span>
                 </div>
               </div>
               
