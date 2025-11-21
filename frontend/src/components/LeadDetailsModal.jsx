@@ -48,7 +48,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl h-[85vh] flex flex-col">
+      <DialogContent className="max-w-[95vw] h-[85vh] flex flex-col">
         {/* Header Info Section - Compact Layout */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 border-b px-6 py-3 -mt-6 -mx-6 shadow-sm">
           {leadType === 'upsell' ? (
