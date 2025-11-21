@@ -276,26 +276,6 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-sm text-gray-900 font-semibold">Active</span>
                 </div>
               </div>
-
-              {/* Row 3 - 4 fields */}
-              <div className="grid grid-cols-5 gap-x-6 gap-y-3">
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Subscription Status:</span>
-                  <span className="text-sm text-gray-900 font-semibold">Active</span>
-                </div>
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Model:</span>
-                  <span className="text-sm text-gray-900 font-semibold">23.0</span>
-                </div>
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Release:</span>
-                  <span className="text-sm text-gray-900 font-semibold">5.1</span>
-                </div>
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-medium text-gray-600">Version:</span>
-                  <span className="text-sm text-gray-900 font-semibold">23.0.5.1</span>
-                </div>
-              </div>
             </div>
 
             {/* Follow Up Update Section - Part of Details Tab */}
