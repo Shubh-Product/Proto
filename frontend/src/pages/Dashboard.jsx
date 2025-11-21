@@ -193,6 +193,7 @@ const Dashboard = () => {
                       <col style={{ width: '120px' }} />
                       <col style={{ width: '150px' }} />
                       <col style={{ width: '120px' }} />
+                      <col style={{ width: '120px' }} />
                     </colgroup>
                     <thead className="bg-blue-900 text-white">
                       <tr>
@@ -226,9 +227,14 @@ const Dashboard = () => {
                             Payment Received <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
-                        <th className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
+                        <th className="py-3 px-4 text-center text-sm font-semibold border-r border-blue-800 sticky top-0 bg-blue-900 z-10">
                           <div className="flex items-center justify-center gap-1">
                             Dropped <ArrowUpDown className="w-3 h-3" />
+                          </div>
+                        </th>
+                        <th className="py-3 px-4 text-center text-sm font-semibold sticky top-0 bg-blue-900 z-10">
+                          <div className="flex items-center justify-center gap-1">
+                            Total <ArrowUpDown className="w-3 h-3" />
                           </div>
                         </th>
                       </tr>
