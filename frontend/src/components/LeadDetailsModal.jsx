@@ -167,9 +167,9 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="font-semibold text-gray-900">EINV</span>
                 </div>
                 <span className="text-gray-300">|</span>
-                {/* Activation */}
+                {/* Act */}
                 <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Activation:</span>
+                  <span className="text-gray-600 font-medium">Act:</span>
                   <span className="font-semibold text-gray-900">{new Date(lead.activationDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
@@ -185,9 +185,9 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="font-semibold text-gray-900">{new Date(lead.lastActive).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }).replace(/ /g, '-')}</span>
                 </div>
                 <span className="text-gray-300">|</span>
-                {/* Last Renewal */}
+                {/* Last Ren */}
                 <div className="flex items-center gap-1.5">
-                  <span className="text-gray-600 font-medium">Last Renewal:</span>
+                  <span className="text-gray-600 font-medium">Last Ren:</span>
                   <span className="font-semibold text-gray-900">15-Jan-24</span>
                 </div>
               </div>
