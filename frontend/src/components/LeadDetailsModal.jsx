@@ -214,10 +214,10 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
           <TabsContent value="details" className="space-y-6 mt-4 overflow-y-auto flex-1">
-            {/* Lead Details Section - Plain Text Display in 2 Rows */}
+            {/* Lead Details Section - Plain Text Display in 3 Rows */}
             <div>
-              {/* Row 1 - 7 fields */}
-              <div className="grid grid-cols-7 gap-x-4 gap-y-3 mb-3">
+              {/* Row 1 - 5 fields */}
+              <div className="grid grid-cols-5 gap-x-6 gap-y-3 mb-3">
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-medium text-gray-600">Contact Person:</span>
                   <span className="text-sm text-gray-900 font-semibold">Dheeraj Kumar</span>
@@ -238,6 +238,10 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-sm font-medium text-gray-600">Owner Partner:</span>
                   <span className="text-sm text-gray-900 font-semibold">Sudhanshu Kumar</span>
                 </div>
+              </div>
+
+              {/* Row 2 - 5 fields */}
+              <div className="grid grid-cols-5 gap-x-6 gap-y-3 mb-3">
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-medium text-gray-600">Email ID:</span>
                   <span className="text-sm text-gray-900 font-semibold">dheeraj@mahavirsteel.com</span>
@@ -246,10 +250,6 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-sm font-medium text-gray-600">Pincode:</span>
                   <span className="text-sm text-gray-900 font-semibold">110001</span>
                 </div>
-              </div>
-
-              {/* Row 2 - 7 fields */}
-              <div className="grid grid-cols-7 gap-x-4 gap-y-3">
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-medium text-gray-600">City:</span>
                   <span className="text-sm text-gray-900 font-semibold">New Delhi</span>
@@ -262,6 +262,10 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   <span className="text-sm font-medium text-gray-600">Status:</span>
                   <span className="text-sm text-gray-900 font-semibold">Active</span>
                 </div>
+              </div>
+
+              {/* Row 3 - 4 fields */}
+              <div className="grid grid-cols-5 gap-x-6 gap-y-3">
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-medium text-gray-600">Subscription Status:</span>
                   <span className="text-sm text-gray-900 font-semibold">Active</span>
