@@ -1008,36 +1008,36 @@ export const mockUpsellOffers4MonthMetrics = [
     name: '720 Days',
     mMinus1: { due: 85, renewed: 62, percentage: 72.9 },
     m0: { due: 120, renewed: 78, percentage: 65.0 },
-    mPlus1: { due: 95, renewed: 0, percentage: 0 },
-    mPlus2: { due: 105, renewed: 0, percentage: 0 }
+    mPlus1: { due: 95, renewed: 68, percentage: 71.6 },
+    mPlus2: { due: 105, renewed: 75, percentage: 71.4 }
   },
   {
     name: 'Model Upgrade',
     mMinus1: { due: 42, renewed: 28, percentage: 66.7 },
     m0: { due: 58, renewed: 35, percentage: 60.3 },
-    mPlus1: { due: 48, renewed: 0, percentage: 0 },
-    mPlus2: { due: 52, renewed: 0, percentage: 0 }
+    mPlus1: { due: 48, renewed: 32, percentage: 66.7 },
+    mPlus2: { due: 52, renewed: 35, percentage: 67.3 }
   },
   {
     name: 'Mobile',
     mMinus1: { due: 35, renewed: 25, percentage: 71.4 },
     m0: { due: 48, renewed: 32, percentage: 66.7 },
-    mPlus1: { due: 42, renewed: 0, percentage: 0 },
-    mPlus2: { due: 45, renewed: 0, percentage: 0 }
+    mPlus1: { due: 42, renewed: 30, percentage: 71.4 },
+    mPlus2: { due: 45, renewed: 32, percentage: 71.1 }
   },
   {
     name: 'Mobile Bundle',
     mMinus1: { due: 28, renewed: 22, percentage: 78.6 },
     m0: { due: 38, renewed: 28, percentage: 73.7 },
-    mPlus1: { due: 32, renewed: 0, percentage: 0 },
-    mPlus2: { due: 35, renewed: 0, percentage: 0 }
+    mPlus1: { due: 32, renewed: 26, percentage: 81.3 },
+    mPlus2: { due: 35, renewed: 28, percentage: 80.0 }
   },
   {
     name: 'Busy Online',
     mMinus1: { due: 52, renewed: 38, percentage: 73.1 },
     m0: { due: 68, renewed: 45, percentage: 66.2 },
-    mPlus1: { due: 58, renewed: 0, percentage: 0 },
-    mPlus2: { due: 62, renewed: 0, percentage: 0 }
+    mPlus1: { due: 58, renewed: 42, percentage: 72.4 },
+    mPlus2: { due: 62, renewed: 45, percentage: 72.6 }
   }
 ];
 
