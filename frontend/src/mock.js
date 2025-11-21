@@ -703,45 +703,45 @@ export const mockOperationalUpsellOffersMetrics = [
 export const mockRenewal4MonthMetrics = [
   {
     name: 'Sudhanshu Kumar',
-    mMinus2: { due: 38, renewed: 28, percentage: 73.7 },
     mMinus1: { due: 45, renewed: 32, percentage: 71.1 },
     m0: { due: 67, renewed: 42, percentage: 62.7 },
-    mPlus1: { due: 52, renewed: 0, percentage: 0 }
+    mPlus1: { due: 52, renewed: 0, percentage: 0 },
+    mPlus2: { due: 58, renewed: 0, percentage: 0 }
   },
   {
     name: 'Amit Sharma',
-    mMinus2: { due: 32, renewed: 25, percentage: 78.1 },
     mMinus1: { due: 38, renewed: 28, percentage: 73.7 },
     m0: { due: 58, renewed: 38, percentage: 65.5 },
-    mPlus1: { due: 48, renewed: 0, percentage: 0 }
+    mPlus1: { due: 48, renewed: 0, percentage: 0 },
+    mPlus2: { due: 52, renewed: 0, percentage: 0 }
   },
   {
     name: 'Shubham Verma',
-    mMinus2: { due: 28, renewed: 18, percentage: 64.3 },
     mMinus1: { due: 32, renewed: 19, percentage: 59.4 },
     m0: { due: 48, renewed: 28, percentage: 58.3 },
-    mPlus1: { due: 42, renewed: 0, percentage: 0 }
+    mPlus1: { due: 42, renewed: 0, percentage: 0 },
+    mPlus2: { due: 45, renewed: 0, percentage: 0 }
   },
   {
     name: 'Nitesh Gupta',
-    mMinus2: { due: 25, renewed: 17, percentage: 68.0 },
     mMinus1: { due: 30, renewed: 19, percentage: 63.3 },
     m0: { due: 50, renewed: 26, percentage: 52.0 },
-    mPlus1: { due: 47, renewed: 0, percentage: 0 }
+    mPlus1: { due: 47, renewed: 0, percentage: 0 },
+    mPlus2: { due: 50, renewed: 0, percentage: 0 }
   },
   {
     name: 'Priya Singh',
-    mMinus2: { due: 22, renewed: 19, percentage: 86.4 },
     mMinus1: { due: 28, renewed: 22, percentage: 78.6 },
     m0: { due: 42, renewed: 31, percentage: 73.8 },
-    mPlus1: { due: 35, renewed: 0, percentage: 0 }
+    mPlus1: { due: 35, renewed: 0, percentage: 0 },
+    mPlus2: { due: 40, renewed: 0, percentage: 0 }
   },
   {
     name: 'Rahul Patel',
-    mMinus2: { due: 20, renewed: 14, percentage: 70.0 },
     mMinus1: { due: 25, renewed: 16, percentage: 64.0 },
     m0: { due: 38, renewed: 23, percentage: 60.5 },
-    mPlus1: { due: 30, renewed: 0, percentage: 0 }
+    mPlus1: { due: 30, renewed: 0, percentage: 0 },
+    mPlus2: { due: 35, renewed: 0, percentage: 0 }
   }
 ];
 
