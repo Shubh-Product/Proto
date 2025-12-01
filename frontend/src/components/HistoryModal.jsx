@@ -27,10 +27,11 @@ const HistoryModal = ({ lead, onClose }) => {
         </DialogHeader>
 
         <Tabs defaultValue="table" className="mt-4">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="table">History Table</TabsTrigger>
-            <TabsTrigger value="timeline">Follow-up Timeline</TabsTrigger>
-            <TabsTrigger value="whatsapp">WhatsApp History</TabsTrigger>
+            <TabsTrigger value="timeline">Follow Up History</TabsTrigger>
+            <TabsTrigger value="whatsapp">Whatsapp History</TabsTrigger>
+            <TabsTrigger value="pastleads">Past Leads</TabsTrigger>
           </TabsList>
 
           {/* History Table */}
