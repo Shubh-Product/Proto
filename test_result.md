@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Update mock data for history"
+  - task: "Unify History Modal styling between lead listing and edit modal"
     implemented: true
     working: true
-    file: "/app/frontend/src/mock.js"
+    file: "/app/frontend/src/components/LeadDetailsModal.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Added priority field to mockFollowUpHistory data to match the new table structure. Updated first entry to match the exact data shown in the image (01 Dec 25, 12:35 PM, System, New Lead, Hot, N/A, BiSMA)."
+        comment: "Replaced the separate ViewHistoryModal implementation inside LeadDetailsModal.jsx with the standardized HistoryModal styling. Both history modals (from lead listing and from edit lead popup) now use identical styling, structure, and data. Headers match perfectly with dark blue background, white text, stacked chevron icons, and same 6-column layout with Priority column included."
 
 metadata:
   created_by: "main_agent"
