@@ -7,7 +7,7 @@ import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Badge } from './ui/badge';
-import { Calendar, Clock, Package, User, Building2 } from 'lucide-react';
+import { Calendar, Clock, Package, User, Building2, ArrowUpDown, ChevronDown, ChevronUp } from 'lucide-react';
 import { mockDispositions, mockStages, mockPriorities, mockRelatedSubscriptions, mockTeamMembers } from '../mock';
 import { toast } from '../hooks/use-toast';
 
@@ -17,6 +17,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
   const [contactPerson, setContactPerson] = useState(lead.contactPerson || '');
   const [assignedTo, setAssignedTo] = useState(lead.assignedTo);
   const [showMoreDetails, setShowMoreDetails] = useState(false);
+  const [showViewHistory, setShowViewHistory] = useState(false);
   
   const [followUpType, setFollowUpType] = useState('call');
   const [stage, setStage] = useState(lead.stage.toLowerCase());
