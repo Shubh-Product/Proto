@@ -303,3 +303,6 @@ const HistoryModal = ({ lead, onClose }) => {
 };
 
 export default HistoryModal;
+};
+
+export default HistoryModal;
