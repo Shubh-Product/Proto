@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Add Priority column to both History modals to match reference image"
+  - task: "Rename tabs in edit lead pop-up"
     implemented: true
     working: true
-    file: "/app/frontend/src/components/HistoryModal.jsx, /app/frontend/src/components/LeadDetailsModal.jsx"
+    file: "/app/frontend/src/components/LeadDetailsModal.jsx"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully added Priority column to both History modals to match the reference image exactly. Updated headers to include 6 columns: Updated At, Updated By, Stage, Priority, Call Disposition, Assigned To, plus Actions column. Added priority data (Hot, Warm, Cold) to mock data. Both modals now have identical structure with bg-blue-900 headers, white text, ArrowUpDown icons, and same data presentation. Screenshot verification confirms perfect match to reference image."
+        comment: "Successfully renamed tabs in edit lead pop-up: 'Direct Linked' to 'Associated Subscriptions' and 'Indirect Linked' to 'Other Subscriptions'. Both tabs are functioning correctly and displaying proper content. Screenshot verification confirms the tab name changes are working as expected."
 
 metadata:
   created_by: "main_agent"
