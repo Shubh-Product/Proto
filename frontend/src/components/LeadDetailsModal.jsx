@@ -651,103 +651,244 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
 
 // View History Modal Component
 const ViewHistoryModal = ({ onClose, lead }) => {
-  const [expandedRow, setExpandedRow] = useState(null);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [expandedRemarks, setExpandedRemarks] = useState({});
 
-  // Mock data for History Table
-  const historyTableData = [
+  const toggleRemark = (id) => {
+    setExpandedRemarks((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
+  // Use the same mock data as the main HistoryModal
+  const mockFollowUpHistory = [
     {
-      id: 1,
-      updatedAt: '2024-11-15 10:30 AM',
-      updatedBy: 'Sudhanshu Kumar',
+      id: 'FU001',
+      updatedAt: '01 Dec 25, 12:35 PM',
+      by: 'System',
       stage: 'New Lead',
-      callDisposition: 'Not Connected',
-      assignedTo: 'Sudhanshu Kumar',
-      remarks: 'Lead created in the system'
+      priority: 'Hot',
+      disposition: 'N/A',
+      assignedTo: 'BiSMA',
+      remarks: 'Client showed interest, waiting for management approval. Follow-up scheduled for next week.'
     },
     {
-      id: 2,
-      updatedAt: '2024-11-16 02:45 PM',
-      updatedBy: 'Amit Sharma',
-      stage: 'Contacted',
-      callDisposition: 'Connected',
-      assignedTo: 'Amit Sharma',
-      remarks: 'Customer showed interest in renewal. Will follow up next week.'
+      id: 'FU002',
+      updatedAt: '2024-07-28 10:15',
+      by: 'Amit Kumar',
+      stage: 'Due',
+      priority: 'Warm',
+      disposition: 'Initial contact made',
+      assignedTo: 'Amit Kumar',
+      remarks: 'Contacted client, discussed renewal benefits.'
     },
     {
-      id: 3,
-      updatedAt: '2024-11-18 11:20 AM',
-      updatedBy: 'Amit Sharma',
-      stage: 'Interested',
-      callDisposition: 'Connected',
-      assignedTo: 'Amit Sharma',
-      remarks: 'Customer requested detailed pricing. Sent quotation via email.'
+      id: 'FU003',
+      updatedAt: '2024-07-20 16:45',
+      by: 'System',
+      stage: 'Due',
+      priority: 'Cold',
+      disposition: 'Lead assigned',
+      assignedTo: 'Amit Kumar',
+      remarks: 'Lead automatically assigned based on territory.'
     }
   ];
 
-  // Mock data for Follow Up History
-  const followUpHistoryData = [
+  const mockWhatsAppHistory = [
     {
-      id: 1,
-      dateTime: '2024-11-18 11:20 AM',
-      updatedBy: 'Amit Sharma',
-      updateType: 'Call (Phone/VC)',
-      stageOld: 'Contacted',
-      stageNew: 'Interested',
-      assignedTo: 'Amit Sharma',
-      callDisposition: 'Connected',
-      nextFollowUpType: 'Call',
-      nextFollowUpDateTime: '2024-11-22 10:00 AM',
-      remarks: 'Customer requested detailed pricing. Sent quotation via email.'
+      id: 'WA001',
+      timestamp: '2024-08-04 11:20',
+      message: 'Hi, this is regarding your Busy subscription renewal. Can we schedule a call?',
+      type: 'sent'
     },
     {
-      id: 2,
-      dateTime: '2024-11-16 02:45 PM',
-      updatedBy: 'Amit Sharma',
-      updateType: 'Call (Phone/VC)',
-      stageOld: 'New Lead',
-      stageNew: 'Contacted',
-      assignedTo: 'Amit Sharma',
-      callDisposition: 'Connected',
-      nextFollowUpType: 'Call',
-      nextFollowUpDateTime: '2024-11-18 11:00 AM',
-      remarks: 'Customer showed interest in renewal. Will follow up next week.'
+      id: 'WA002',
+      timestamp: '2024-08-04 15:30',
+      message: 'Sure, please call me tomorrow at 10 AM.',
+      type: 'received'
     }
   ];
 
-  // Mock data for Support History
-  const supportHistoryData = [
-    {
-      id: 1,
-      dateTime: '2024-11-17 09:15 AM',
-      callerType: 'Customer',
-      source: 'Welcome Dialer',
-      serialNumber: 'SN12345678',
-      agentName: 'Priya Singh',
-      mobileNo: '9999888877',
-      disposition: 'Query Resolved',
-      subDisposition: 'Product Information',
-      remark: 'Customer inquired about renewal process and pricing'
-    },
-    {
-      id: 2,
-      dateTime: '2024-11-14 03:30 PM',
-      callerType: 'Customer',
-      source: 'CLM Dialer',
-      serialNumber: 'SN12345678',
-      agentName: 'Rahul Patel',
-      mobileNo: '9999888877',
-      disposition: 'Callback Required',
-      subDisposition: 'Technical Issue',
-      remark: 'Customer reported login issue. Ticket created.'
-    }
-  ];
+  return (
+    <Dialog open={true} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <div className="flex items-center justify-between">
+            <DialogTitle className="text-xl flex items-center gap-3">
+              <span>History</span>
+              <span className="text-base font-normal text-gray-600">{lead.subscriptionId}</span>
+              <span className="text-base font-normal text-gray-600">{lead.mobile}</span>
+              <span className="text-base font-normal text-gray-600">Existing Services: N/A</span>
+            </DialogTitle>
+          </div>
+        </DialogHeader>
 
-  const handleSort = (key) => {
-    let direction = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
+        <Tabs defaultValue="table" className="mt-4">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="table">History Table</TabsTrigger>
+            <TabsTrigger value="timeline">Follow Up History</TabsTrigger>
+            <TabsTrigger value="whatsapp">Whatsapp History</TabsTrigger>
+            <TabsTrigger value="pastleads">Past Leads</TabsTrigger>
+          </TabsList>
+
+          {/* History Table */}
+          <TabsContent value="table" className="mt-4">
+            <div className="border rounded-lg overflow-hidden">
+              <table className="w-full">
+                <thead style={{backgroundColor: '#1a4e80'}}>
+                  <tr>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
+                        <span>Updated At</span>
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
+                        <span>Updated By</span>
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
+                        <span>Stage</span>
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
+                        <span>Priority</span>
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
+                        <span>Call Disposition</span>
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
+                        <span>Assigned To</span>
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {mockFollowUpHistory.map((history) => (
+                    <tr key={history.id} className="border-t border-gray-100 hover:bg-gray-50">
+                      <td className="py-3 px-4 text-sm text-gray-900">{history.updatedAt}</td>
+                      <td className="py-3 px-4 text-sm text-gray-900">{history.by}</td>
+                      <td className="py-3 px-4 text-sm">{history.stage}</td>
+                      <td className="py-3 px-4 text-sm">{history.priority || 'N/A'}</td>
+                      <td className="py-3 px-4 text-sm text-gray-900">{history.disposition}</td>
+                      <td className="py-3 px-4 text-sm text-gray-900">{history.assignedTo}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </TabsContent>
+
+          {/* Timeline */}
+          <TabsContent value="timeline" className="mt-4">
+            <div className="space-y-4">
+              {mockFollowUpHistory.map((history, index) => (
+                <div key={history.id} className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Clock className="w-4 h-4 text-blue-600" />
+                    </div>
+                    {index !== mockFollowUpHistory.length - 1 && (
+                      <div className="w-0.5 h-full bg-gray-200 mt-2"></div>
+                    )}
+                  </div>
+                  <div className="flex-1 pb-8">
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-sm text-gray-900">{history.by}</span>
+                          <Badge variant="outline" className="text-xs">{history.stage}</Badge>
+                        </div>
+                        <span className="text-xs text-gray-600">{history.updatedAt}</span>
+                      </div>
+                      <div className="text-sm text-gray-700 mb-2">
+                        <span className="font-medium">Disposition:</span> {history.disposition}
+                      </div>
+                      <div className="text-sm text-gray-700">
+                        <span className="font-medium">Remarks:</span> {history.remarks}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* WhatsApp History */}
+          <TabsContent value="whatsapp" className="mt-4">
+            {mockWhatsAppHistory.length > 0 ? (
+              <div className="space-y-3">
+                {mockWhatsAppHistory.map((msg) => (
+                  <div
+                    key={msg.id}
+                    className={`flex ${
+                      msg.type === 'sent' ? 'justify-end' : 'justify-start'
+                    }`}
+                  >
+                    <div
+                      className={`max-w-[70%] p-3 rounded-lg ${
+                        msg.type === 'sent'
+                          ? 'bg-green-100 text-gray-900'
+                          : 'bg-gray-100 text-gray-900'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <User className="w-3 h-3" />
+                        <span className="text-xs text-gray-600">{msg.timestamp}</span>
+                      </div>
+                      <p className="text-sm">{msg.message}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-8 text-gray-500">
+                No WhatsApp history available
+              </div>
+            )}
+          </TabsContent>
+
+          {/* Past Leads */}
+          <TabsContent value="pastleads" className="mt-4">
+            <div className="text-center py-8 text-gray-500">
+              Past leads data will be displayed here
+            </div>
+          </TabsContent>
+        </Tabs>
+      </DialogContent>
+    </Dialog>
+  );
+};
     setSortConfig({ key, direction });
   };
 
