@@ -1045,11 +1045,12 @@ export const mockUpsellOffers4MonthMetrics = [
 export const mockFollowUpHistory = [
   {
     id: 'FU001',
-    updatedAt: '2024-08-05 14:30',
-    by: 'Amit Kumar',
-    stage: 'Interested',
-    disposition: 'Budget approval pending',
-    assignedTo: 'Amit Kumar',
+    updatedAt: '01 Dec 25, 12:35 PM',
+    by: 'System',
+    stage: 'New Lead',
+    priority: 'Hot',
+    disposition: 'N/A',
+    assignedTo: 'BiSMA',
     remarks: 'Client showed interest, waiting for management approval. Follow-up scheduled for next week.'
   },
   {
@@ -1057,6 +1058,7 @@ export const mockFollowUpHistory = [
     updatedAt: '2024-07-28 10:15',
     by: 'Amit Kumar',
     stage: 'Due',
+    priority: 'Warm',
     disposition: 'Initial contact made',
     assignedTo: 'Amit Kumar',
     remarks: 'Contacted client, discussed renewal benefits.'
@@ -1066,6 +1068,7 @@ export const mockFollowUpHistory = [
     updatedAt: '2024-07-20 16:45',
     by: 'System',
     stage: 'Due',
+    priority: 'Cold',
     disposition: 'Lead assigned',
     assignedTo: 'Amit Kumar',
     remarks: 'Lead automatically assigned based on territory.'
