@@ -82,35 +82,11 @@ const HistoryModal = ({ lead, onClose }) => {
                   {mockFollowUpHistory.map((history) => (
                     <tr key={history.id} className="border-t border-gray-100 hover:bg-gray-50">
                       <td className="py-3 px-4 text-sm text-gray-900">{history.updatedAt}</td>
-                      <td className="py-3 px-4 text-sm">
-                        <div className="flex items-center gap-2">
-                          <User className="w-4 h-4 text-gray-600" />
-                          {history.by}
-                        </div>
-                      </td>
-                      <td className="py-3 px-4 text-sm">
-                        <Badge variant="outline" className="text-xs">{history.stage}</Badge>
-                      </td>
+                      <td className="py-3 px-4 text-sm text-gray-900">{history.by}</td>
+                      <td className="py-3 px-4 text-sm">{history.stage}</td>
+                      <td className="py-3 px-4 text-sm">{history.priority || 'N/A'}</td>
                       <td className="py-3 px-4 text-sm text-gray-900">{history.disposition}</td>
                       <td className="py-3 px-4 text-sm text-gray-900">{history.assignedTo}</td>
-                      <td className="py-3 px-4 text-sm">
-                        <div>
-                          <div className={expandedRemarks[history.id] ? '' : 'line-clamp-2'}>
-                            {history.remarks}
-                          </div>
-                          {history.remarks.length > 100 && (
-                            <button
-                              onClick={() => toggleRemark(history.id)}
-                              className="text-blue-600 text-xs mt-1 hover:underline flex items-center gap-1"
-                            >
-                              {expandedRemarks[history.id] ? 'Show less' : 'Show more'}
-                              <ChevronDown className={`w-3 h-3 transition-transform ${
-                                expandedRemarks[history.id] ? 'rotate-180' : ''
-                              }`} />
-                            </button>
-                          )}
-                        </div>
-                      </td>
                     </tr>
                   ))}
                 </tbody>
