@@ -120,7 +120,7 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Unify History Modal styling between lead listing and edit modal"
+  - task: "Restore original ViewHistoryModal design for View History button"
     implemented: true
     working: true
     file: "/app/frontend/src/components/LeadDetailsModal.jsx"
@@ -130,7 +130,7 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Replaced the separate ViewHistoryModal implementation inside LeadDetailsModal.jsx with the standardized HistoryModal styling. Both history modals (from lead listing and from edit lead popup) now use identical styling, structure, and data. Headers match perfectly with dark blue background, white text, stacked chevron icons, and same 6-column layout with Priority column included."
+        comment: "Successfully restored the original ViewHistoryModal implementation inside LeadDetailsModal.jsx. The View History button now shows the original design with: bg-blue-900 headers, 5 columns (no Priority), 3 tabs (no Past Leads), expandable rows with Actions column, ArrowUpDown icons, and original title format. This maintains the distinct design difference between the two history modals as requested by the user."
 
 metadata:
   created_by: "main_agent"
