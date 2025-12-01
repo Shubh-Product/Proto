@@ -661,6 +661,7 @@ const ViewHistoryModal = ({ onClose, lead }) => {
       updatedAt: '2024-11-15 10:30 AM',
       updatedBy: 'Sudhanshu Kumar',
       stage: 'New Lead',
+      priority: 'Hot',
       callDisposition: 'Not Connected',
       assignedTo: 'Sudhanshu Kumar',
       remarks: 'Lead created in the system'
@@ -670,6 +671,7 @@ const ViewHistoryModal = ({ onClose, lead }) => {
       updatedAt: '2024-11-16 02:45 PM',
       updatedBy: 'Amit Sharma',
       stage: 'Contacted',
+      priority: 'Warm',
       callDisposition: 'Connected',
       assignedTo: 'Amit Sharma',
       remarks: 'Customer showed interest in renewal. Will follow up next week.'
@@ -679,6 +681,7 @@ const ViewHistoryModal = ({ onClose, lead }) => {
       updatedAt: '2024-11-18 11:20 AM',
       updatedBy: 'Amit Sharma',
       stage: 'Interested',
+      priority: 'Cold',
       callDisposition: 'Connected',
       assignedTo: 'Amit Sharma',
       remarks: 'Customer requested detailed pricing. Sent quotation via email.'
