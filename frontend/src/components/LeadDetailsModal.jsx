@@ -222,8 +222,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
         <Tabs defaultValue="details" className="mt-0 flex-1 flex flex-col overflow-hidden">
           <TabsList className="grid w-full grid-cols-3 flex-shrink-0">
             <TabsTrigger value="details">Details</TabsTrigger>
-            <TabsTrigger value="addons">Direct Linked</TabsTrigger>
-            <TabsTrigger value="related">Indirect Linked</TabsTrigger>
+            <TabsTrigger value="addons">Associated Subscriptions</TabsTrigger>
+            <TabsTrigger value="related">Other Subscriptions</TabsTrigger>
           </TabsList>
 
           {/* Details Tab - Contains both Lead Details and Follow Up Update */}
