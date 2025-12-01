@@ -10,13 +10,14 @@ const HistoryModal = ({ lead, onClose }) => {
   const [expandedRow, setExpandedRow] = useState(null);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
-  // Mock data for History Table - same as ViewHistoryModal
+  // Mock data for History Table - same as ViewHistoryModal but with Priority
   const historyTableData = [
     {
       id: 1,
       updatedAt: '2024-11-15 10:30 AM',
       updatedBy: 'Sudhanshu Kumar',
       stage: 'New Lead',
+      priority: 'Hot',
       callDisposition: 'Not Connected',
       assignedTo: 'Sudhanshu Kumar',
       remarks: 'Lead created in the system'
@@ -26,6 +27,7 @@ const HistoryModal = ({ lead, onClose }) => {
       updatedAt: '2024-11-16 02:45 PM',
       updatedBy: 'Amit Sharma',
       stage: 'Contacted',
+      priority: 'Warm',
       callDisposition: 'Connected',
       assignedTo: 'Amit Sharma',
       remarks: 'Customer showed interest in renewal. Will follow up next week.'
@@ -35,6 +37,7 @@ const HistoryModal = ({ lead, onClose }) => {
       updatedAt: '2024-11-18 11:20 AM',
       updatedBy: 'Amit Sharma',
       stage: 'Interested',
+      priority: 'Cold',
       callDisposition: 'Connected',
       assignedTo: 'Amit Sharma',
       remarks: 'Customer requested detailed pricing. Sent quotation via email.'
