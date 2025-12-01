@@ -425,7 +425,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
 
             {/* Action Buttons */}
             <div className="flex justify-end gap-3 pt-4 border-t">
-              <Button variant="outline" onClick={onClose}>
+              <Button variant="outline" onClick={() => setShowViewHistory(true)}>
                 View History
               </Button>
               <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleSaveFollowUp}>
