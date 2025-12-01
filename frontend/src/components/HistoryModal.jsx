@@ -38,14 +38,44 @@ const HistoryModal = ({ lead, onClose }) => {
           <TabsContent value="table" className="mt-4">
             <div className="border rounded-lg overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead style={{backgroundColor: '#0f4c81'}}>
                   <tr>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Updated At</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">By</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Stage</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Disposition</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Assigned To</th>
-                    <th className="py-3 px-4 text-left text-xs font-semibold text-gray-700">Remarks</th>
+                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center gap-2">
+                        <span>Updated At</span>
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
+                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center gap-2">
+                        <span>Updated By</span>
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
+                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center gap-2">
+                        <span>Stage</span>
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
+                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center gap-2">
+                        <span>Priority</span>
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
+                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center gap-2">
+                        <span>Call Disposition</span>
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
+                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center gap-2">
+                        <span>Assigned To</span>
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
