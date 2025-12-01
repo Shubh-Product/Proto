@@ -42,42 +42,60 @@ const HistoryModal = ({ lead, onClose }) => {
           <TabsContent value="table" className="mt-4">
             <div className="border rounded-lg overflow-hidden">
               <table className="w-full">
-                <thead style={{backgroundColor: '#0f4c81'}}>
+                <thead style={{backgroundColor: '#1a4e80'}}>
                   <tr>
-                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
-                      <div className="flex items-center gap-2">
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
                         <span>Updated At</span>
-                        <ArrowUpDown className="w-4 h-4" />
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
                       </div>
                     </th>
-                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
-                      <div className="flex items-center gap-2">
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
                         <span>Updated By</span>
-                        <ArrowUpDown className="w-4 h-4" />
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
                       </div>
                     </th>
-                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
-                      <div className="flex items-center gap-2">
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
                         <span>Stage</span>
-                        <ArrowUpDown className="w-4 h-4" />
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
                       </div>
                     </th>
-                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
-                      <div className="flex items-center gap-2">
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
                         <span>Priority</span>
-                        <ArrowUpDown className="w-4 h-4" />
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
                       </div>
                     </th>
-                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
-                      <div className="flex items-center gap-2">
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
                         <span>Call Disposition</span>
-                        <ArrowUpDown className="w-4 h-4" />
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
                       </div>
                     </th>
-                    <th className="py-3 px-4 text-left text-sm font-medium text-white">
-                      <div className="flex items-center gap-2">
+                    <th className="py-4 px-4 text-left text-sm font-medium text-white">
+                      <div className="flex items-center justify-between">
                         <span>Assigned To</span>
-                        <ArrowUpDown className="w-4 h-4" />
+                        <div className="flex flex-col">
+                          <ChevronUp className="w-3 h-3 -mb-1" />
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
                       </div>
                     </th>
                   </tr>
