@@ -115,7 +115,10 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Updated History Table headers with dark blue background (#0f4c81), white text, and sort icons (ArrowUpDown). Added Priority column to match the design. Updated tabs to include 4 tabs: History Table, Follow Up History, Whatsapp History, and Past Leads."
+        comment: "Updated History Table headers with dark blue background (#1a4e80), white text, and proper sort icons (ChevronUp/ChevronDown stacked). Added Priority column to match the design. Updated tabs to include 4 tabs: History Table, Follow Up History, Whatsapp History, and Past Leads. Refined styling to match reference image exactly."
+      - working: true
+        agent: "main"
+        comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
   - task: "Update mock data for history"
     implemented: true
