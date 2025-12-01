@@ -20,9 +20,13 @@ const HistoryModal = ({ lead, onClose }) => {
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl">History - {lead.company}</DialogTitle>
-          <div className="flex items-center gap-2 mt-2">
-            <Badge className="text-xs">{lead.subscriptionId}</Badge>
+          <div className="flex items-center justify-between">
+            <DialogTitle className="text-xl flex items-center gap-3">
+              <span>History</span>
+              <span className="text-base font-normal text-gray-600">{lead.subscriptionId}</span>
+              <span className="text-base font-normal text-gray-600">{lead.mobile}</span>
+              <span className="text-base font-normal text-gray-600">Existing Services: N/A</span>
+            </DialogTitle>
           </div>
         </DialogHeader>
 
