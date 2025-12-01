@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Make both History modals exactly identical"
+  - task: "Add Priority column to both History modals to match reference image"
     implemented: true
     working: true
-    file: "/app/frontend/src/components/HistoryModal.jsx"
+    file: "/app/frontend/src/components/HistoryModal.jsx, /app/frontend/src/components/LeadDetailsModal.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully updated HistoryModal.jsx to match ViewHistoryModal exactly. Both history modals now have identical: bg-blue-900 headers, 5 columns (no Priority), 3 tabs (no Past Leads), ArrowUpDown icons, expandable rows with Actions column, same title format, and same mock data. Screenshot verification confirms perfect match between lead listing history and View History button modals."
+        comment: "Successfully added Priority column to both History modals to match the reference image exactly. Updated headers to include 6 columns: Updated At, Updated By, Stage, Priority, Call Disposition, Assigned To, plus Actions column. Added priority data (Hot, Warm, Cold) to mock data. Both modals now have identical structure with bg-blue-900 headers, white text, ArrowUpDown icons, and same data presentation. Screenshot verification confirms perfect match to reference image."
 
 metadata:
   created_by: "main_agent"
