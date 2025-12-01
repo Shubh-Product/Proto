@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Update the History Table headers in the HistoryModal component to match the design shown in the provided image"
+user_problem_statement: "Update the History Table headers in the HistoryModal component to match the design shown in the provided image, then ensure both history pop-ups look the same, then restore the original design for the View History button while keeping the updated design for the lead listing history button"
 
 frontend:
   - task: "Update History Table header styling"
