@@ -192,6 +192,7 @@ const HistoryModal = ({ lead, onClose }) => {
                         <td className="py-3 px-4 text-sm" onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}>{row.updatedAt}</td>
                         <td className="py-3 px-4 text-sm" onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}>{row.updatedBy}</td>
                         <td className="py-3 px-4 text-sm" onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}>{row.stage}</td>
+                        <td className="py-3 px-4 text-sm" onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}>{row.priority}</td>
                         <td className="py-3 px-4 text-sm" onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}>{row.callDisposition}</td>
                         <td className="py-3 px-4 text-sm" onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}>{row.assignedTo}</td>
                         <td className="py-3 px-4 text-center">
@@ -202,7 +203,7 @@ const HistoryModal = ({ lead, onClose }) => {
                       </tr>
                       {expandedRow === row.id && (
                         <tr className="bg-blue-50">
-                          <td colSpan="6" className="py-3 px-4">
+                          <td colSpan="7" className="py-3 px-4">
                             <div className="text-sm">
                               <span className="font-semibold">Remarks:</span> {row.remarks}
                             </div>
