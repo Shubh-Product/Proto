@@ -806,6 +806,12 @@ const ViewHistoryModal = ({ onClose, lead }) => {
                         <ArrowUpDown className="w-4 h-4" />
                       </div>
                     </th>
+                    <th className="py-3 px-4 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('priority')}>
+                      <div className="flex items-center gap-2">
+                        Priority
+                        <ArrowUpDown className="w-4 h-4" />
+                      </div>
+                    </th>
                     <th className="py-3 px-4 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('callDisposition')}>
                       <div className="flex items-center gap-2">
                         Call Disposition
