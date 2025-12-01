@@ -2,7 +2,7 @@ import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Badge } from './ui/badge';
-import { Clock, User, ChevronDown, MessageSquare, ArrowUpDown } from 'lucide-react';
+import { Clock, User, ChevronDown, MessageSquare, ChevronUp } from 'lucide-react';
 import { mockFollowUpHistory, mockWhatsAppHistory } from '../mock';
 import { useState } from 'react';
 
