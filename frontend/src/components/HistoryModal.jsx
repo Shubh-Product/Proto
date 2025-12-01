@@ -2,6 +2,7 @@ import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 import { Clock, User, ChevronDown, MessageSquare, ChevronUp, ArrowUpDown } from 'lucide-react';
 import { useState } from 'react';
 
