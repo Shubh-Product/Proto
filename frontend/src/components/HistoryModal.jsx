@@ -162,6 +162,13 @@ const HistoryModal = ({ lead, onClose }) => {
               </div>
             )}
           </TabsContent>
+
+          {/* Past Leads */}
+          <TabsContent value="pastleads" className="mt-4">
+            <div className="text-center py-8 text-gray-500">
+              Past leads data will be displayed here
+            </div>
+          </TabsContent>
         </Tabs>
       </DialogContent>
     </Dialog>
