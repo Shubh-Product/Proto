@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Update the History Table headers in the HistoryModal component to match the design shown in the provided image, then ensure both history pop-ups look the same, then restore the original design for the View History button while keeping the updated design for the lead listing history button, finally make both History modals exactly identical to the ViewHistoryModal design, and lastly add Priority column to both modals to match the final reference image, and rename tabs in edit lead pop-up from 'Direct Linked' to 'Associated Subscriptions' and 'Indirect Linked' to 'Other Subscriptions'"
+user_problem_statement: "Update the History Table headers in the HistoryModal component to match the design shown in the provided image, then ensure both history pop-ups look the same, then restore the original design for the View History button while keeping the updated design for the lead listing history button, finally make both History modals exactly identical to the ViewHistoryModal design, and lastly add Priority column to both modals to match the final reference image, and rename tabs in edit lead pop-up from 'Direct Linked' to 'Associated Subscriptions' and 'Indirect Linked' to 'Other Subscriptions', and remove 'With Offers' quick filter and 'Offers' advance filter from the Renewal lead management page"
 
 frontend:
   - task: "Update History Table header styling"
