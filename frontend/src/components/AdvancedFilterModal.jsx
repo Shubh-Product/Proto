@@ -37,7 +37,6 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
       licenseCategory: '',
       assignedTo: '',
       stage: '',
-      offers: '',
       due: ''
     });
   };
