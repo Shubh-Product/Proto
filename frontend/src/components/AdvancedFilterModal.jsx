@@ -219,23 +219,6 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           </div>
 
           <div className="space-y-2">
-            <Label>Offers</Label>
-            <Select
-              value={filters.offers}
-              onValueChange={(value) => setFilters({ ...filters, offers: value })}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select offers" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All</SelectItem>
-                <SelectItem value="720days">720 Days Offer</SelectItem>
-                <SelectItem value="upgrade">Upgrade Discount</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-2">
             <Label>Due</Label>
             <Select
               value={filters.due}
