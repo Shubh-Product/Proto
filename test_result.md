@@ -120,7 +120,7 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Convert all fields to dropdowns in renewal lead management advanced filter"
+  - task: "Revert advanced filter fields back to multi-select checkboxes"
     implemented: true
     working: true
     file: "/app/frontend/src/components/AdvancedFilterModal.jsx"
@@ -130,7 +130,7 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully converted all multi-select checkbox fields to dropdown menus in Advanced Filter modal. Replaced MultiSelectField component with DropdownField component using Select UI. Updated filter state from arrays to strings for single-value selection. Added 'All' option to each dropdown with proper values to fix React warnings. Maintained all 14 fields with same options and maintained Stage field default to 'Due'. Date range fields remain as date pickers. Screenshot verification shows all dropdowns working properly with clean UI and proper placeholder text."
+        comment: "Successfully reverted Advanced Filter modal from dropdown menus back to multi-select checkbox implementation. Restored Checkbox import, MultiSelectField component, handleMultiSelectChange function, and array-based filter state. All 14 fields now show checkboxes with scrollable containers and selection counters. Stage field maintains 'Due' default selection. Screenshot verification shows Partner with 'Inside Sales' selected, Product with 'Basic Multi-user' selected, Stage with 'Due' pre-selected, and all selection counters working properly."
 
 metadata:
   created_by: "main_agent"
