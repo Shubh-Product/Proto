@@ -237,25 +237,33 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           <MultiSelectField 
             label="Renewal Vintage" 
             field="renewalVintage" 
-            options={renewalVintageOptions} 
+            options={renewalVintageOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="GST Feature Usage" 
             field="gstFeatureUsage" 
-            options={gstFeatureUsageOptions} 
+            options={gstFeatureUsageOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="Activeness" 
             field="activeness" 
-            options={activenessOptions} 
+            options={activenessOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="License Category" 
             field="licenseCategory" 
-            options={licenseCategoryOptions} 
+            options={licenseCategoryOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
 
           {/* Row 3 */}
