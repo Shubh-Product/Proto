@@ -279,10 +279,10 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
             <div className="border-t pt-6">
               <h3 className="text-lg font-semibold mb-4">Follow Up Update</h3>
               
-              {/* First Row: Update Type, Stage, Priority, Call Disposition */}
+              {/* First Row: Update Type, Stage, Assigned To, Priority, Call Disposition */}
               <div className="grid grid-cols-12 gap-4 mb-4">
-                {/* Update Type - Takes 4 columns */}
-                <div className="col-span-4 space-y-2">
+                {/* Update Type - Takes 3 columns */}
+                <div className="col-span-3 space-y-2">
                   <Label className="text-sm">Update Type</Label>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-3">
@@ -339,8 +339,25 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                   </Select>
                 </div>
                 
-                {/* Priority - Takes 3 columns */}
-                <div className="col-span-3 space-y-2">
+                {/* Assigned To - Takes 2 columns */}
+                <div className="col-span-2 space-y-2">
+                  <Label className="text-sm">Assigned To</Label>
+                  <Select value={assignedTo} onValueChange={setAssignedTo}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select assignee" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {mockTeamMembers.map((member) => (
+                        <SelectItem key={member} value={member}>
+                          {member}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                {/* Priority - Takes 2 columns */}
+                <div className="col-span-2 space-y-2">
                   <Label className="text-sm">Priority</Label>
                   <Select value={priority} onValueChange={setPriority}>
                     <SelectTrigger>
