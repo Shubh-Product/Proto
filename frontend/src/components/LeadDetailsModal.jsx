@@ -348,8 +348,8 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                     </SelectTrigger>
                     <SelectContent>
                       {mockTeamMembers.map((member) => (
-                        <SelectItem key={member} value={member}>
-                          {member}
+                        <SelectItem key={member.value} value={member.value}>
+                          {member.label}
                         </SelectItem>
                       ))}
                     </SelectContent>
