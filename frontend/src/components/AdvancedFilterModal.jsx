@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Calendar } from 'lucide-react';
 
 const AdvancedFilterModal = ({ onClose, onApply }) => {
   const [filters, setFilters] = useState({
@@ -24,6 +25,12 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
     followUpScheduledTo: '',
     followUpDoneFrom: '',
     followUpDoneTo: ''
+  });
+
+  const [datePickerOpen, setDatePickerOpen] = useState({
+    validTill: false,
+    followUpScheduled: false,
+    followUpDone: false
   });
 
   // Dropdown options
@@ -137,7 +144,104 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
     </div>
   );
 
+  // Date Range Picker Component
+  const DateRangePicker = ({ label, fromField, toField, pickerKey }) => {
+    const fromValue = filters[fromField];
+    const toValue = filters[toField];
+    const isOpen = datePickerOpen[pickerKey];
+
+    const getDisplayText = () => {
+      if (fromValue && toValue) {
+        return `${fromValue} to ${toValue}`;
+      } else if (fromValue) {
+        return `From ${fromValue}`;
+      } else if (toValue) {
+        return `To ${toValue}`;
+      } else {
+        return `Select ${label.toLowerCase()}`;
+      }
+    };
+
+    const handleToggle = () => {
+      setDatePickerOpen(prev => ({
+        ...prev,
+        [pickerKey]: !prev[pickerKey]
+      }));
+    };
+
+    const handleFromDateChange = (e) => {
+      setFilters({ ...filters, [fromField]: e.target.value });
+    };
+
+    const handleToDateChange = (e) => {
+      setFilters({ ...filters, [toField]: e.target.value });
+    };
+
+    return (
+      <div className="space-y-2 relative">
+        <Label>{label}</Label>
+        <div 
+          className="flex items-center justify-between p-2 border rounded-md cursor-pointer hover:border-gray-400 bg-white"
+          onClick={handleToggle}
+        >
+          <span className={`text-sm ${(!fromValue && !toValue) ? 'text-gray-500' : 'text-gray-900'}`}>
+            {getDisplayText()}
+          </span>
+          <Calendar className="w-4 h-4 text-gray-500" />
+        </div>
+        
+        {isOpen && (
+          <div className="absolute top-full left-0 right-0 z-50 mt-1 p-3 bg-white border rounded-md shadow-lg">
+            <div className="space-y-2">
+              <div>
+                <Label className="text-xs">From Date</Label>
+                <Input
+                  type="date"
+                  value={fromValue}
+                  onChange={handleFromDateChange}
+                  className="text-sm"
+                />
+              </div>
+              <div>
+                <Label className="text-xs">To Date</Label>
+                <Input
+                  type="date"
+                  value={toValue}
+                  onChange={handleToDateChange}
+                  className="text-sm"
+                />
+              </div>
+              <div className="flex justify-end space-x-2 pt-2">
+                <Button 
+                  size="sm" 
+                  variant="outline" 
+                  onClick={() => {
+                    setFilters({ ...filters, [fromField]: '', [toField]: '' });
+                  }}
+                >
+                  Clear
+                </Button>
+                <Button 
+                  size="sm" 
+                  onClick={handleToggle}
+                >
+                  Done
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   const handleApply = () => {
+    // Close any open date pickers
+    setDatePickerOpen({
+      validTill: false,
+      followUpScheduled: false,
+      followUpDone: false
+    });
     onApply(filters);
   };
 
@@ -161,10 +265,26 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
       followUpDoneFrom: '',
       followUpDoneTo: ''
     });
+    // Close any open date pickers
+    setDatePickerOpen({
+      validTill: false,
+      followUpScheduled: false,
+      followUpDone: false
+    });
+  };
+
+  const handleClose = () => {
+    // Close any open date pickers before closing modal
+    setDatePickerOpen({
+      validTill: false,
+      followUpScheduled: false,
+      followUpDone: false
+    });
+    onClose();
   };
 
   return (
-    <Dialog open={true} onOpenChange={onClose}>
+    <Dialog open={true} onOpenChange={handleClose}>
       <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Advanced Filters</DialogTitle>
@@ -193,23 +313,12 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
             placeholder="Select license type"
           />
           
-          <div className="space-y-2">
-            <Label>Valid Till Date</Label>
-            <div className="space-y-1">
-              <Input
-                type="date"
-                placeholder="From"
-                value={filters.validTillFrom}
-                onChange={(e) => setFilters({ ...filters, validTillFrom: e.target.value })}
-              />
-              <Input
-                type="date"
-                placeholder="To"
-                value={filters.validTillTo}
-                onChange={(e) => setFilters({ ...filters, validTillTo: e.target.value })}
-              />
-            </div>
-          </div>
+          <DateRangePicker
+            label="Valid Till Date"
+            fromField="validTillFrom"
+            toField="validTillTo"
+            pickerKey="validTill"
+          />
 
           {/* Row 2 */}
           <DropdownField 
@@ -270,41 +379,19 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           />
 
           {/* Row 4 */}
-          <div className="space-y-2">
-            <Label>Follow Up Scheduled For</Label>
-            <div className="space-y-1">
-              <Input
-                type="date"
-                placeholder="From"
-                value={filters.followUpScheduledFrom}
-                onChange={(e) => setFilters({ ...filters, followUpScheduledFrom: e.target.value })}
-              />
-              <Input
-                type="date"
-                placeholder="To"
-                value={filters.followUpScheduledTo}
-                onChange={(e) => setFilters({ ...filters, followUpScheduledTo: e.target.value })}
-              />
-            </div>
-          </div>
+          <DateRangePicker
+            label="Follow Up Scheduled For"
+            fromField="followUpScheduledFrom"
+            toField="followUpScheduledTo"
+            pickerKey="followUpScheduled"
+          />
 
-          <div className="space-y-2">
-            <Label>Follow Up Done On</Label>
-            <div className="space-y-1">
-              <Input
-                type="date"
-                placeholder="From"
-                value={filters.followUpDoneFrom}
-                onChange={(e) => setFilters({ ...filters, followUpDoneFrom: e.target.value })}
-              />
-              <Input
-                type="date"
-                placeholder="To"
-                value={filters.followUpDoneTo}
-                onChange={(e) => setFilters({ ...filters, followUpDoneTo: e.target.value })}
-              />
-            </div>
-          </div>
+          <DateRangePicker
+            label="Follow Up Done On"
+            fromField="followUpDoneFrom"
+            toField="followUpDoneTo"
+            pickerKey="followUpDone"
+          />
         </div>
 
         <div className="flex justify-between items-center pt-6 border-t">
@@ -312,7 +399,7 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
             Reset
           </Button>
           <div className="space-x-2">
-            <Button variant="outline" onClick={onClose}>
+            <Button variant="outline" onClick={handleClose}>
               Cancel
             </Button>
             <Button onClick={handleApply}>
