@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Convert date pickers to single-field with popup date range selector"
+  - task: "Remove Email field and add Assigned To dropdown in renewal lead edit popup"
     implemented: true
     working: true
-    file: "/app/frontend/src/components/AdvancedFilterModal.jsx"
+    file: "/app/frontend/src/components/LeadDetailsModal.jsx"
     stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully converted 3 date fields (Valid Till Date, Follow Up Scheduled For, Follow Up Done On) from dual separate inputs to single clickable fields with popup date range selectors. Implemented custom DateRangePicker component with Calendar icon, popup with From/To date inputs, Clear/Done buttons, and proper state management. Added calendar icon import and popup positioning with z-index. Screenshot verification shows: single fields display properly, popup opens with From/To inputs, date selection works, selected range displays as 'From 2024-12-31', and multiple date pickers can work independently."
+        comment: "Successfully removed Email field from contact information section (changed from 3-column to 2-column grid) and added new 'Assigned To' dropdown field right after Stage field in Follow Up Update section. Updated grid layout from 4 to 5 fields in the Follow Up Update section with proper column spans: Update Type (3 cols), Stage (2 cols), Assigned To (2 cols), Priority (2 cols), Call Disposition (3 cols). Fixed mockTeamMembers data structure mapping to use value/label properties. Screenshot verification shows Email field removed from contact info and Assigned To dropdown properly positioned with 'Select assignee' placeholder text."
 
 metadata:
   created_by: "main_agent"
