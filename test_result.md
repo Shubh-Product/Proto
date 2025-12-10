@@ -120,7 +120,7 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Convert all fields to dropdowns in renewal lead management advanced filter (final)"
+  - task: "Convert date pickers to single-field with popup date range selector"
     implemented: true
     working: true
     file: "/app/frontend/src/components/AdvancedFilterModal.jsx"
@@ -130,7 +130,7 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully converted all multi-select checkbox fields to dropdown menus in Advanced Filter modal (final implementation). Removed Checkbox import and MultiSelectField components, implemented DropdownField components using Select UI. Updated filter state from arrays to strings for single-value selection. Added 'All' option to each dropdown. Maintained all 14 fields with same options and preserved Stage field default to 'Due'. Screenshot verification shows all dropdowns working: Partner shows 'Inside Sales' selected, Product shows 'Basic Multi-user' selected, Stage shows 'Due' as default, and all other fields show proper placeholder text."
+        comment: "Successfully converted 3 date fields (Valid Till Date, Follow Up Scheduled For, Follow Up Done On) from dual separate inputs to single clickable fields with popup date range selectors. Implemented custom DateRangePicker component with Calendar icon, popup with From/To date inputs, Clear/Done buttons, and proper state management. Added calendar icon import and popup positioning with z-index. Screenshot verification shows: single fields display properly, popup opens with From/To inputs, date selection works, selected range displays as 'From 2024-12-31', and multiple date pickers can work independently."
 
 metadata:
   created_by: "main_agent"
