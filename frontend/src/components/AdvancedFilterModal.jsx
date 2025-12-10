@@ -4,30 +4,29 @@ import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Checkbox } from './ui/checkbox';
 
 const AdvancedFilterModal = ({ onClose, onApply }) => {
   const [filters, setFilters] = useState({
-    partner: [],
-    product: [],
-    licenseType: [],
+    partner: '',
+    product: '',
+    licenseType: '',
     validTillFrom: '',
     validTillTo: '',
-    renewalVintage: [],
-    gstFeatureUsage: [],
-    activeness: [],
-    licenseCategory: [],
-    assignedTo: [],
-    stage: ['Due'], // Default selection as specified
-    lastDisposition: [],
-    updatedBy: [],
+    renewalVintage: '',
+    gstFeatureUsage: '',
+    activeness: '',
+    licenseCategory: '',
+    assignedTo: '',
+    stage: 'Due', // Default selection as specified
+    lastDisposition: '',
+    updatedBy: '',
     followUpScheduledFrom: '',
     followUpScheduledTo: '',
     followUpDoneFrom: '',
     followUpDoneTo: ''
   });
 
-  // Multi-select options
+  // Dropdown options
   const partnerOptions = [
     'Inside Sales',
     'KGSS', 
@@ -115,44 +114,26 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
     'Shubham Goel'
   ];
 
-  // Handle multi-select change
-  const handleMultiSelectChange = (field, value, isChecked) => {
-    setFilters(prev => ({
-      ...prev,
-      [field]: isChecked 
-        ? [...prev[field], value]
-        : prev[field].filter(item => item !== value)
-    }));
-  };
-
-  // Multi-select component
-  const MultiSelectField = ({ label, field, options }) => (
+  // Dropdown component
+  const DropdownField = ({ label, field, options, placeholder }) => (
     <div className="space-y-2">
       <Label>{label}</Label>
-      <div className="border rounded-md p-2 max-h-32 overflow-y-auto bg-white">
-        <div className="space-y-1">
+      <Select
+        value={filters[field]}
+        onValueChange={(value) => setFilters({ ...filters, [field]: value })}
+      >
+        <SelectTrigger>
+          <SelectValue placeholder={placeholder || `Select ${label.toLowerCase()}`} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">All</SelectItem>
           {options.map((option) => (
-            <div key={option} className="flex items-center space-x-2">
-              <Checkbox
-                id={`${field}-${option}`}
-                checked={filters[field].includes(option)}
-                onCheckedChange={(checked) => handleMultiSelectChange(field, option, checked)}
-              />
-              <label 
-                htmlFor={`${field}-${option}`}
-                className="text-sm font-normal cursor-pointer"
-              >
-                {option}
-              </label>
-            </div>
+            <SelectItem key={option} value={option}>
+              {option}
+            </SelectItem>
           ))}
-        </div>
-      </div>
-      {filters[field].length > 0 && (
-        <div className="text-xs text-gray-600">
-          {filters[field].length} selected
-        </div>
-      )}
+        </SelectContent>
+      </Select>
     </div>
   );
 
@@ -162,19 +143,19 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
 
   const handleReset = () => {
     setFilters({
-      partner: [],
-      product: [],
-      licenseType: [],
+      partner: '',
+      product: '',
+      licenseType: '',
       validTillFrom: '',
       validTillTo: '',
-      renewalVintage: [],
-      gstFeatureUsage: [],
-      activeness: [],
-      licenseCategory: [],
-      assignedTo: [],
-      stage: ['Due'],
-      lastDisposition: [],
-      updatedBy: [],
+      renewalVintage: '',
+      gstFeatureUsage: '',
+      activeness: '',
+      licenseCategory: '',
+      assignedTo: '',
+      stage: 'Due',
+      lastDisposition: '',
+      updatedBy: '',
       followUpScheduledFrom: '',
       followUpScheduledTo: '',
       followUpDoneFrom: '',
@@ -191,22 +172,25 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
 
         <div className="grid grid-cols-4 gap-4 mt-4">
           {/* Row 1 */}
-          <MultiSelectField 
+          <DropdownField 
             label="Partner" 
             field="partner" 
-            options={partnerOptions} 
+            options={partnerOptions}
+            placeholder="Select partner"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Product" 
             field="product" 
-            options={productOptions} 
+            options={productOptions}
+            placeholder="Select product"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="License Type" 
             field="licenseType" 
-            options={licenseTypeOptions} 
+            options={licenseTypeOptions}
+            placeholder="Select license type"
           />
           
           <div className="space-y-2">
@@ -228,53 +212,61 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           </div>
 
           {/* Row 2 */}
-          <MultiSelectField 
+          <DropdownField 
             label="Renewal Vintage" 
             field="renewalVintage" 
-            options={renewalVintageOptions} 
+            options={renewalVintageOptions}
+            placeholder="Select vintage"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="GST Feature Usage" 
             field="gstFeatureUsage" 
-            options={gstFeatureUsageOptions} 
+            options={gstFeatureUsageOptions}
+            placeholder="Select GST usage"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Activeness" 
             field="activeness" 
-            options={activenessOptions} 
+            options={activenessOptions}
+            placeholder="Select activeness"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="License Category" 
             field="licenseCategory" 
-            options={licenseCategoryOptions} 
+            options={licenseCategoryOptions}
+            placeholder="Select category"
           />
 
           {/* Row 3 */}
-          <MultiSelectField 
+          <DropdownField 
             label="Assigned To" 
             field="assignedTo" 
-            options={assignedToOptions} 
+            options={assignedToOptions}
+            placeholder="Select assignee"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Stage" 
             field="stage" 
-            options={stageOptions} 
+            options={stageOptions}
+            placeholder="Select stage"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Last Disposition" 
             field="lastDisposition" 
-            options={lastDispositionOptions} 
+            options={lastDispositionOptions}
+            placeholder="Select disposition"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Updated By" 
             field="updatedBy" 
-            options={updatedByOptions} 
+            options={updatedByOptions}
+            placeholder="Select user"
           />
 
           {/* Row 4 */}
