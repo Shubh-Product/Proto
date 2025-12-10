@@ -270,25 +270,33 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           <MultiSelectField 
             label="Assigned To" 
             field="assignedTo" 
-            options={assignedToOptions} 
+            options={assignedToOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="Stage" 
             field="stage" 
-            options={stageOptions} 
+            options={stageOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="Last Disposition" 
             field="lastDisposition" 
-            options={lastDispositionOptions} 
+            options={lastDispositionOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="Updated By" 
             field="updatedBy" 
-            options={updatedByOptions} 
+            options={updatedByOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
 
           {/* Row 4 */}
