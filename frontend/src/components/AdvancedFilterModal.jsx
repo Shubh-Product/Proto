@@ -156,37 +156,6 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
     }));
   };
 
-  // Multi-select component
-  const MultiSelectField = ({ label, field, options }) => (
-    <div className="space-y-2">
-      <Label>{label}</Label>
-      <div className="border rounded-md p-2 max-h-32 overflow-y-auto bg-white">
-        <div className="space-y-1">
-          {options.map((option) => (
-            <div key={option} className="flex items-center space-x-2">
-              <Checkbox
-                id={`${field}-${option}`}
-                checked={filters[field].includes(option)}
-                onCheckedChange={(checked) => handleMultiSelectChange(field, option, checked)}
-              />
-              <label 
-                htmlFor={`${field}-${option}`}
-                className="text-sm font-normal cursor-pointer"
-              >
-                {option}
-              </label>
-            </div>
-          ))}
-        </div>
-      </div>
-      {filters[field].length > 0 && (
-        <div className="text-xs text-gray-600">
-          {filters[field].length} selected
-        </div>
-      )}
-    </div>
-  );
-
   const handleApply = () => {
     onApply(filters);
   };
