@@ -4,61 +4,29 @@ import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Checkbox } from './ui/checkbox';
-
-// Multi-select component
-const MultiSelectField = ({ label, field, options, filters, handleMultiSelectChange }) => (
-  <div className="space-y-2">
-    <Label>{label}</Label>
-    <div className="border rounded-md p-2 max-h-32 overflow-y-auto bg-white">
-      <div className="space-y-1">
-        {options.map((option) => (
-          <div key={option} className="flex items-center space-x-2">
-            <Checkbox
-              id={`${field}-${option}`}
-              checked={filters[field].includes(option)}
-              onCheckedChange={(checked) => handleMultiSelectChange(field, option, checked)}
-            />
-            <label 
-              htmlFor={`${field}-${option}`}
-              className="text-sm font-normal cursor-pointer"
-            >
-              {option}
-            </label>
-          </div>
-        ))}
-      </div>
-    </div>
-    {filters[field].length > 0 && (
-      <div className="text-xs text-gray-600">
-        {filters[field].length} selected
-      </div>
-    )}
-  </div>
-);
 
 const AdvancedFilterModal = ({ onClose, onApply }) => {
   const [filters, setFilters] = useState({
-    partner: [],
-    product: [],
-    licenseType: [],
+    partner: '',
+    product: '',
+    licenseType: '',
     validTillFrom: '',
     validTillTo: '',
-    renewalVintage: [],
-    gstFeatureUsage: [],
-    activeness: [],
-    licenseCategory: [],
-    assignedTo: [],
-    stage: ['Due'], // Default selection as specified
-    lastDisposition: [],
-    updatedBy: [],
+    renewalVintage: '',
+    gstFeatureUsage: '',
+    activeness: '',
+    licenseCategory: '',
+    assignedTo: '',
+    stage: 'Due', // Default selection as specified
+    lastDisposition: '',
+    updatedBy: '',
     followUpScheduledFrom: '',
     followUpScheduledTo: '',
     followUpDoneFrom: '',
     followUpDoneTo: ''
   });
 
-  // Multi-select options
+  // Dropdown options
   const partnerOptions = [
     'Inside Sales',
     'KGSS', 
@@ -146,15 +114,28 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
     'Shubham Goel'
   ];
 
-  // Handle multi-select change
-  const handleMultiSelectChange = (field, value, isChecked) => {
-    setFilters(prev => ({
-      ...prev,
-      [field]: isChecked 
-        ? [...prev[field], value]
-        : prev[field].filter(item => item !== value)
-    }));
-  };
+  // Dropdown component
+  const DropdownField = ({ label, field, options, placeholder }) => (
+    <div className="space-y-2">
+      <Label>{label}</Label>
+      <Select
+        value={filters[field]}
+        onValueChange={(value) => setFilters({ ...filters, [field]: value })}
+      >
+        <SelectTrigger>
+          <SelectValue placeholder={placeholder || `Select ${label.toLowerCase()}`} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="">All</SelectItem>
+          {options.map((option) => (
+            <SelectItem key={option} value={option}>
+              {option}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+  );
 
   const handleApply = () => {
     onApply(filters);
@@ -162,19 +143,19 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
 
   const handleReset = () => {
     setFilters({
-      partner: [],
-      product: [],
-      licenseType: [],
+      partner: '',
+      product: '',
+      licenseType: '',
       validTillFrom: '',
       validTillTo: '',
-      renewalVintage: [],
-      gstFeatureUsage: [],
-      activeness: [],
-      licenseCategory: [],
-      assignedTo: [],
-      stage: ['Due'],
-      lastDisposition: [],
-      updatedBy: [],
+      renewalVintage: '',
+      gstFeatureUsage: '',
+      activeness: '',
+      licenseCategory: '',
+      assignedTo: '',
+      stage: 'Due',
+      lastDisposition: '',
+      updatedBy: '',
       followUpScheduledFrom: '',
       followUpScheduledTo: '',
       followUpDoneFrom: '',
@@ -191,28 +172,25 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
 
         <div className="grid grid-cols-4 gap-4 mt-4">
           {/* Row 1 */}
-          <MultiSelectField 
+          <DropdownField 
             label="Partner" 
             field="partner" 
             options={partnerOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select partner"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Product" 
             field="product" 
             options={productOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select product"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="License Type" 
             field="licenseType" 
             options={licenseTypeOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select license type"
           />
           
           <div className="space-y-2">
@@ -234,69 +212,61 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           </div>
 
           {/* Row 2 */}
-          <MultiSelectField 
+          <DropdownField 
             label="Renewal Vintage" 
             field="renewalVintage" 
             options={renewalVintageOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select vintage"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="GST Feature Usage" 
             field="gstFeatureUsage" 
             options={gstFeatureUsageOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select GST usage"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Activeness" 
             field="activeness" 
             options={activenessOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select activeness"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="License Category" 
             field="licenseCategory" 
             options={licenseCategoryOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select category"
           />
 
           {/* Row 3 */}
-          <MultiSelectField 
+          <DropdownField 
             label="Assigned To" 
             field="assignedTo" 
             options={assignedToOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select assignee"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Stage" 
             field="stage" 
             options={stageOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select stage"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Last Disposition" 
             field="lastDisposition" 
             options={lastDispositionOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select disposition"
           />
           
-          <MultiSelectField 
+          <DropdownField 
             label="Updated By" 
             field="updatedBy" 
             options={updatedByOptions}
-            filters={filters}
-            handleMultiSelectChange={handleMultiSelectChange}
+            placeholder="Select user"
           />
 
           {/* Row 4 */}
