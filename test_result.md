@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Display 4 fields in a single row in renewal lead management advance filter pop-up"
+  - task: "Replace all fields in renewal lead management advanced filter with 14 new fields"
     implemented: true
     working: true
     file: "/app/frontend/src/components/AdvancedFilterModal.jsx"
     stuck_count: 0
-    priority: "medium"
+    priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully updated Advanced Filter modal layout from 2-column to 4-column grid. Changed grid-cols-2 to grid-cols-4 and increased modal width from max-w-3xl to max-w-6xl to accommodate the wider layout. Now displays 4 fields per row: Partner/Product/Valid From/Valid To in first row, Vintage/GST Usage/Activeness/License Category in second row, etc. Screenshot verification confirms the 4-column layout is working perfectly and improves space utilization."
+        comment: "Successfully replaced all Advanced Filter fields with 14 new fields as specified: Partner, Product, License Type, Valid Till Date, Renewal Vintage, GST Feature Usage, Activeness, License Category, Assigned To, Stage (with Due default), Last Disposition, Updated By, Follow Up Scheduled For, Follow Up Done On. Implemented multi-select functionality using checkboxes with scrollable containers and selection counters. Added date range pickers for 3 fields. All fields display exact values as specified. Screenshot verification shows 4-column layout working perfectly with all functionality operational."
 
 metadata:
   created_by: "main_agent"
