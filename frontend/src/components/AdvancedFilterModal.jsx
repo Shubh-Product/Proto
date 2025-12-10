@@ -194,19 +194,25 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
           <MultiSelectField 
             label="Partner" 
             field="partner" 
-            options={partnerOptions} 
+            options={partnerOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="Product" 
             field="product" 
-            options={productOptions} 
+            options={productOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <MultiSelectField 
             label="License Type" 
             field="licenseType" 
-            options={licenseTypeOptions} 
+            options={licenseTypeOptions}
+            filters={filters}
+            handleMultiSelectChange={handleMultiSelectChange}
           />
           
           <div className="space-y-2">
