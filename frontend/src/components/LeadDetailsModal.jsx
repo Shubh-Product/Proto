@@ -247,7 +247,7 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
               </div>
 
               {/* Row 2 - 3 fields */}
-              <div className="grid grid-cols-3 gap-x-8 gap-y-3 mb-3">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-3 mb-3">
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-bold text-gray-600">Mobile:</span>
                   <span className="text-sm text-gray-900">9999888877</span>
@@ -255,10 +255,6 @@ const LeadDetailsModal = ({ lead, onClose, leadType = 'renewal' }) => {
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <span className="text-sm font-bold text-gray-600">Alternate No.:</span>
                   <span className="text-sm text-gray-900">9876543210</span>
-                </div>
-                <div className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-sm font-bold text-gray-600">Email ID:</span>
-                  <span className="text-sm text-gray-900">dheeraj@mahavirsteel.com</span>
                 </div>
               </div>
 
