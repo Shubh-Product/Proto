@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Remove With Offers quick filter and Offers advance filter from Renewal lead management page"
+  - task: "Display 4 fields in a single row in renewal lead management advance filter pop-up"
     implemented: true
     working: true
-    file: "/app/frontend/src/pages/LeadManagement.jsx, /app/frontend/src/components/AdvancedFilterModal.jsx"
+    file: "/app/frontend/src/components/AdvancedFilterModal.jsx"
     stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully removed 'With Offers' quick filter from LeadManagement.jsx and 'Offers' advanced filter from AdvancedFilterModal.jsx. Updated filter state objects to exclude offers field. Both the quick filter buttons and advanced filter modal no longer display offers-related options. Screenshot verification confirms both filters have been completely removed while maintaining all other functionality."
+        comment: "Successfully updated Advanced Filter modal layout from 2-column to 4-column grid. Changed grid-cols-2 to grid-cols-4 and increased modal width from max-w-3xl to max-w-6xl to accommodate the wider layout. Now displays 4 fields per row: Partner/Product/Valid From/Valid To in first row, Vintage/GST Usage/Activeness/License Category in second row, etc. Screenshot verification confirms the 4-column layout is working perfectly and improves space utilization."
 
 metadata:
   created_by: "main_agent"
