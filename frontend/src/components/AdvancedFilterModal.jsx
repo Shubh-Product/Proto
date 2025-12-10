@@ -43,7 +43,7 @@ const AdvancedFilterModal = ({ onClose, onApply }) => {
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Advanced Filters</DialogTitle>
         </DialogHeader>
