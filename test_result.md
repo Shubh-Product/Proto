@@ -120,17 +120,17 @@ frontend:
         agent: "main"
         comment: "Refined header styling based on second reference image: Updated background color to #1a4e80, changed sort icons from ArrowUpDown to stacked ChevronUp/ChevronDown, adjusted layout with justify-between for proper spacing, increased padding for better visual hierarchy."
         
-  - task: "Replace all fields in renewal lead management advanced filter with 14 new fields"
+  - task: "Convert all fields to dropdowns in renewal lead management advanced filter"
     implemented: true
     working: true
     file: "/app/frontend/src/components/AdvancedFilterModal.jsx"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Successfully replaced all Advanced Filter fields with 14 new fields as specified: Partner, Product, License Type, Valid Till Date, Renewal Vintage, GST Feature Usage, Activeness, License Category, Assigned To, Stage (with Due default), Last Disposition, Updated By, Follow Up Scheduled For, Follow Up Done On. Implemented multi-select functionality using checkboxes with scrollable containers and selection counters. Added date range pickers for 3 fields. All fields display exact values as specified. Screenshot verification shows 4-column layout working perfectly with all functionality operational."
+        comment: "Successfully converted all multi-select checkbox fields to dropdown menus in Advanced Filter modal. Replaced MultiSelectField component with DropdownField component using Select UI. Updated filter state from arrays to strings for single-value selection. Added 'All' option to each dropdown with proper values to fix React warnings. Maintained all 14 fields with same options and maintained Stage field default to 'Due'. Date range fields remain as date pickers. Screenshot verification shows all dropdowns working properly with clean UI and proper placeholder text."
 
 metadata:
   created_by: "main_agent"
