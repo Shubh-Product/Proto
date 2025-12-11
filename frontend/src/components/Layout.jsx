@@ -14,22 +14,12 @@ const Layout = ({ children }) => {
     { 
       name: 'Dashboard', 
       href: '/', 
-      icon: LayoutDashboard,
-      subMenu: [
-        { name: 'New Sales', href: '/dashboard/new-sales' },
-        { name: 'Renewals', href: '/' },
-        { name: 'Upsell', href: '/dashboard/upsell' }
-      ]
+      icon: LayoutDashboard
     },
     { 
       name: 'Lead', 
       href: '/leads', 
-      icon: Users,
-      subMenu: [
-        { name: 'New Sales', href: '/leads/new-sales' },
-        { name: 'Renewals', href: '/leads' },
-        { name: 'Upsell', href: '/leads/upsell' }
-      ]
+      icon: Users
     },
     { 
       name: 'Report', 
